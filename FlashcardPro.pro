@@ -28,3 +28,6 @@ HEADERS  +=   include/mainwindow.h \
     include/studyarea.h \
     include/flashcard.h \
     include/imagebox.h
+
+DISTFILES += \
+    info.txt
