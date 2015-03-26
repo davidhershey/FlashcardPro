@@ -27,7 +27,7 @@ private slots:
 private:
     QString fstr;
     QString bstr;
-
+    int cardScore;
 //    QLabel* front;
 //    QLabel* back;
     QStackedWidget* m_stack;
