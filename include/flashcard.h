@@ -4,17 +4,33 @@
 #include <QObject>
 #include <QWidget>
 #include <QLabel>
-
-class Flashcard : public QLabel
+#include <QGraphicsWidget>
+#include <QStackedWidget>
+class Flashcard : public QGraphicsWidget
 {
     Q_OBJECT
 public:
-    explicit Flashcard(QWidget *parent = 0);
+    explicit Flashcard(QString ftext, QString btext, QWidget *parent = 0);
     ~Flashcard();
 
 signals:
+    void flipRequest(); // private
+    void clicked();
 
+protected:
+    void mousePressEvent ( QMouseEvent * event ) ;
+    void resizeEvent(QGraphicsSceneResizeEvent *event);
 public slots:
+
+private slots:
+    void togglePage();
+private:
+    QString fstr;
+    QString bstr;
+
+//    QLabel* front;
+//    QLabel* back;
+    QStackedWidget* m_stack;
 };
 
 #endif // FLASHCARD_H

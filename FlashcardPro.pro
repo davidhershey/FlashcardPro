@@ -18,9 +18,13 @@ SOURCES +=     src/main.cpp \
                src/mainwindow.cpp \
     src/flashcard.cpp \
     src/deck.cpp \
-    src/studyarea.cpp
+    src/studyarea.cpp \
+    src/flashcard.cpp \
+    src/imagebox.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
     include/deck.h \
-    include/studyarea.h
+    include/studyarea.h \
+    include/flashcard.h \
+    include/imagebox.h
