@@ -12,8 +12,9 @@
 #include <QGraphicsSceneResizeEvent>
 #include "../include/imagebox.h"
 
-Flashcard::Flashcard(QString ftext, QString btext, QWidget *parent)
+Flashcard::Flashcard(QString ftext, QString btext, int cscore, QWidget *parent)
 {
+    card_score = cscore;
     ImageBox* front = new ImageBox;
     ImageBox* back = new ImageBox;
     fstr = ftext;

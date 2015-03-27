@@ -10,8 +10,9 @@ class Flashcard : public QGraphicsWidget
 {
     Q_OBJECT
 public:
-    explicit Flashcard(QString ftext, QString btext, QWidget *parent = 0);
+    explicit Flashcard(QString ftext, QString btext, int cscore, QWidget *parent = 0);
     ~Flashcard();
+    int card_score;
 
 signals:
     void flipRequest(); // private
@@ -34,3 +35,4 @@ private:
 };
 
 #endif // FLASHCARD_H
+
