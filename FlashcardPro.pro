@@ -24,10 +24,10 @@ SOURCES +=     src/main.cpp \
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
-    include/deck.h \
     include/studyarea.h \
     include/flashcard.h \
-    include/imagebox.h
+    include/imagebox.h \
+    include/deck.h
 
 DISTFILES += \
     info.txt
