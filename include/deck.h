@@ -5,20 +5,22 @@
 #ifndef DECK_H
 #define DECK_H
 
-#include <QtWidgets>
+#include <QFile>
 #include <vector>
+#include <QString>
+#include <QGraphicsWidget>
 
 class Deck
 {
 public:
     Deck(FILE* deck_file);
     ~Deck();
-    void saveDeck(QString location);
 
     int deck_score;
     int num_cards;
     QString deck_name;
     std::vector<QGraphicsWidget*> cards;
+    QString saveText;
 
 private:
     void parseCard(QString* line);

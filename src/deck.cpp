@@ -14,11 +14,15 @@ Deck::Deck(FILE* deck_file)
         qDebug() << "Error reading in deck file!";
         exit(1);
     }
+    saveText += line;
+    saveText += "\n";
     parseInfo(&line);
 
     line = instream.readLine();
     while(!line.isNull())
     {
+        saveText += line;
+        saveText += "\n";
         parseCard(&line);
         line = instream.readLine();
     }
@@ -115,11 +119,3 @@ void Deck::parseCard(QString* line)
     Flashcard* new_card = new Flashcard(front, back, score);
     cards.push_back(new_card);
 }
-
-void Deck::saveDeck(QString location)
-{
-
-}
-
-
-

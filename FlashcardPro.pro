@@ -20,15 +20,19 @@ SOURCES +=     src/main.cpp \
     src/deck.cpp \
     src/studyarea.cpp \
     src/flashcard.cpp \
-    src/imagebox.cpp
+    src/imagebox.cpp \
+    src/decklabel.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
     include/studyarea.h \
     include/flashcard.h \
     include/imagebox.h \
-    include/deck.h
+    include/deck.h \
+    src/decklabel.h \
+    include/decklabel.h
 
 DISTFILES += \
     info.txt \
-    test_set.txt
+    test_set.txt \
+    test_set2.txt

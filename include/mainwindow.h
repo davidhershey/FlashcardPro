@@ -2,24 +2,26 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QAction>
+#include <vector>
+#include <QGridLayout>
+#include "deck.h"
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
 private:
     QAction* loadAct;
-    QAction* saveAct;
-    QAction* studyAct;
-    Deck* deck;
+    std::vector<Deck*> decks;
+    QGridLayout* decksLayout;
 
 public slots:
     void loadDeck();
-    void saveDeck();
-    void studyDeck();
 };
 
 #endif // MAINWINDOW_H

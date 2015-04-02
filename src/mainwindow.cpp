@@ -1,38 +1,38 @@
-#include "../include/mainwindow.h"
+#include "mainwindow.h"
 #include <QtWidgets>
 #include "deck.h"
-#include "studyarea.h"
+#include "decklabel.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent)
 {
-    ui->setupUi(this);
     QMenu* fileMenu = this->menuBar()->addMenu("&File");
     loadAct = new QAction("&Load Deck",fileMenu);
     fileMenu->addAction(loadAct);
-    saveAct = new QAction("&Save Deck",fileMenu);
-    fileMenu->addAction(saveAct);
-    QMenu* studyMenu = this->menuBar()->addMenu("&Study");
-    studyAct = new QAction("&Study Deck",studyMenu);
-    studyMenu->addAction(studyAct);
-    studyAct->setEnabled(false);
 
     connect(loadAct, SIGNAL(triggered()), this, SLOT(loadDeck()));
-    connect(saveAct, SIGNAL(triggered()), this, SLOT(saveDeck()));
-    connect(studyAct, SIGNAL(triggered()), this, SLOT(studyDeck()));
+
+    QFrame* frame = new QFrame();
+    decksLayout = new QGridLayout();
+    frame->setLayout(decksLayout);
+    frame->setMinimumSize(700,500);
+    this->setCentralWidget(frame);
+
+    DeckLabel* loadLabel = new DeckLabel(NULL);
+    connect(loadLabel, SIGNAL(clicked()), this, SLOT(loadDeck()));
+    decksLayout->addWidget(loadLabel, 0, 0);
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
 }
 
 void MainWindow::loadDeck()
 {
     QString fileName =
-      QFileDialog::getOpenFileName(this, tr("Pick a Set"),
+      QFileDialog::getOpenFileName(this, tr("Pick a Deck"),
                                    QDir::homePath() + QDir::separator() + "*",
-                                   "*");
+                                   tr("Text File (*.txt)"));
     if (fileName.isEmpty() || fileName.isNull())
       return;
     else
@@ -42,18 +42,15 @@ void MainWindow::loadDeck()
         myFile.open(QIODevice::ReadOnly);
         int fileHandle = myFile.handle();
         FILE* fh = fdopen(fileHandle, "rb");
-        deck = new Deck(fh);
+        Deck* insDeck = new Deck(fh);
+        decks.push_back(insDeck);
+        DeckLabel* insLabel = new DeckLabel(insDeck);
+        connect(insLabel, SIGNAL(clicked()), insLabel, SLOT(chooseNext()));
+        int i = decks.size()-1;
+        QWidget* last = decksLayout->itemAtPosition(int(i/5),i%5)->widget();
+        decksLayout->addWidget(insLabel,int(i/5),i%5);
+        ++i;
+        decksLayout->addWidget(last,int(i/5),i%5);
     }
-    studyAct->setEnabled(true);
 }
 
-void MainWindow::saveDeck()
-{
-
-}
-
-void MainWindow::studyDeck()
-{
-    StudyArea* area = new StudyArea(deck);
-    area->exec();
-}
