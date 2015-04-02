@@ -1,5 +1,7 @@
 #include "deck.h"
 #include "flashcard.h"
+#include <QTextStream>
+#include <QDebug>
 
 Deck::Deck(FILE* deck_file)
 {
@@ -56,13 +58,13 @@ void Deck::parseInfo(QString* line)
     read = "";
     ++i;
     j=0;
-    while(line->at(i) != '\n' && line->at(i).isDigit())
+    while(i < line->size() && line->at(i).isDigit())
     {
         read[j] = line->at(i);
         ++i;
         ++j;
     }
-    if(line->at(i) != '\n')
+    if(i < line->size())
         qDebug() << "Got a non digit value in deck score!";
     this->deck_score = read.toInt();
 }
@@ -86,6 +88,7 @@ void Deck::parseCard(QString* line)
     j = 0;
     if(line->at(++i) != '<')
         qDebug() << "Wrong char at beginning of back of card!";
+    ++i;
     while(line->at(i) != '>')
     {
         read[j] = line->at(i);
@@ -98,6 +101,7 @@ void Deck::parseCard(QString* line)
     j = 0;
     if(line->at(++i) != '<')
         qDebug() << "Wrong char at beginning of card score!";
+    ++i;
     while(line->at(i) != '>' && line->at(i).isDigit())
     {
         read[j] = line->at(i);
@@ -116,4 +120,6 @@ void Deck::saveDeck(QString location)
 {
 
 }
+
+
 
