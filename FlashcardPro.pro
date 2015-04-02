@@ -30,4 +30,5 @@ HEADERS  +=   include/mainwindow.h \
     include/deck.h
 
 DISTFILES += \
-    info.txt
+    info.txt \
+    test_set.txt
