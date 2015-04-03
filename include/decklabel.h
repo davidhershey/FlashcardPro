@@ -12,12 +12,15 @@ public:
 
 private:
     Deck* deck;
+    bool hover;
 
 signals:
     void clicked();
 
 protected:
     void mousePressEvent ( QMouseEvent * event );
+    void enterEvent(QEvent * event);
+    void leaveEvent(QEvent * event);
 
 public slots:
     void chooseNext();

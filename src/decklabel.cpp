@@ -8,8 +8,17 @@ DeckLabel::DeckLabel(Deck* deck_in, QWidget * parent ):
 
   {
       deck = deck_in;
-      if(deck == NULL) this->setText("Load New\nDeck");
-      else this->setText(deck->deck_name);
+      if(deck == NULL)
+      {
+          this->setText("Load New\nDeck");
+          hover = false;
+      }
+      else
+      {
+          this->setText(deck->deck_name);
+          hover = true;
+      }
+
 
       this->setStyleSheet("border: 1px solid");
       this->setMinimumSize(50, 100);
@@ -27,6 +36,20 @@ DeckLabel::DeckLabel(Deck* deck_in, QWidget * parent ):
   {
       //std::cout << "Got click" << std::endl;
       emit clicked();
+  }
+
+  void DeckLabel::enterEvent(QEvent * event)
+  {
+    qDebug() << "entered!";
+    if(hover) this->setStyleSheet("border: 2px solid");
+    else this->setStyleSheet("border: 2px solid; background: white");
+  }
+
+  void DeckLabel::leaveEvent(QEvent * event)
+  {
+    qDebug() << "exited!";
+    if(hover) this->setStyleSheet("border: 1px solid");
+    else this->setStyleSheet("border: 1px solid; background: white");
   }
 
   void DeckLabel::chooseNext()
