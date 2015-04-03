@@ -1,27 +1,25 @@
-#include "mainwindow.h"
-#include <QtWidgets>
 #include "decksview.h"
+#include "decklabel.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent)
+DecksView::DecksView()
+    :QFrame()
 {
-    /*QMenu* fileMenu = this->menuBar()->addMenu("&File");
-    loadAct = new QAction("&Load Deck",fileMenu);
-    fileMenu->addAction(loadAct);
+    decksLayout = new QGridLayout();
+    setLayout(decksLayout);
+    setMinimumSize(700,500);
 
-    connect(loadAct, SIGNAL(triggered()), this, SLOT(loadDeck()));*/
-
-    DecksView* decksView = new DecksView();
-    //INSERT LOGIC FOR SWITCHING BETWEEN FRAMES HERE
-    //setting this as central widget for now
-    this->setCentralWidget(decksView);
+    loadLabel = new DeckLabel(NULL);
+    loadLabel->setStyleSheet("background-color: white; border: 1px solid");
+    connect(loadLabel, SIGNAL(clicked()), this, SLOT(loadDeck()));
+    decksLayout->addWidget(loadLabel, 0, 0);
 }
 
-MainWindow::~MainWindow()
+DecksView::~DecksView()
 {
+
 }
 
-void MainWindow::loadDeck()
+void DecksView::loadDeck()
 {
     QString fileName =
       QFileDialog::getOpenFileName(this, tr("Pick a Deck"),
@@ -47,4 +45,5 @@ void MainWindow::loadDeck()
         decksLayout->addWidget(last,int(i/5),i%5);
     }
 }
+
 

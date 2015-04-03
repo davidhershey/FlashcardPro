@@ -71,7 +71,7 @@ DeckLabel::DeckLabel(Deck* deck_in, QWidget * parent ):
                       file.errorString());
                   return;
               }
-      QDataStream out(&file);
+      QTextStream out(&file);
       out << deck_save;
       file.close();
   }

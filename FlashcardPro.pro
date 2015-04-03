@@ -21,7 +21,9 @@ SOURCES +=     src/main.cpp \
     src/studyarea.cpp \
     src/flashcard.cpp \
     src/imagebox.cpp \
-    src/decklabel.cpp
+    src/decklabel.cpp \
+    decksview.cpp \
+    src/decksview.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
@@ -30,7 +32,9 @@ HEADERS  +=   include/mainwindow.h \
     include/imagebox.h \
     include/deck.h \
     src/decklabel.h \
-    include/decklabel.h
+    include/decklabel.h \
+    decksview.h \
+    include/decksview.h
 
 DISTFILES += \
     info.txt \
