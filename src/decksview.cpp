@@ -1,9 +1,10 @@
 #include "decksview.h"
 #include "decklabel.h"
 
-DecksView::DecksView()
+DecksView::DecksView(QStackedWidget* pages_in)
     :QFrame()
 {
+    pages = pages_in;
     decksLayout = new QGridLayout();
     setLayout(decksLayout);
     setMinimumSize(700,500);
@@ -45,5 +46,3 @@ void DecksView::loadDeck()
         decksLayout->addWidget(last,int(i/5),i%5);
     }
 }
-
-

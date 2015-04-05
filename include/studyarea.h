@@ -2,7 +2,7 @@
 #define STUDYAREA_H
 #include "deck.h"
 #include <QtWidgets>
-class StudyArea : public QDialog
+class StudyArea : public QFrame
 {
     Q_OBJECT
 public:

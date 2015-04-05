@@ -1,7 +1,7 @@
 #include "studyarea.h"
 
 StudyArea::StudyArea(Deck* deck_in)
-    :QDialog()
+    :QFrame()
 {
     deck = deck_in;
     current_card = 0;

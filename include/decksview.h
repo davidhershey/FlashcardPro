@@ -1,6 +1,5 @@
 #ifndef DECKSVIEW_H
 #define DECKSVIEW_H
-
 #include <QFrame>
 #include <vector>
 #include <QGridLayout>
@@ -11,11 +10,12 @@ class DecksView :public QFrame
 {
     Q_OBJECT
 public:
-    DecksView();
+    DecksView(QStackedWidget* pages_in);
     ~DecksView();
 
 private:
     //QAction* loadAct;
+    QStackedWidget* pages;
     std::vector<Deck*> decks;
     QGridLayout* decksLayout;
     DeckLabel* loadLabel;
