@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT += opengl
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -22,10 +23,10 @@ SOURCES +=     src/main.cpp \
     src/flashcard.cpp \
     src/imagebox.cpp \
     src/decklabel.cpp \
-    decksview.cpp \
     src/decksview.cpp \
-    login.cpp \
-    src/login.cpp
+    src/login.cpp \
+    src/FlipWidget.cpp \
+    src/RoundRectItem.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
@@ -38,7 +39,9 @@ HEADERS  +=   include/mainwindow.h \
     decksview.h \
     include/decksview.h \
     login.h \
-    include/login.h
+    include/login.h \
+    include/FlipWidget.h \
+    include/RoundRectItem.h
 
 DISTFILES += \
     info.txt \

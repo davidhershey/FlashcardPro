@@ -19,7 +19,7 @@ public:
     int deck_score;
     int num_cards;
     QString deck_name;
-    std::vector<QGraphicsWidget*> cards;
+    std::vector<QWidget*> cards;
     QString saveText;
 
 private:

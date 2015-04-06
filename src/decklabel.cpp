@@ -75,7 +75,7 @@ DeckLabel::DeckLabel(Deck* deck_in, QWidget * parent ):
   void DeckLabel::initStudyArea()
   {
       StudyArea* area = new StudyArea(deck);
-      area->exec();
+//      area->exec();
   }
 
   void DeckLabel::saveDeck()

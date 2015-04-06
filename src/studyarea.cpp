@@ -12,27 +12,29 @@ StudyArea::StudyArea(Deck* deck_in)
     }
 
     //add first card to graphics scene
-    scene = new QGraphicsScene();
-    scene->addItem(deck->cards.at(current_card));
-    QGraphicsView* view = new QGraphicsView(scene);
-    view->show();
+    grid = new QGridLayout(this);
+    grid->addWidget(deck->cards.at(current_card),0,0,2,1);
+//    scene->addItem(deck->cards.at(current_card));
+//    QGraphicsView* view = new QGraphicsView(scene);
+//    view->show();
 
     //Set up layout of window
     //prev button, card, next button
     prevButton = new QPushButton("Prev");
+    grid->addWidget(prevButton,1,0,1,1);
     nextButton = new QPushButton("Next");
+    grid->addWidget(nextButton,1,1,1,1);
     connect(prevButton, SIGNAL(clicked()), this, SLOT(prevCard()));
     connect(nextButton, SIGNAL(clicked()), this, SLOT(nextCard()));
-
-    QVBoxLayout* innervlayout = new QVBoxLayout();
-    innervlayout->addWidget(view);
-    QHBoxLayout* innerhlayout = new QHBoxLayout();
-    innerhlayout->addWidget(prevButton);
-    innerhlayout->addWidget(nextButton);
-    QVBoxLayout* vlayout = new QVBoxLayout();
-    vlayout->addLayout(innervlayout);
-    vlayout->addLayout(innerhlayout);
-    setLayout(vlayout);
+//    QVBoxLayout* innervlayout = new QVBoxLayout();
+//    innervlayout->addWidget(view);
+//    QHBoxLayout* innerhlayout = new QHBoxLayout();
+//    innerhlayout->addWidget(prevButton);
+//    innerhlayout->addWidget(nextButton);
+//    QVBoxLayout* vlayout = new QVBoxLayout();
+//    vlayout->addLayout(innervlayout);
+//    vlayout->addLayout(innerhlayout);
+//    setLayout(vlayout);
 }
 
 StudyArea::~StudyArea()
@@ -48,8 +50,8 @@ void StudyArea::prevCard()
         qDebug() << "No previous card!";
         return;
     }
-    scene->removeItem(deck->cards.at(current_card--));
-    scene->addItem(deck->cards.at(current_card));
+    grid->removeWidget(deck->cards.at(current_card--));
+    grid->addWidget(deck->cards.at(current_card),0,0,1,2);
 }
 
 void StudyArea::nextCard()
@@ -60,6 +62,6 @@ void StudyArea::nextCard()
         qDebug() << "No next card!";
         return;
     }
-    scene->removeItem(deck->cards.at(current_card++));
-    scene->addItem(deck->cards.at(current_card));
+    grid->removeWidget(deck->cards.at(current_card++));
+    grid->addWidget(deck->cards.at(current_card),0,0,1,2);
 }

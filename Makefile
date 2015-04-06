@@ -198,6 +198,7 @@ Makefile: FlashcardPro.pro F:\Qt\5.4\msvc2013_64\mkspecs\win32-msvc2013\qmake.co
 		FlashcardPro.pro \
 		F:/Qt/5.4/msvc2013_64/lib/qtmaind.prl \
 		F:/Qt/5.4/msvc2013_64/lib/Qt5Cored.prl \
+		F:/Qt/5.4/msvc2013_64/lib/Qt5OpenGL.prl \
 		F:/Qt/5.4/msvc2013_64/lib/Qt5Widgets.prl \
 		F:/Qt/5.4/msvc2013_64/lib/Qt5Gui.prl \
 		F:/Qt/5.4/msvc2013_64/lib/Qt5Core.prl
@@ -327,6 +328,7 @@ F:\Qt\5.4\msvc2013_64\mkspecs\features\lex.prf:
 FlashcardPro.pro:
 F:/Qt/5.4/msvc2013_64/lib/qtmaind.prl:
 F:/Qt/5.4/msvc2013_64/lib/Qt5Cored.prl:
+F:/Qt/5.4/msvc2013_64/lib/Qt5OpenGL.prl:
 F:/Qt/5.4/msvc2013_64/lib/Qt5Widgets.prl:
 F:/Qt/5.4/msvc2013_64/lib/Qt5Gui.prl:
 F:/Qt/5.4/msvc2013_64/lib/Qt5Core.prl:

@@ -12,7 +12,7 @@ public:
 private:
     Deck* deck;
     int current_card;
-    QGraphicsScene* scene;
+    QGridLayout *grid;
     QPushButton* prevButton;
     QPushButton* nextButton;
 
