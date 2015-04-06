@@ -29,10 +29,36 @@ Deck::Deck(FILE* deck_file)
 
 }
 
+Deck::Deck(std::vector<Flashcard *> _cards) : cards(_cards)
+{
+
+}
+
 Deck::~Deck()
 {
 
 }
+
+Flashcard* Deck::getTop()
+{
+    return cards.at(0);
+}
+
+void Deck::shuffle()
+{
+    Flashcard* curCard = getTop();
+    if(cards.size()>4){
+        cards.erase(cards.begin());
+        int i = 3;
+        while(cards[i]->getScore() < curCard->getScore() && i<cards.size()-1) i++;
+        cards.insert(cards.begin()+i,curCard);
+    }
+    else{
+        cards.erase(cards.begin());
+        cards.push_back(curCard);
+    }
+}
+
 void Deck::parseInfo(QString* line)
 {
     QString read;

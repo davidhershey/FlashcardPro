@@ -1,24 +1,28 @@
 #ifndef STUDYAREA_H
 #define STUDYAREA_H
-#include "deck.h"
+
+#include <QWidget>
 #include <QtWidgets>
-class StudyArea : public QFrame
+#include "deck.h"
+#include "flashcard.h"
+
+class StudyArea : public QGraphicsView
 {
     Q_OBJECT
 public:
-    StudyArea(Deck* deck_in);
+    explicit StudyArea(Deck* _deck,QWidget *parent = 0);
     ~StudyArea();
 
-private:
-    Deck* deck;
-    int current_card;
-    QGridLayout *grid;
-    QPushButton* prevButton;
-    QPushButton* nextButton;
+signals:
 
 public slots:
-    void nextCard();
-    void prevCard();
+    void correct();
+    void incorrect();
+
+private:
+    QGridLayout *grid;
+    Deck *deck;
+    Flashcard *curCard;
 };
 
 #endif // STUDYAREA_H

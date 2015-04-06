@@ -35,6 +35,9 @@ class Flashcard : public QWidget
 public:
     Flashcard(QString ftext, QString btext, int cscore, QWidget *parent = 0);
     ~Flashcard();
+    int getScore();
+    void correct();
+    void incorrect();
 
 public slots:
 

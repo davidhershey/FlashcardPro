@@ -34,9 +34,9 @@
 #include <QToolButton>
 #include <QColor>
 #include <QFileDialog>
-#include "../include/flashcard.h"
+#include "flashcard.h"
 
-#include "../include/imagebox.h"
+#include "imagebox.h"
 
 Flashcard::Flashcard(QString ftext, QString btext, int cscore, QWidget *parent) :
     QWidget(parent),
@@ -138,4 +138,19 @@ void Flashcard::FlyAway()
 Flashcard::~Flashcard()
 {
 
+}
+
+int Flashcard::getScore()
+{
+    return cardScore;
+}
+
+void Flashcard::correct()
+{
+    cardScore++;
+}
+
+void Flashcard::incorrect()
+{
+    cardScore--;
 }

@@ -9,18 +9,22 @@
 #include <vector>
 #include <QString>
 #include <QGraphicsWidget>
-
+#include "flashcard.h"
 class Deck
 {
 public:
     Deck(FILE* deck_file);
+    Deck(std::vector<Flashcard*> _cards);
     ~Deck();
 
     int deck_score;
     int num_cards;
     QString deck_name;
-    std::vector<QWidget*> cards;
+    std::vector<Flashcard*> cards;
     QString saveText;
+    Flashcard* getTop();
+
+    void shuffle();
 
 private:
     void parseCard(QString* line);

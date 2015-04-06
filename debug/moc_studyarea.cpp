@@ -30,12 +30,12 @@ struct qt_meta_stringdata_StudyArea_t {
 static const qt_meta_stringdata_StudyArea_t qt_meta_stringdata_StudyArea = {
     {
 QT_MOC_LITERAL(0, 0, 9), // "StudyArea"
-QT_MOC_LITERAL(1, 10, 8), // "nextCard"
-QT_MOC_LITERAL(2, 19, 0), // ""
-QT_MOC_LITERAL(3, 20, 8) // "prevCard"
+QT_MOC_LITERAL(1, 10, 7), // "correct"
+QT_MOC_LITERAL(2, 18, 0), // ""
+QT_MOC_LITERAL(3, 19, 9) // "incorrect"
 
     },
-    "StudyArea\0nextCard\0\0prevCard"
+    "StudyArea\0correct\0\0incorrect"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,8 +68,8 @@ void StudyArea::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     if (_c == QMetaObject::InvokeMetaMethod) {
         StudyArea *_t = static_cast<StudyArea *>(_o);
         switch (_id) {
-        case 0: _t->nextCard(); break;
-        case 1: _t->prevCard(); break;
+        case 0: _t->correct(); break;
+        case 1: _t->incorrect(); break;
         default: ;
         }
     }
@@ -77,7 +77,7 @@ void StudyArea::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
 }
 
 const QMetaObject StudyArea::staticMetaObject = {
-    { &QFrame::staticMetaObject, qt_meta_stringdata_StudyArea.data,
+    { &QGraphicsView::staticMetaObject, qt_meta_stringdata_StudyArea.data,
       qt_meta_data_StudyArea,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
@@ -92,12 +92,12 @@ void *StudyArea::qt_metacast(const char *_clname)
     if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_StudyArea.stringdata))
         return static_cast<void*>(const_cast< StudyArea*>(this));
-    return QFrame::qt_metacast(_clname);
+    return QGraphicsView::qt_metacast(_clname);
 }
 
 int StudyArea::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QFrame::qt_metacall(_c, _id, _a);
+    _id = QGraphicsView::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
