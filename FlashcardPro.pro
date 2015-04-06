@@ -47,3 +47,6 @@ DISTFILES += \
     info.txt \
     test_set.txt \
     test_set2.txt
+
+RESOURCES += \
+    images.qrc
