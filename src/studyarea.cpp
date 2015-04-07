@@ -4,14 +4,16 @@
 #include <QtWidgets>
 #include <QtGui>
 
-StudyArea::StudyArea(Deck *_deck, QWidget *parent) : QGraphicsView(parent)
+StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, QWidget *parent) : QGraphicsView(parent)
 {
     grid = new QGridLayout;
     deck = _deck;
+    pages = pages_in;
     curCard = _deck->getTop();
     grid->addWidget(curCard,1,0,1,2);
 
     QPushButton *back = new QPushButton("Back to Deck Selection");
+    connect(back, SIGNAL(clicked()), this, SLOT(goBack()));
     grid->addWidget(back,0,0,1,1);
 
     QPushButton *right = new QPushButton;
@@ -67,3 +69,8 @@ void StudyArea::incorrect()
     curCard->show();
 }
 
+void StudyArea::goBack()
+{
+    pages->removeWidget(pages->currentWidget());
+    pages->setCurrentIndex(3);
+}

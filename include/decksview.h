@@ -19,9 +19,11 @@ private:
     std::vector<Deck*> decks;
     QGridLayout* decksLayout;
     DeckLabel* loadLabel;
+    QPushButton* backButton;
 
 public slots:
     void loadDeck();
+    void goBack();
 };
 
 #endif // DECKSVIEW_H

@@ -5,14 +5,21 @@ DecksView::DecksView(QStackedWidget* pages_in)
     :QFrame()
 {
     pages = pages_in;
-    decksLayout = new QGridLayout();
-    setLayout(decksLayout);
-    setMinimumSize(700,500);
+    QVBoxLayout* mainLayout = new QVBoxLayout();
 
-    loadLabel = new DeckLabel(NULL);
+    decksLayout = new QGridLayout();
+    loadLabel = new DeckLabel(NULL, pages);
     loadLabel->setStyleSheet("background-color: white; border: 1px solid");
     connect(loadLabel, SIGNAL(clicked()), this, SLOT(loadDeck()));
     decksLayout->addWidget(loadLabel, 0, 0);
+
+    backButton = new QPushButton("Back");
+    connect(backButton, SIGNAL(clicked()), this, SLOT(goBack()));
+
+    mainLayout->addLayout(decksLayout);
+    mainLayout->addWidget(backButton);
+    setMinimumSize(700,500);
+    setLayout(mainLayout);
 }
 
 DecksView::~DecksView()
@@ -37,7 +44,7 @@ void DecksView::loadDeck()
         FILE* fh = fdopen(fileHandle, "rb");
         Deck* insDeck = new Deck(fh);
         decks.push_back(insDeck);
-        DeckLabel* insLabel = new DeckLabel(insDeck);
+        DeckLabel* insLabel = new DeckLabel(insDeck, pages);
         connect(insLabel, SIGNAL(clicked()), insLabel, SLOT(chooseNext()));
         int i = decks.size()-1;
         QWidget* last = decksLayout->itemAtPosition(int(i/5),i%5)->widget();
@@ -45,4 +52,9 @@ void DecksView::loadDeck()
         ++i;
         decksLayout->addWidget(last,int(i/5),i%5);
     }
+}
+
+void DecksView::goBack()
+{
+    pages->setCurrentIndex(1);
 }

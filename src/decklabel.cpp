@@ -3,11 +3,12 @@
 #include "studyarea.h"
 
 
-DeckLabel::DeckLabel(Deck* deck_in, QWidget * parent ):
+DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent ):
     QLabel(parent)
 
   {
       deck = deck_in;
+      pages = pages_in;
       if(deck == NULL)
       {
           this->setText("Load New\nDeck");
@@ -74,7 +75,9 @@ DeckLabel::DeckLabel(Deck* deck_in, QWidget * parent ):
 
   void DeckLabel::initStudyArea()
   {
-      StudyArea* area = new StudyArea(deck);
+      StudyArea* area = new StudyArea(deck, pages);
+      int index = pages->addWidget(area);
+      pages->setCurrentIndex(index);
 //      area->exec();
   }
 

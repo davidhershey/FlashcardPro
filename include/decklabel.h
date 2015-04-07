@@ -7,11 +7,12 @@ class DeckLabel:public QLabel
 {
     Q_OBJECT
 public:
-    explicit DeckLabel(Deck* deck_in, QWidget * parent = 0 );
+    explicit DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent = 0 );
     ~DeckLabel();
 
 private:
     Deck* deck;
+    QStackedWidget* pages;
     bool hover;
 
 signals:

@@ -10,7 +10,7 @@ class StudyArea : public QGraphicsView
 {
     Q_OBJECT
 public:
-    explicit StudyArea(Deck* _deck,QWidget *parent = 0);
+    explicit StudyArea(Deck* _deck, QStackedWidget* pages_in, QWidget *parent = 0);
     ~StudyArea();
 
 signals:
@@ -18,10 +18,12 @@ signals:
 public slots:
     void correct();
     void incorrect();
+    void goBack();
 
 private:
     QGridLayout *grid;
     Deck *deck;
+    QStackedWidget* pages;
     Flashcard *curCard;
 };
 
