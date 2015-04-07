@@ -80,6 +80,7 @@ void StudyArea::incorrect()
 
 void StudyArea::goBack()
 {
+    int nextIndex = pages->currentIndex()-1;
     pages->removeWidget(pages->currentWidget());
-    pages->setCurrentIndex(3);
+    pages->setCurrentIndex(nextIndex);
 }

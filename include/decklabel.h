@@ -16,7 +16,7 @@ private:
     bool hover;
 
 signals:
-    void clicked();
+    void clicked(Deck* _deck);
 
 protected:
     void mousePressEvent ( QMouseEvent * event );

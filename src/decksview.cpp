@@ -1,6 +1,6 @@
 #include "decksview.h"
 #include "decklabel.h"
-
+#include "deckmenu.h"
 DecksView::DecksView(QStackedWidget* pages_in)
     :QFrame()
 {
@@ -10,7 +10,7 @@ DecksView::DecksView(QStackedWidget* pages_in)
     decksLayout = new QGridLayout();
     loadLabel = new DeckLabel(NULL, pages);
     loadLabel->setStyleSheet("background-color: white; border: 1px solid");
-    connect(loadLabel, SIGNAL(clicked()), this, SLOT(loadDeck()));
+    connect(loadLabel, SIGNAL(clicked(Deck*)), this, SLOT(loadDeck(Deck*)));
     decksLayout->addWidget(loadLabel, 0, 0);
 
     backButton = new QPushButton("Back");
@@ -27,7 +27,7 @@ DecksView::~DecksView()
 
 }
 
-void DecksView::loadDeck()
+void DecksView::loadDeck(Deck* nulldeck)
 {
     QString fileName =QFileDialog::getOpenFileName(this, tr("Pick a Deck"),
                                                    "*",
@@ -47,7 +47,7 @@ void DecksView::loadDeck()
         Deck* insDeck = new Deck(fh);
         decks.push_back(insDeck);
         DeckLabel* insLabel = new DeckLabel(insDeck, pages);
-        connect(insLabel, SIGNAL(clicked()), insLabel, SLOT(chooseNext()));
+        connect(insLabel, &DeckLabel::clicked , this, &DecksView::openDeck);
         int i = decks.size()-1;
         QWidget* last = decksLayout->itemAtPosition(int(i/5),i%5)->widget();
         decksLayout->addWidget(insLabel,int(i/5),i%5);
@@ -56,7 +56,14 @@ void DecksView::loadDeck()
     }
 }
 
+void DecksView::openDeck(Deck* deck)
+{
+    DeckMenu *dm = new DeckMenu(deck,pages);
+    int index = pages->addWidget(dm);
+    pages->setCurrentIndex(index);
+}
+
 void DecksView::goBack()
 {
-    pages->setCurrentIndex(1);
+    pages->setCurrentIndex(0);
 }

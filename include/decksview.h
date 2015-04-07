@@ -22,7 +22,8 @@ private:
     QPushButton* backButton;
 
 public slots:
-    void loadDeck();
+    void loadDeck(Deck *nulldeck);
+    void openDeck(Deck *deck);
     void goBack();
 };
 

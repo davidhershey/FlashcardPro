@@ -36,7 +36,7 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
 
   {
       //std::cout << "Got click" << std::endl;
-      emit clicked();
+      emit clicked(deck);
   }
 
   void DeckLabel::enterEvent(QEvent * event)
