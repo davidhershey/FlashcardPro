@@ -25,21 +25,20 @@ SOURCES +=     src/main.cpp \
     src/decksview.cpp \
     src/login.cpp \
     src/FlipWidget.cpp \
-    src/RoundRectItem.cpp
+    src/RoundRectItem.cpp \
+    src/mainmenu.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
     include/studyarea.h \
     include/imagebox.h \
     include/deck.h \
-    src/decklabel.h \
     include/decklabel.h \
-    decksview.h \
     include/decksview.h \
-    login.h \
     include/login.h \
     include/FlipWidget.h \
-    include/RoundRectItem.h
+    include/RoundRectItem.h \
+    include/mainmenu.h
 
 DISTFILES += \
     info.txt \

@@ -9,7 +9,6 @@ class LogIn : public QFrame
 public:
     LogIn(QStackedWidget* pages_in);
     ~LogIn();
-
 private:
     QStackedWidget* pages;
     QPushButton* nextButton;

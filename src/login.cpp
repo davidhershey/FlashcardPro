@@ -22,6 +22,6 @@ LogIn::~LogIn()
 void LogIn::nextPage()
 {
     //LOGIC FOR LOGGING INTO DATABASE HERE
-    int current = pages->currentIndex();
-    pages->setCurrentIndex(current + 1);
+    //int current = pages->currentIndex();
+    pages->setCurrentIndex(1);
 }
