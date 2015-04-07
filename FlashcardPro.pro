@@ -20,7 +20,6 @@ SOURCES +=     src/main.cpp \
     src/flashcard.cpp \
     src/deck.cpp \
     src/studyarea.cpp \
-    src/flashcard.cpp \
     src/imagebox.cpp \
     src/decklabel.cpp \
     src/decksview.cpp \
@@ -31,7 +30,6 @@ SOURCES +=     src/main.cpp \
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
     include/studyarea.h \
-    include/flashcard.h \
     include/imagebox.h \
     include/deck.h \
     src/decklabel.h \
