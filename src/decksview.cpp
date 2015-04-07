@@ -13,7 +13,7 @@ DecksView::DecksView(QStackedWidget* pages_in)
     connect(loadLabel, SIGNAL(clicked(Deck*)), this, SLOT(loadDeck(Deck*)));
     decksLayout->addWidget(loadLabel, 0, 0);
 
-    backButton = new QPushButton("Back");
+    backButton = new QPushButton("Switch User");
     connect(backButton, SIGNAL(clicked()), this, SLOT(goBack()));
 
     mainLayout->addLayout(decksLayout);
