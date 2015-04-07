@@ -21,6 +21,7 @@ public slots:
     void goBack();
 
 private:
+    QLabel *scores;
     QGridLayout *grid;
     Deck *deck;
     QStackedWidget* pages;

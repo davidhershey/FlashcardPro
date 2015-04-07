@@ -38,6 +38,7 @@ public:
     int getScore();
     void correct();
     void incorrect();
+    bool isFront();
 
 public slots:
 
@@ -69,5 +70,6 @@ private slots:
     QString fstr;
     QString bstr;
     int cardScore;
+    bool front;
 };
 #endif // DEMO_H

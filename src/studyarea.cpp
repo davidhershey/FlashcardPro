@@ -6,11 +6,12 @@
 
 StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, QWidget *parent) : QGraphicsView(parent)
 {
+    scores = new QLabel;
     grid = new QGridLayout;
     deck = _deck;
     pages = pages_in;
     curCard = _deck->getTop();
-    grid->addWidget(curCard,1,0,1,2);
+    grid->addWidget(curCard,1,0,1,3);
 
     QPushButton *back = new QPushButton("Back to Deck Selection");
     connect(back, SIGNAL(clicked()), this, SLOT(goBack()));
@@ -32,8 +33,11 @@ StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, QWidget *parent) : Q
     QIcon ic2(pm2);
     wrong->setIcon(ic2);
     wrong->setIconSize(iconSize);
-    grid->addWidget(wrong,2,1,1,1,Qt::AlignRight);
+    grid->addWidget(wrong,2,2,1,1,Qt::AlignRight);
     connect(wrong,SIGNAL(clicked()),this,SLOT(incorrect()));
+
+    scores->setText("Card Score: " + QString::number(curCard->getScore()));
+    grid->addWidget(scores,2,1,1,1,Qt::AlignCenter);
 
     grid->setRowStretch(0,0);
     grid->setRowStretch(1,1);
@@ -52,9 +56,11 @@ void StudyArea::correct()
     deck->shuffle();
     grid->removeWidget(curCard);
     curCard->hide();
+    if (!curCard->isFront()) curCard->Flip();
     curCard = deck->getTop();
-    grid->addWidget(curCard,1,0,1,2);
+    grid->addWidget(curCard,1,0,1,3);
     curCard->show();
+    scores->setText("Card Score: " + QString::number(curCard->getScore()));
 
 }
 
@@ -64,9 +70,12 @@ void StudyArea::incorrect()
     deck->shuffle();
     grid->removeWidget(curCard);
     curCard->hide();
+    if (!curCard->isFront()) curCard->Flip();
     curCard = deck->getTop();
-    grid->addWidget(curCard,1,0,1,2);
+    grid->addWidget(curCard,1,0,1,3);
     curCard->show();
+    scores->setText("Card Score: " + QString::number(curCard->getScore()));
+
 }
 
 void StudyArea::goBack()

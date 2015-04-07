@@ -29,10 +29,12 @@ DecksView::~DecksView()
 
 void DecksView::loadDeck()
 {
-    QString fileName =
-      QFileDialog::getOpenFileName(this, tr("Pick a Deck"),
-                                   QDir::homePath() + QDir::separator() + "*",
-                                   tr("Text File (*.txt)"));
+    QString fileName =QFileDialog::getOpenFileName(this, tr("Pick a Deck"),
+                                                   "*",
+                                                   tr("Text File (*.txt)"));
+//      QFileDialog::getOpenFileName(this, tr("Pick a Deck"),
+//                                   QDir::homePath() + QDir::separator() + "*",
+//                                   tr("Text File (*.txt)"));
     if (fileName.isEmpty() || fileName.isNull())
       return;
     else

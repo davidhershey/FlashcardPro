@@ -46,7 +46,8 @@ Flashcard::Flashcard(QString ftext, QString btext, int cscore, QWidget *parent) 
     m_frontBorder( false ),
     cardScore (cscore),
     fstr(ftext),
-    bstr(btext)
+    bstr(btext),
+    front(true)
 {
     //--Flashcard
     QVBoxLayout* mainDialogLayout = new QVBoxLayout( this );
@@ -86,6 +87,8 @@ Flashcard::Flashcard(QString ftext, QString btext, int cscore, QWidget *parent) 
 void Flashcard::Flip( bool leftToRight )
 {
     m_flip->Flip( m_leftToRight );
+    if(front) front=false;
+    else front=true;
 }
 
 void Flashcard::Speed( int speed )
@@ -152,5 +155,10 @@ void Flashcard::correct()
 
 void Flashcard::incorrect()
 {
-    cardScore--;
+    cardScore = 0;
+}
+
+bool Flashcard::isFront()
+{
+    return front;
 }
