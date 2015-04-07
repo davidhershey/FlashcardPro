@@ -150,7 +150,7 @@ public:
     /**
         Sets a border around either the front or back widget.
     */
-    void SetBorder( WIDGET_SIDE side, bool useBorder, int borderSize = 0, bool roundedCorners = false, QBrush& borderBrush = QBrush() );
+    void SetBorder( WIDGET_SIDE side, bool useBorder, int borderSize = 0, bool roundedCorners = false, QBrush borderBrush = QBrush() );
 
     /**
         Sets a pixmap as the border background.

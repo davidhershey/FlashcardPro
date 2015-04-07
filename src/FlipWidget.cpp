@@ -168,7 +168,7 @@ bool QFlipWidget::isFlippedLeft()
     }
  }
 
-void QFlipWidget::SetBorder( WIDGET_SIDE side, bool useBorder, int borderSize, bool roundedCorners, QBrush& borderBrush )
+void QFlipWidget::SetBorder(WIDGET_SIDE side, bool useBorder, int borderSize, bool roundedCorners, QBrush borderBrush )
 {
     if( side == BACK )
     {
