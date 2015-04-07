@@ -26,7 +26,8 @@ SOURCES +=     src/main.cpp \
     src/login.cpp \
     src/FlipWidget.cpp \
     src/RoundRectItem.cpp \
-    src/mainmenu.cpp
+    src/mainmenu.cpp \
+    src/deckmenu.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
@@ -38,7 +39,8 @@ HEADERS  +=   include/mainwindow.h \
     include/login.h \
     include/FlipWidget.h \
     include/RoundRectItem.h \
-    include/mainmenu.h
+    include/mainmenu.h \
+    include/deckmenu.h
 
 DISTFILES += \
     info.txt \
