@@ -14,7 +14,7 @@ class Deck
 {
 public:
     Deck(FILE* deck_file);
-    Deck(std::vector<Flashcard*> _cards);
+    Deck(std::vector<Flashcard*> _cards, QString deck_name_in);
     ~Deck();
 
     int deck_score;
@@ -25,10 +25,12 @@ public:
     Flashcard* getTop();
 
     void shuffle();
+    void saveDeck(QString fileName);
 
 private:
     void parseCard(QString* line);
     void parseInfo(QString* line);
+    void makeSaveText();
 };
 
 #endif // DECK_H

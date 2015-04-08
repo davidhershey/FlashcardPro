@@ -6,6 +6,7 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 {
     pages = pages_in;
     deck = _deck;
+
     QVBoxLayout *vbox = new QVBoxLayout;
 
     QLabel *title = new QLabel(deck->deck_name);
@@ -23,6 +24,7 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 
     QPushButton *save = new QPushButton("Save Deck Progress");
     vbox->addWidget(save);
+    connect(save, SIGNAL(clicked()), this, SLOT(saveDeckCallback()));
 
     QPushButton *back = new QPushButton("Back to Decks");
     vbox->addWidget(back);
@@ -60,6 +62,13 @@ void DeckMenu::back()
     pages->setCurrentIndex(nextIndex);
 }
 
+void DeckMenu::saveDeckCallback()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save Selected Deck"),
+                                                    QDir::homePath() + QDir::separator() + "*",
+                                                    "");
 
+   deck->saveDeck(fileName);
+}
 
 

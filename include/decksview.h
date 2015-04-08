@@ -21,10 +21,16 @@ private:
     DeckLabel* loadLabel;
     QPushButton* backButton;
 
+public:
+void addNewDeckLabel(Deck* insDeck);
+
 public slots:
-    void loadDeck(Deck *nulldeck);
+    void chooseCreateLoad();
+    void loadDeck();
     void openDeck(Deck *deck);
     void goBack();
+    void goToCreator();
 };
+
 
 #endif // DECKSVIEW_H

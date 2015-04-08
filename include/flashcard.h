@@ -67,6 +67,8 @@ private slots:
     bool m_frontBorder;
     QLineEdit* m_colorEdit;
     QLineEdit* m_pathEdit;
+
+public:
     QString fstr;
     QString bstr;
     int cardScore;

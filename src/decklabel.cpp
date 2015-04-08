@@ -11,7 +11,7 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
       pages = pages_in;
       if(deck == NULL)
       {
-          this->setText("Load New\nDeck");
+          this->setText("Add New\nDeck");
           hover = false;
       }
       else
@@ -81,23 +81,11 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
 //      area->exec();
   }
 
-  void DeckLabel::saveDeck()
+  void DeckLabel::saveDeckCallback()
   {
-      QString deck_save = deck->saveText;
       QString fileName = QFileDialog::getSaveFileName(this, tr("Save Selected Deck"),
                                                       QDir::homePath() + QDir::separator() + "*",
                                                       "");
 
-      if (fileName.isEmpty() || fileName.isNull())
-        return;
-
-      QFile file(fileName);
-              if (!file.open(QIODevice::WriteOnly)) {
-                  QMessageBox::information(this, tr("Unable to open file"),
-                      file.errorString());
-                  return;
-              }
-      QTextStream out(&file);
-      out << deck_save;
-      file.close();
+     deck->saveDeck(fileName);
   }

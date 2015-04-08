@@ -29,9 +29,13 @@ Deck::Deck(FILE* deck_file)
 
 }
 
-Deck::Deck(std::vector<Flashcard *> _cards) : cards(_cards)
+Deck::Deck(std::vector<Flashcard *> _cards, QString deck_name_in) : cards(_cards)
 {
+    deck_name = deck_name_in;
+    deck_score = 0;
+    num_cards = _cards.size();
 
+    makeSaveText();
 }
 
 Deck::~Deck()
@@ -64,7 +68,7 @@ void Deck::parseInfo(QString* line)
     QString read;
     int i = 0;
     int j = 0;
-    while(line->at(i) != '@')
+    while(line->at(i) != char(30))
     {
         read[j] = line->at(i);
         ++i;
@@ -75,13 +79,13 @@ void Deck::parseInfo(QString* line)
     read = "";
     ++i;
     j = 0;
-    while(line->at(i) != '@' && line->at(i).isDigit())
+    while(line->at(i) != char(30) && line->at(i).isDigit())
     {
         read[j] = line->at(i);
         ++i;
         ++j;
     }
-    if(line->at(i) != '@')
+    if(line->at(i) != char(30))
         qDebug() << "Got a non digit value in deck size!";
     this->num_cards = read.toInt();
 
@@ -104,9 +108,7 @@ void Deck::parseCard(QString* line)
     QString read;
     int i = 0;
     int j = 0;
-    if(line->at(i++) != '<')
-        qDebug() << "Wrong char at beginning of card line!";
-    while(line->at(i) != '>')
+    while(line->at(i) != char(30))
     {
         read[j] = line->at(i);
         ++i;
@@ -116,10 +118,10 @@ void Deck::parseCard(QString* line)
 
     read = "";
     j = 0;
-    if(line->at(++i) != '<')
+    if(line->at(i++) != char(30))
         qDebug() << "Wrong char at beginning of back of card!";
-    ++i;
-    while(line->at(i) != '>')
+
+    while(line->at(i) != char(30))
     {
         read[j] = line->at(i);
         ++i;
@@ -129,19 +131,55 @@ void Deck::parseCard(QString* line)
 
     read = "";
     j = 0;
-    if(line->at(++i) != '<')
+    if(line->at(i++) != char(30))
         qDebug() << "Wrong char at beginning of card score!";
-    ++i;
-    while(line->at(i) != '>' && line->at(i).isDigit())
+
+    while(i < line->size() && line->at(i).isDigit())
     {
         read[j] = line->at(i);
         ++i;
         ++j;
     }
-    if(line->at(i) != '>')
+    if(i < line->size())
         qDebug() << "Non digit in card score!";
     int score = read.toInt();
 
     Flashcard* new_card = new Flashcard(front, back, score);
     cards.push_back(new_card);
+}
+
+void Deck::makeSaveText()
+{
+    saveText += deck_name;
+    saveText += char(30);
+    saveText += num_cards;
+    saveText += char(30);
+    saveText += deck_score;
+    saveText += '\n';
+
+    for(int i = 0; i < num_cards; ++i)
+    {
+        saveText += cards[i]->fstr;
+        saveText += char(30);
+        saveText += cards[i]->bstr;
+        saveText += char(30);
+        saveText += cards[i]->cardScore;
+        saveText += '\n';
+    }
+
+}
+
+void Deck::saveDeck(QString fileName)
+{
+    if (fileName.isEmpty() || fileName.isNull())
+      return;
+
+    QFile file(fileName);
+            if (!file.open(QIODevice::WriteOnly)) {
+                qDebug() << "File couldn't be opened";
+                return;
+            }
+    QTextStream out(&file);
+    out << saveText;
+    file.close();
 }

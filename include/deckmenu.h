@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QStackedWidget>
 #include "deck.h"
+#include "decklabel.h"
 
 class DeckMenu : public QWidget
 {
@@ -18,12 +19,13 @@ signals:
 public slots:
     void study();
     void edit();
-
     void stats();
+    void saveDeckCallback();
     void back();
 private:
     Deck* deck;
     QStackedWidget* pages;
+
 };
 
 #endif // DECKMENU_H
