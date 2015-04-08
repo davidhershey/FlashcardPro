@@ -47,7 +47,8 @@ HEADERS  +=   include/mainwindow.h \
 DISTFILES += \
     info.txt \
     test_set.txt \
-    test_set2.txt
+    test_set2.txt \
+    login_names.txt
 
 RESOURCES += \
     images.qrc
