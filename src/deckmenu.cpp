@@ -1,6 +1,7 @@
 #include "deckmenu.h"
 #include <QtWidgets>
 #include "studyarea.h"
+#include "statsview.h"
 
 DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 {
@@ -11,6 +12,7 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 
     QLabel *title = new QLabel(deck->deck_name);
     vbox->addWidget(title);
+    title->setAlignment(Qt::AlignCenter);
 
     QPushButton *study = new QPushButton("Study Deck");
     vbox->addWidget(study);
@@ -21,6 +23,7 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 
     QPushButton *stats = new QPushButton("View Deck Statistics");
     vbox->addWidget(stats);
+    connect(stats,SIGNAL(clicked()),this,SLOT(stats()));
 
     QPushButton *save = new QPushButton("Save Deck Progress");
     vbox->addWidget(save);
@@ -52,7 +55,9 @@ void DeckMenu::edit()
 
 void DeckMenu::stats()
 {
-
+    StatsView *sv = new StatsView(deck,pages);
+    int index = pages->addWidget(sv);
+    pages->setCurrentIndex(index);
 }
 
 void DeckMenu::back()

@@ -47,7 +47,9 @@ Flashcard::Flashcard(QString ftext, QString btext, int cscore, QWidget *parent) 
     cardScore (cscore),
     fstr(ftext),
     bstr(btext),
-    front(true)
+    front(true),
+    right(0),
+    wrong(0)
 {
     //--Flashcard
     QVBoxLayout* mainDialogLayout = new QVBoxLayout( this );
@@ -151,14 +153,21 @@ int Flashcard::getScore()
 void Flashcard::correct()
 {
     cardScore++;
+    right++;
 }
 
 void Flashcard::incorrect()
 {
     cardScore = 0;
+    wrong++;
 }
 
 bool Flashcard::isFront()
 {
     return front;
+}
+
+int Flashcard::getWrong()
+{
+    return wrong;
 }

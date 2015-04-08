@@ -48,6 +48,16 @@ Flashcard* Deck::getTop()
     return cards.at(0);
 }
 
+int Deck::getDeckScore()
+{
+    if(cards.size()==0) return 0;
+    int min = cards[0]->getScore();
+    for(int i=1;i<cards.size();i++){
+        if(cards[i]->getScore() < min) min = cards[i]->getScore();
+    }
+    return min;
+}
+
 void Deck::shuffle()
 {
     Flashcard* curCard = getTop();
@@ -182,4 +192,15 @@ void Deck::saveDeck(QString fileName)
     QTextStream out(&file);
     out << saveText;
     file.close();
+}
+
+Flashcard *Deck::getHardest()
+{
+    Flashcard* hardest;
+    if(cards.size()==0) return hardest;
+    hardest = cards[0];
+    for(int i=1;i<cards.size();i++){
+        if(cards[i]->getWrong() > hardest->getWrong()) hardest = cards[i];
+    }
+    return hardest;
 }

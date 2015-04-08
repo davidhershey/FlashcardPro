@@ -23,9 +23,11 @@ public:
     std::vector<Flashcard*> cards;
     QString saveText;
     Flashcard* getTop();
+    int getDeckScore();
 
     void shuffle();
     void saveDeck(QString fileName);
+    Flashcard* getHardest();
 
 private:
     void parseCard(QString* line);

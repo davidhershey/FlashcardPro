@@ -39,6 +39,7 @@ public:
     void correct();
     void incorrect();
     bool isFront();
+    int getWrong();
 
 public slots:
 
@@ -67,11 +68,14 @@ private slots:
     bool m_frontBorder;
     QLineEdit* m_colorEdit;
     QLineEdit* m_pathEdit;
+    int wrong;
+    int right;
 
 public:
     QString fstr;
     QString bstr;
     int cardScore;
     bool front;
+
 };
 #endif // DEMO_H
