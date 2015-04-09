@@ -46,6 +46,8 @@ void DecksView::loadDeck()
         FILE* fh = fdopen(fileHandle, "rb");
         Deck* insDeck = new Deck(fh);
         addNewDeckLabel(insDeck);
+
+        qDebug() << insDeck->num_cards;
     }
 }
 
@@ -95,7 +97,6 @@ void DecksView::chooseCreateLoad()
 
 void DecksView::goToCreator()
 {
-    //JARED THIS IS WHERE THE CREATE NEW PAGE SHOULD BE ADDED TO THE QSTACKEDWIDGET
     builder* build = new builder(pages, this);
     pages->addWidget(build);
     pages->setCurrentIndex(2);

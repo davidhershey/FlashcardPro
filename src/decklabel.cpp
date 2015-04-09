@@ -86,6 +86,5 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
       QString fileName = QFileDialog::getSaveFileName(this, tr("Save Selected Deck"),
                                                       QDir::homePath() + QDir::separator() + "*",
                                                       "");
-
      deck->saveDeck(fileName);
   }

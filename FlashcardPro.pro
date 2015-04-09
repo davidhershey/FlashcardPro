@@ -52,7 +52,8 @@ DISTFILES += \
     info.txt \
     test_set.txt \
     test_set2.txt \
-    login_names.txt
+    login_names.txt \
+    working_deck.txt
 
 RESOURCES += \
     images.qrc

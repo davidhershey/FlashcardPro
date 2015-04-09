@@ -89,7 +89,7 @@ void Deck::parseInfo(QString* line)
     read = "";
     ++i;
     j = 0;
-    while(line->at(i) != char(30) && line->at(i).isDigit())
+    while(line->at(i) != char(30)) //&& line->at(i).isDigit())
     {
         read[j] = line->at(i);
         ++i;
@@ -102,14 +102,12 @@ void Deck::parseInfo(QString* line)
     read = "";
     ++i;
     j=0;
-    while(i < line->size() && line->at(i).isDigit())
+    while(i < line->size()) //&& line->at(i).isDigit())
     {
         read[j] = line->at(i);
         ++i;
         ++j;
     }
-    if(i < line->size())
-        qDebug() << "Got a non digit value in deck score!";
     this->deck_score = read.toInt();
 }
 
@@ -150,8 +148,6 @@ void Deck::parseCard(QString* line)
         ++i;
         ++j;
     }
-    if(i < line->size())
-        qDebug() << "Non digit in card score!";
     int score = read.toInt();
 
     Flashcard* new_card = new Flashcard(front, back, score);
