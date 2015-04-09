@@ -17,6 +17,7 @@ private:
 
 public slots:
     void nextPage();
+    void createNewUserCallback();
 };
 
 #endif // LOGIN_H
