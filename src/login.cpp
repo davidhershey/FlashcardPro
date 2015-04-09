@@ -76,7 +76,7 @@ void LogIn::initialSetup(){
 
 
 
-    /*QPixmap newPixmap(txtFile);
+    QPixmap newPixmap(txtFile);
 
     if (newPixmap.isNull()){
       QMessageBox msgBox;
@@ -89,7 +89,7 @@ void LogIn::initialSetup(){
         newLabel->setMaximumSize(500,500);
         newLabel->setMinimumSize(500,500);
         layout->addWidget(newLabel);
-    }*/
+    }
 
     QLabel *lab = new QLabel("The most comprehensive flashcard app on the market. Two thumbs up!");
     layout->addWidget(lab);
