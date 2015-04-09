@@ -8,9 +8,59 @@ using namespace std;
 LogIn::LogIn(QStackedWidget* pages_in)
     :QFrame()
 {
+    qDebug() << "yo";
     pages = pages_in;
-    QVBoxLayout* layout = new QVBoxLayout();
+    layout = new QVBoxLayout();
+    initialSetup();
+}
 
+LogIn::~LogIn()
+{
+
+}
+
+void LogIn::nextPage()
+{
+    //LOGIC FOR LOGGING INTO DATABASE HERE
+    //int current = pages->currentIndex();
+    pages->setCurrentIndex(1);
+}
+
+void LogIn::createNewUserCallback(){
+    qDebug() << "createNewUser";
+
+    QLayoutItem *item = layout->takeAt(3);
+    layout->removeItem(item);
+    item->widget()->hide();
+
+    item = layout->takeAt(2);
+    layout->removeItem(item);
+    item->widget()->hide();
+
+    item = layout->takeAt(1);
+    layout->removeItem(item);
+    item->widget()->hide();
+
+    item = layout->takeAt(0);
+    layout->removeItem(item);
+    item->widget()->hide();
+
+    QPushButton *returnBtn = new QPushButton("Return Back to Login");
+    layout->addWidget(returnBtn);
+
+    connect(returnBtn,SIGNAL(clicked()),this,SLOT(returnToLogInCallback()));
+
+
+    //txtFile.append("/FlashcardPro/login_names.txt");
+
+    //ofstream myFile;
+    //myFile.open(txtFile.toStdString().c_str(), std::ios::app);
+    //myFile << "Writing to this file 21313232\n";
+    //myFile.close();
+}
+
+
+void LogIn::initialSetup(){
     QDir directory;
     QString txtFile;
     txtFile = directory.currentPath();
@@ -78,44 +128,14 @@ LogIn::LogIn(QStackedWidget* pages_in)
     connect(nextButton, SIGNAL(clicked()), this, SLOT(nextPage()));
     layout->addWidget(nextButton);
     layout->addWidget(cr);
-
+    connect(cr, SIGNAL(clicked()),this,SLOT(createNewUserCallback()));
     setLayout(layout);
-
-
-
 }
 
-LogIn::~LogIn()
-{
 
-}
-
-void LogIn::nextPage()
-{
-    //LOGIC FOR LOGGING INTO DATABASE HERE
-    //int current = pages->currentIndex();
-    pages->setCurrentIndex(1);
-}
-
-void LogIn::createNewUserCallback(){
-    qDebug() << "createNewUser";
-    QDir directory;
-    QString txtFile;
-    txtFile = directory.currentPath();
-    int cutpoint = 0;
-    for(int i = txtFile.size() - 1; i > 0; i--){
-        if(txtFile.at(i) == '/'){
-            cutpoint = i;
-            i = 0;
-        }
-    }
-    txtFile = txtFile.left(cutpoint);
-    txtFile.append("/FlashcardPro/flashcard.png");
-
-    //txtFile.append("/FlashcardPro/login_names.txt");
-
-    //ofstream myFile;
-    //myFile.open(txtFile.toStdString().c_str(), std::ios::app);
-    //myFile << "Writing to this file 21313232\n";
-    //myFile.close();
+void LogIn::returnToLogInCallback(){
+    QLayoutItem *item = layout->takeAt(0);
+    layout->removeItem(item);
+    item->widget()->hide();
+    initialSetup();
 }
