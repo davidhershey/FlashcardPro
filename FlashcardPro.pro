@@ -28,7 +28,9 @@ SOURCES +=     src/main.cpp \
     src/RoundRectItem.cpp \
     src/mainmenu.cpp \
     src/deckmenu.cpp \
-    src/statsview.cpp
+    src/statsview.cpp \
+    src/builder.cpp \
+    src/builderitem.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
@@ -42,7 +44,9 @@ HEADERS  +=   include/mainwindow.h \
     include/RoundRectItem.h \
     include/mainmenu.h \
     include/deckmenu.h \
-    include/statsview.h
+    include/statsview.h \
+    include/builder.h \
+    include/builderitem.h
 
 DISTFILES += \
     info.txt \

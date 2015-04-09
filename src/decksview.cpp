@@ -1,6 +1,8 @@
 #include "decksview.h"
 #include "decklabel.h"
 #include "deckmenu.h"
+#include "builder.h"
+
 DecksView::DecksView(QStackedWidget* pages_in)
     :QFrame()
 {
@@ -94,10 +96,7 @@ void DecksView::chooseCreateLoad()
 void DecksView::goToCreator()
 {
     //JARED THIS IS WHERE THE CREATE NEW PAGE SHOULD BE ADDED TO THE QSTACKEDWIDGET
-    //Below is just a test by hard coding creating a new deck
-    std::vector<Flashcard*> test_cards;
-    test_cards.push_back(new Flashcard("FRONT", "BACK", 0));
-    test_cards.push_back(new Flashcard("FRONT2", "BACK2", 0));
-    Deck* test = new Deck(test_cards, "create test");
-    addNewDeckLabel(test);
+    builder* build = new builder(pages, this);
+    pages->addWidget(build);
+    pages->setCurrentIndex(2);
 }
