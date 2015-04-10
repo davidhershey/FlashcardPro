@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     pages = new QStackedWidget();
+    pages->setStyleSheet("QStackedWidget { background-color: rgb(191, 197, 255); }");
     LogIn* loginPage = new LogIn(pages);
 
     mainmenu* menuPage = new mainmenu(pages);

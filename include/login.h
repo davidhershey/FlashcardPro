@@ -4,23 +4,31 @@
 #include <QtWidgets>
 #include <iostream>
 #include <fstream>
+#include <vector>
 
-class LogIn : public QFrame
-{
+using namespace std;
+
+class LogIn : public QFrame {
     Q_OBJECT
 public:
     LogIn(QStackedWidget* pages_in);
-    ~LogIn();
     void initialSetup();
+    void readCurrentUsers();
+    QString fileLoc;
+    QTextEdit *edit3;
+    vector<QString> currentUsers;
+
 private:
     QStackedWidget* pages;
     QPushButton* nextButton;
-    QVBoxLayout* layout;
+    QGridLayout* layout;
 
 public slots:
     void nextPage();
     void createNewUserCallback();
+    void writeNewUserCallback();
     void returnToLogInCallback();
+    void userLoginCallback();
 };
 
 #endif // LOGIN_H

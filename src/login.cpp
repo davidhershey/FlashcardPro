@@ -1,82 +1,121 @@
 #include "login.h"
 #include <iostream>
 #include <fstream>
-
+#include <vector>
 
 using namespace std;
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////// LogIn Constructor //////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 LogIn::LogIn(QStackedWidget* pages_in)
-    :QFrame()
-{
-    qDebug() << "yo";
+    :QFrame(){
     pages = pages_in;
-    layout = new QVBoxLayout();
+    layout = new QGridLayout();
     initialSetup();
+    readCurrentUsers();
 }
 
-LogIn::~LogIn()
-{
-
-}
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////// Next Page Call /////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LogIn::nextPage()
 {
-    //LOGIC FOR LOGGING INTO DATABASE HERE
-    //int current = pages->currentIndex();
-    pages->setCurrentIndex(1);
+
+    if(currentUsers.empty()){
+        createNewUserCallback();
+    }
+
+    for(int i=layout->count()-1; i >= 0; i--){
+        QLayoutItem *item = layout->takeAt(i);
+        layout->removeItem(item);
+        item->widget()->hide();
+    }
+
+    QLabel *label = new QLabel("Existing Users:");
+    label->setMaximumHeight(15);
+    layout->addWidget(label,0,0);
+
+    for(int i=0; i < currentUsers.size(); i++){
+        QPushButton *btn = new QPushButton(currentUsers.at(i).toStdString().c_str());
+        btn->setMinimumHeight(50);
+        btn->setMaximumWidth(150);
+        layout->addWidget(btn,i+1,0);
+        connect(btn,SIGNAL(clicked()),this,SLOT(userLoginCallback()));
+    }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////// Goes From Login to Create New Users Page ///////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LogIn::createNewUserCallback(){
-    qDebug() << "createNewUser";
 
-    QLayoutItem *item = layout->takeAt(3);
-    layout->removeItem(item);
-    item->widget()->hide();
+    for(int i=layout->count()-1; i >= 0; i--){
+        QLayoutItem *item = layout->takeAt(i);
+        layout->removeItem(item);
+        item->widget()->hide();
+    }
 
-    item = layout->takeAt(2);
-    layout->removeItem(item);
-    item->widget()->hide();
+    QLabel *label1 = new QLabel("Create new user:");
+    QLabel *label2 = new QLabel("First Name:");
+    QLabel *label3 = new QLabel("Last Name:");
+    QLabel *label4 = new QLabel("Username:");
+    QLabel *label5 = new QLabel("Password:");
+    QLabel *label6 = new QLabel("Re-enter Password:");
+    QTextEdit *edit1 = new QTextEdit();
+    QTextEdit *edit2 = new QTextEdit();
+    edit3 = new QTextEdit();
+    QTextEdit *edit4 = new QTextEdit();
+    QTextEdit *edit5 = new QTextEdit();
+    QPushButton *createNewUserBtn = new QPushButton("Submit");
+    QPushButton *returnBtn = new QPushButton("Cancel");
 
-    item = layout->takeAt(1);
-    layout->removeItem(item);
-    item->widget()->hide();
-
-    item = layout->takeAt(0);
-    layout->removeItem(item);
-    item->widget()->hide();
-
-    QPushButton *returnBtn = new QPushButton("Return Back to Login");
-    layout->addWidget(returnBtn);
+    layout->addWidget(label1,0,0);
+    layout->addWidget(label2,1,0);
+    layout->addWidget(edit1,1,1);
+    layout->addWidget(label3,2,0);
+    layout->addWidget(edit2,2,1);
+    layout->addWidget(label4,3,0);
+    layout->addWidget(edit3,3,1);
+    layout->addWidget(label5,4,0);
+    layout->addWidget(edit4,4,1);
+    layout->addWidget(label6,5,0);
+    layout->addWidget(edit5,5,1);
+    layout->addWidget(createNewUserBtn,6,0);
+    layout->addWidget(returnBtn,7,0);
 
     connect(returnBtn,SIGNAL(clicked()),this,SLOT(returnToLogInCallback()));
-
-
-    //txtFile.append("/FlashcardPro/login_names.txt");
-
-    //ofstream myFile;
-    //myFile.open(txtFile.toStdString().c_str(), std::ios::app);
-    //myFile << "Writing to this file 21313232\n";
-    //myFile.close();
+    connect(createNewUserBtn,SIGNAL(clicked()),this,SLOT(writeNewUserCallback()));
 }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// Sets Up Initial Login Page /////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LogIn::initialSetup(){
+
     QDir directory;
-    QString txtFile;
-    txtFile = directory.currentPath();
+    fileLoc = directory.currentPath();
     int cutpoint = 0;
-    for(int i = txtFile.size() - 1; i > 0; i--){
-        if(txtFile.at(i) == '/'){
+    for(int i = fileLoc.size() - 1; i > 0; i--){
+        if(fileLoc.at(i) == '/'){
             cutpoint = i;
             i = 0;
         }
     }
-    txtFile = txtFile.left(cutpoint);
-    txtFile.append("/FlashcardPro/flashcard.png");
+    fileLoc = fileLoc.left(cutpoint);
+    QString picLoc;
+    picLoc = fileLoc;
+    picLoc.append("/FlashcardPro/flashcard.png");
 
-
-
-    QPixmap newPixmap(txtFile);
+    QPixmap newPixmap(picLoc);
 
     if (newPixmap.isNull()){
       QMessageBox msgBox;
@@ -88,54 +127,99 @@ void LogIn::initialSetup(){
         newLabel->setPixmap(newPixmap.scaled(500,500,Qt::KeepAspectRatio));
         newLabel->setMaximumSize(500,500);
         newLabel->setMinimumSize(500,500);
-        layout->addWidget(newLabel);
+        layout->addWidget(newLabel,0,0);
     }
 
-    QLabel *lab = new QLabel("The most comprehensive flashcard app on the market. Two thumbs up!");
-    layout->addWidget(lab);
+    QLabel *label1 = new QLabel("The most comprehensive flashcard app on the market. Two thumbs up!");
 
-    /*
-    QLabel *label = new QLabel("Existing Users:");
-    label->setMaximumHeight(15);
-    QPushButton *lauren = new QPushButton("Lauren");
-    lauren->setMinimumHeight(50);
-    lauren->setMaximumWidth(150);
-    QPushButton *david = new QPushButton("David");
-    david->setMinimumHeight(50);
-    david->setMaximumWidth(150);
-    QPushButton *jared = new QPushButton("Jared");
-    jared->setMinimumHeight(50);
-    jared->setMaximumWidth(150);
-    QPushButton *sam = new QPushButton("Sam");
-    sam->setMinimumHeight(50);
-    sam->setMaximumWidth(150);
-    QLabel *newUser = new QLabel("Create New User:");
-    newUser->setMaximumHeight(15);
-    QPushButton *createNewUser = new QPushButton("Create New User");
-    createNewUser->setMaximumSize(150,50);
-    createNewUser->setMinimumSize(150,50);
-    layout->addWidget(label);
-    layout->addWidget(lauren);
-    layout->addWidget(david);
-    layout->addWidget(jared);
-    layout->addWidget(sam);
-    layout->addWidget(newUser);
-    layout->addWidget(createNewUser);
-    connect(createNewUser, SIGNAL(clicked()),this,SLOT(createNewUserCallback()));
-*/
+
     nextButton = new QPushButton("Log In");
     QPushButton *cr = new QPushButton("Sign Up");
-    connect(nextButton, SIGNAL(clicked()), this, SLOT(nextPage()));
-    layout->addWidget(nextButton);
-    layout->addWidget(cr);
-    connect(cr, SIGNAL(clicked()),this,SLOT(createNewUserCallback()));
+
+
+    layout->addWidget(label1,1,0);
+    layout->addWidget(nextButton,2,0);
+    layout->addWidget(cr,3,0);
     setLayout(layout);
+
+    connect(nextButton, SIGNAL(clicked()), this, SLOT(nextPage()));
+    connect(cr, SIGNAL(clicked()),this,SLOT(createNewUserCallback()));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// Goes from Create User to Login Page ////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+void LogIn::returnToLogInCallback(){
+
+    for(int i=layout->count()-1; i >= 0; i--){
+        QLayoutItem *item = layout->takeAt(i);
+        layout->removeItem(item);
+        item->widget()->hide();
+    }
+    initialSetup();
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// Writes New User to Text File ///////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+void LogIn::writeNewUserCallback(){
+    QString txtFile;
+    txtFile = fileLoc;
+    txtFile.append("/FlashcardPro/login_names.txt");
+
+    if(edit3->toPlainText() == ""){
+        QMessageBox msgBox;
+        msgBox.critical(0,"Error", "Please enter a username");
+        msgBox.setFixedSize(500,200);
+        return;
+    }
+
+    for(int i=0; i < currentUsers.size(); i++){
+        if(edit3->toPlainText() == currentUsers.at(i)){
+            QMessageBox msgBox;
+            msgBox.critical(0,"Error", "Username Already exists. Please choose a new username");
+            msgBox.setFixedSize(500,200);
+            return;
+        }
+    }
+
+    currentUsers.push_back(edit3->toPlainText());
+
+    ofstream myFile;
+    myFile.open(txtFile.toStdString().c_str(), std::ios::app);
+    myFile << edit3->toPlainText().toStdString().c_str();
+    myFile << "\n";
+    myFile.close();
+
+    //LOGIC FOR LOGGING INTO DATABASE HERE
+    //int current = pages->currentIndex();
+    pages->setCurrentIndex(1);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// Reads in Users from Text File //////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+void LogIn::readCurrentUsers(){
+    QString txtFile = fileLoc;
+    txtFile.append("/FlashcardPro/login_names.txt");
+
+    ifstream file(txtFile.toStdString().c_str());
+    string temp;
+
+    while(getline(file,temp)){
+        QString push = QString::fromStdString(temp);
+        currentUsers.push_back(push);
+    }
 }
 
 
-void LogIn::returnToLogInCallback(){
-    QLayoutItem *item = layout->takeAt(0);
-    layout->removeItem(item);
-    item->widget()->hide();
-    initialSetup();
+void LogIn::userLoginCallback(){
+    returnToLogInCallback();
+    pages->setCurrentIndex(1);
 }
