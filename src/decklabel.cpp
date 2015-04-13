@@ -1,29 +1,47 @@
 #include "decklabel.h"
 #include <QMouseEvent>
 #include "studyarea.h"
+#include "deckmenu.h"
 
 
 DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent ):
-    QLabel(parent)
+    QPushButton(parent)
 
   {
       deck = deck_in;
       pages = pages_in;
       if(deck == NULL)
       {
-          this->setText("Add New\nDeck");
+          QPixmap pm(":/add_deck.png");
+          /*QPalette palette;
+          palette.setBrush(this->backgroundRole(), QBrush(pm));
+          this->setFlat(true);
+          this->setAutoFillBackground(true);
+          this->setPalette(palette);
+          this->setText("Add Deck");*/
+          QIcon ic(pm);
+          this->setIcon(ic);
+          QSize iconSize(pm.width(), pm.height());
+          this->setIconSize(iconSize);
           hover = false;
+          this->setMinimumSize(pm.width(), pm.height());
+          this->setMaximumSize(pm.width(), pm.height());
       }
       else
       {
+          QPixmap pm(":/deck.png");
+          QPalette palette;
+          palette.setBrush(this->backgroundRole(), QBrush(pm));
+          this->setFlat(true);
+          this->setAutoFillBackground(true);
+          this->setPalette(palette);
           this->setText(deck->deck_name);
           hover = true;
+          this->setMinimumSize(pm.width(), pm.height());
+          this->setMaximumSize(pm.width(), pm.height());
       }
 
 
-      this->setStyleSheet("border: 1px solid");
-      this->setMinimumSize(50, 100);
-      this->setMaximumSize(100, 200);
 
   }
 
@@ -32,7 +50,7 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
 
   }
 
-  void DeckLabel::mousePressEvent ( QMouseEvent * event )
+  /*void DeckLabel::mousePressEvent ( QMouseEvent * event )
 
   {
       //std::cout << "Got click" << std::endl;
@@ -51,7 +69,7 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
     qDebug() << "exited!";
     if(hover) this->setStyleSheet("border: 1px solid");
     else this->setStyleSheet("border: 1px solid; background: white");
-  }
+  }*/
 
   void DeckLabel::chooseNext()
   {
@@ -79,6 +97,13 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
       int index = pages->addWidget(area);
       pages->setCurrentIndex(index);
 //      area->exec();
+  }
+
+  void DeckLabel::openDeck()
+  {
+      DeckMenu *dm = new DeckMenu(deck,pages);
+      int index = pages->addWidget(dm);
+      pages->setCurrentIndex(index);
   }
 
   void DeckLabel::saveDeckCallback()

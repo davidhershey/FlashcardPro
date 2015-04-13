@@ -1,6 +1,5 @@
 #include "decksview.h"
 #include "decklabel.h"
-#include "deckmenu.h"
 #include "builder.h"
 
 DecksView::DecksView(QStackedWidget* pages_in)
@@ -11,8 +10,7 @@ DecksView::DecksView(QStackedWidget* pages_in)
 
     decksLayout = new QGridLayout();
     loadLabel = new DeckLabel(NULL, pages);
-    loadLabel->setStyleSheet("background-color: white; border: 1px solid");
-    connect(loadLabel, SIGNAL(clicked(Deck*)), this, SLOT(chooseCreateLoad()));
+    connect(loadLabel, SIGNAL(clicked()), this, SLOT(chooseCreateLoad()));
     decksLayout->addWidget(loadLabel, 0, 0);
 
     backButton = new QPushButton("Switch User");
@@ -51,13 +49,6 @@ void DecksView::loadDeck()
     }
 }
 
-void DecksView::openDeck(Deck* deck)
-{
-    DeckMenu *dm = new DeckMenu(deck,pages);
-    int index = pages->addWidget(dm);
-    pages->setCurrentIndex(index);
-}
-
 void DecksView::goBack()
 {
     pages->setCurrentIndex(0);
@@ -67,7 +58,7 @@ void DecksView::addNewDeckLabel(Deck* insDeck)
 {
     decks.push_back(insDeck);
     DeckLabel* insLabel = new DeckLabel(insDeck, pages);
-    connect(insLabel, &DeckLabel::clicked , this, &DecksView::openDeck);
+    connect(insLabel, SIGNAL(clicked()) , insLabel, SLOT(openDeck()));
     int i = decks.size()-1;
     QWidget* last = decksLayout->itemAtPosition(int(i/5),i%5)->widget();
     decksLayout->addWidget(insLabel,int(i/5),i%5);

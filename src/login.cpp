@@ -101,7 +101,7 @@ void LogIn::createNewUserCallback(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LogIn::initialSetup(){
 
-    QDir directory;
+    /*QDir directory;
     fileLoc = directory.currentPath();
     int cutpoint = 0;
     for(int i = fileLoc.size() - 1; i > 0; i--){
@@ -113,9 +113,9 @@ void LogIn::initialSetup(){
     fileLoc = fileLoc.left(cutpoint);
     QString picLoc;
     picLoc = fileLoc;
-    picLoc.append("/FlashcardPro/flashcard.png");
+    picLoc.append(":/flashcard.png");*/
 
-    QPixmap newPixmap(picLoc);
+    QPixmap newPixmap(":/flashcard.png");
 
     if (newPixmap.isNull()){
       QMessageBox msgBox;

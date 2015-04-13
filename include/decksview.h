@@ -27,7 +27,6 @@ void addNewDeckLabel(Deck* insDeck);
 public slots:
     void chooseCreateLoad();
     void loadDeck();
-    void openDeck(Deck *deck);
     void goBack();
     void goToCreator();
 };

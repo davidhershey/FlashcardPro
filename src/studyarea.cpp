@@ -19,7 +19,8 @@ StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, QWidget *parent) : Q
 
     QPushButton *right = new QPushButton;
     right->setFixedSize(65,65);
-    QPixmap pm(":/images/check-button.png");
+    QPixmap pm(":/green_check.png");
+    pm = pm.scaled(65, 65, Qt::KeepAspectRatio);
     QIcon ic(pm);
     right->setIcon(ic);
     QSize iconSize(65, 65);
@@ -29,7 +30,8 @@ StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, QWidget *parent) : Q
 
     QPushButton *wrong = new QPushButton;
     wrong->setFixedSize(65,65);
-    QPixmap pm2(":/images/xbutton.png");
+    QPixmap pm2(":/red_x.png");
+    pm2 = pm2.scaled(65, 65, Qt::KeepAspectRatio);
     QIcon ic2(pm2);
     wrong->setIcon(ic2);
     wrong->setIconSize(iconSize);
