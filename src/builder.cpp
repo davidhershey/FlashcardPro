@@ -6,7 +6,7 @@ builder::builder(QStackedWidget* pages_in, DecksView* decksview_in)
     pages = pages_in;
     decksview = decksview_in;
 
-    submit = new QPushButton(tr("Add Card"));
+    submit = new QPushButton(tr("Add/Update Card"));
     remove = new QPushButton(tr("Delete Card"));
     done = new QPushButton(tr("Add Deck"));
     cancel = new QPushButton(tr("Cancel"));
@@ -72,7 +72,11 @@ builder::builder(QStackedWidget* pages_in, DecksView* decksview_in)
     front_text->setTabChangesFocus(true);
     back_text->setTabChangesFocus(true);
 
+    connect(card_list, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(listClicked(QListWidgetItem*)));
+
     this->setLayout(layout);
+
+
 
 }
 
@@ -86,6 +90,18 @@ void builder::submit_card(){
         qDebug() << "empty card";
     }
     else {
+        bool free = true;
+        builderItem* update;
+        for (int i=0; i < card_list->count(); i++){
+
+            if (card_list->item(i)->text() == card_title->toPlainText()){
+                free = false;
+                update = dynamic_cast <builderItem*> (card_list->item(i));
+            }
+
+        }
+
+        if (free == true){
         builderItem *add = new builderItem(card_list);
         add->setCardInfo(card_title->toPlainText(), front_text->toPlainText(), back_text->toPlainText());
         add->setText(card_title->toPlainText());
@@ -94,6 +110,11 @@ void builder::submit_card(){
         card_title->clear();
         front_text->clear();
         back_text->clear();
+        }
+        else {
+            qDebug() << "update existing card";
+            update->setCardInfo(card_title->toPlainText(), front_text->toPlainText(), back_text->toPlainText());
+        }
     }
 }
 
@@ -128,4 +149,12 @@ void builder::done_slot(){
     pages->removeWidget(this);
     pages->setCurrentIndex(1);
     }
+}
+
+void builder::listClicked(QListWidgetItem* item){
+
+    builderItem* myItem = dynamic_cast <builderItem*> (card_list->currentItem());
+    card_title->setText(myItem->card_title);
+    front_text->setText(myItem->ftext());
+    back_text->setText(myItem->btext());
 }

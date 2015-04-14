@@ -16,6 +16,7 @@ private:
     QListWidget* list;
     QString front_text;
     QString back_text;
+public:
     QString card_title;
 };
 

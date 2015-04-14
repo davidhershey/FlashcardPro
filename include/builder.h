@@ -36,6 +36,7 @@ public slots:
     void delete_card();
     void cancel_slot();
     void done_slot();
+    void listClicked(QListWidgetItem*);
 };
 
 #endif // BUILDER_H
