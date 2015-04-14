@@ -1,7 +1,4 @@
 #include "login.h"
-#include <stdio.h>
-#include <conio.h>
-#include <process.h>
 #include <dir.h>
 #include <iostream>
 #include <fstream>
