@@ -1,4 +1,8 @@
 #include "login.h"
+#include <stdio.h>
+#include <conio.h>
+#include <process.h>
+#include <dir.h>
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -28,6 +32,7 @@ void LogIn::nextPage()
 
     if(currentUsers.empty()){
         createNewUserCallback();
+        return;
     }
 
     for(int i=layout->count()-1; i >= 0; i--){
@@ -47,6 +52,7 @@ void LogIn::nextPage()
         layout->addWidget(btn,i+1,0);
         connect(btn,SIGNAL(clicked()),this,SLOT(userLoginCallback()));
     }
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -101,7 +107,7 @@ void LogIn::createNewUserCallback(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LogIn::initialSetup(){
 
-    /*QDir directory;
+    QDir directory;
     fileLoc = directory.currentPath();
     int cutpoint = 0;
     for(int i = fileLoc.size() - 1; i > 0; i--){
@@ -111,6 +117,7 @@ void LogIn::initialSetup(){
         }
     }
     fileLoc = fileLoc.left(cutpoint);
+    /*
     QString picLoc;
     picLoc = fileLoc;
     picLoc.append(":/flashcard.png");*/
@@ -195,9 +202,21 @@ void LogIn::writeNewUserCallback(){
     myFile << "\n";
     myFile.close();
 
+    returnToLogInCallback();
+
+    QString folder;
+    folder = fileLoc + "/" + edit3->toPlainText() + "_Decks";
+    mkdir(folder.toStdString().c_str());
+
+
     //LOGIC FOR LOGGING INTO DATABASE HERE
     //int current = pages->currentIndex();
     pages->setCurrentIndex(1);
+
+    QMessageBox msgBox;
+    msgBox.setText("Successfully Created User!");
+    msgBox.setFixedSize(500,200);
+    msgBox.exec();
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -214,7 +233,7 @@ void LogIn::readCurrentUsers(){
 
     while(getline(file,temp)){
         QString push = QString::fromStdString(temp);
-        currentUsers.push_back(push);
+        if(push != "") currentUsers.push_back(push);
     }
 }
 
