@@ -1,5 +1,5 @@
 #include "login.h"
-#include <direct.h>
+//#include <direct.h>
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -203,7 +203,10 @@ void LogIn::writeNewUserCallback(){
 
     QString folder;
     folder = fileLoc + "/" + edit3->toPlainText() + "_Decks";
-    mkdir(folder.toStdString().c_str());
+    QDir dir(folder);
+    //mkdir(folder.toStdString().c_str());
+    if(!dir.exists()) dir.mkdir(".");
+    else qDebug() << "Folder already exists!";
 
 
     //LOGIC FOR LOGGING INTO DATABASE HERE
