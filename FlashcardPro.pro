@@ -30,7 +30,9 @@ SOURCES +=     src/main.cpp \
     src/deckmenu.cpp \
     src/statsview.cpp \
     src/builder.cpp \
-    src/builderitem.cpp
+    src/builderitem.cpp \
+    src/qcustomplot.cpp \
+    src/scoreplot.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
@@ -46,7 +48,9 @@ HEADERS  +=   include/mainwindow.h \
     include/deckmenu.h \
     include/statsview.h \
     include/builder.h \
-    include/builderitem.h
+    include/builderitem.h \
+    include/qcustomplot.h \
+    include/scoreplot.h
 
 DISTFILES += \
     info.txt \

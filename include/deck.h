@@ -28,11 +28,15 @@ public:
     void shuffle();
     void saveDeck(QString fileName);
     Flashcard* getHardest();
+    std::vector<int> scoreTimes;
+
 
 private:
     void parseCard(QString* line);
     void parseInfo(QString* line);
     void makeSaveText();
+
+    int maxScore;
 };
 
 #endif // DECK_H

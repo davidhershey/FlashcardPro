@@ -2,9 +2,11 @@
 #include "flashcard.h"
 #include <QTextStream>
 #include <QDebug>
+#include <time.h>
 
 Deck::Deck(FILE* deck_file)
 {
+    maxScore = 0;
     QTextStream instream(deck_file, QIODevice::ReadOnly);
 
     QString line;
@@ -55,6 +57,13 @@ int Deck::getDeckScore()
     for(int i=1;i<cards.size();i++){
         if(cards[i]->getScore() < min) min = cards[i]->getScore();
     }
+    if (min > maxScore){
+        maxScore = min;
+        time_t curtime;
+        time(&curtime);
+        scoreTimes.push_back(curtime);
+        qDebug() << curtime;
+    }
     return min;
 }
 
@@ -101,14 +110,22 @@ void Deck::parseInfo(QString* line)
 
     read = "";
     ++i;
-    j=0;
+    i++;
     while(i < line->size()) //&& line->at(i).isDigit())
     {
-        read[j] = line->at(i);
-        ++i;
-        ++j;
+        read = "";
+        j=0;
+        while(i < line->size() && line->at(i) != ','){
+            read[j] = line->at(i);
+            qDebug() << read[j];
+            ++i;
+            ++j;
+        }
+        i+=2;
+        scoreTimes.push_back(read.toInt());
+        qDebug() << read.toInt();
     }
-    this->deck_score = read.toInt();
+    maxScore =scoreTimes.size();
 }
 
 void Deck::parseCard(QString* line)
