@@ -1,5 +1,6 @@
 #include "login.h"
 #include "newuser.h"
+#include "userselect.h"
 //#include <direct.h>
 #include <iostream>
 #include <fstream>
@@ -28,28 +29,13 @@ LogIn::LogIn(QStackedWidget* pages_in)
 void LogIn::nextPage()
 {
 
-    if(currentUsers.empty()){
-        createNewUserCallback();
+    if(curUsers.empty()){
+        qDebug() << "Add a setup page here because this means it's the first time ever using app";
         return;
     }
 
-    for(int i=layout->count()-1; i >= 0; i--){
-        QLayoutItem *item = layout->takeAt(i);
-        layout->removeItem(item);
-        item->widget()->hide();
-    }
-
-    QLabel *label = new QLabel("Existing Users:");
-    label->setMaximumHeight(15);
-    layout->addWidget(label,0,0);
-
-    for(int i=0; i < currentUsers.size(); i++){
-        QPushButton *btn = new QPushButton(currentUsers.at(i).toStdString().c_str());
-        btn->setMinimumHeight(50);
-        btn->setMaximumWidth(150);
-        layout->addWidget(btn,i+1,0);
-        connect(btn,SIGNAL(clicked()),this,SLOT(userLoginCallback()));
-    }
+    int index = pages->addWidget(new UserSelect(pages, curUsers));
+    pages->setCurrentIndex(index);
 
 }
 
