@@ -15,8 +15,8 @@ LogIn::LogIn(QStackedWidget* pages_in)
     :QFrame(){
     pages = pages_in;
     layout = new QGridLayout();
-    initialSetup();
     readCurrentUsers();
+    initialSetup();
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -134,14 +134,17 @@ void LogIn::initialSetup(){
         layout->addWidget(newLabel,0,0);
     }
 
-    QLabel *label1 = new QLabel("The most comprehensive flashcard app on the market. Two thumbs up!");
-
+    QLabel *title_info = new QLabel("The most comprehensive flashcard app on the market. Two thumbs up!");
+    QFont naxa;
+    QFontDatabase db;
+    naxa = db.font("Nexa Light","Normal",18);
+    title_info->setFont(naxa);
 
     nextButton = new QPushButton("Log In");
     QPushButton *cr = new QPushButton("Sign Up");
 
 
-    layout->addWidget(label1,1,0);
+    layout->addWidget(title_info,1,0);
     layout->addWidget(nextButton,2,0);
     layout->addWidget(cr,3,0);
     setLayout(layout);

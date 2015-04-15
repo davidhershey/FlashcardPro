@@ -7,6 +7,5 @@
         <file>deck.png</file>
         <file>green_check.png</file>
         <file>red_x.png</file>
-        <file>back_button.png</file>
     </qresource>
 </RCC>
