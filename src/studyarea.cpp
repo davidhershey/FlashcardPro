@@ -56,6 +56,7 @@ void StudyArea::correct()
 {
     curCard->correct();
     deck->shuffle();
+    deck->getDeckScore();
     grid->removeWidget(curCard);
     curCard->hide();
     if (!curCard->isFront()) curCard->Flip();

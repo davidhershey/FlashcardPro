@@ -1,4 +1,5 @@
 #include "statsview.h"
+#include "scoreplot.h"
 #include <QtWidgets>
 
 StatsView::StatsView(Deck *_deck, QStackedWidget* pages_in,QWidget *parent)
@@ -12,10 +13,13 @@ StatsView::StatsView(Deck *_deck, QStackedWidget* pages_in,QWidget *parent)
     title->setAlignment(Qt::AlignCenter);
     vbox->addWidget(title);
 
-    QLabel *scoreLabel = new QLabel;
-    scoreLabel->setText("Deck Score: " + QString::number(deck->getDeckScore()));
-    scoreLabel->setAlignment(Qt::AlignCenter);
-    vbox->addWidget(scoreLabel);
+
+//    QLabel *scoreLabel = new QLabel;
+//    scoreLabel->setText("Deck Score: " + QString::number(deck->getDeckScore()));
+//    scoreLabel->setAlignment(Qt::AlignCenter);
+//    vbox->addWidget(scoreLabel);
+    ScorePlot *sp = new ScorePlot(deck);
+    vbox->addWidget(sp);
 
     QLabel *hardest = new QLabel;
     vbox->addWidget(hardest);
