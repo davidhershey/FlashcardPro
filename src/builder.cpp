@@ -115,8 +115,9 @@ void builder::delete_card(){
 }
 
 void builder::cancel_slot(){
+    int index = pages->currentIndex();
     pages->removeWidget(this);
-    pages->setCurrentIndex(1);
+    pages->setCurrentIndex(index-1);
 }
 
 void builder::done_slot(){
@@ -138,8 +139,9 @@ void builder::done_slot(){
     Deck* send_deck = new Deck(_cards, deck_title->toPlainText());
     decksview->addNewDeckLabel(send_deck);
 
+    int index = pages->currentIndex();
     pages->removeWidget(this);
-    pages->setCurrentIndex(1);
+    pages->setCurrentIndex(index-1);
     }
 }
 

@@ -112,6 +112,6 @@ void DecksView::chooseCreateLoad()
 void DecksView::goToCreator()
 {
     builder* build = new builder(pages, this);
-    pages->addWidget(build);
-    pages->setCurrentIndex(2);
+    int go = pages->addWidget(build);
+    pages->setCurrentIndex(go);
 }
