@@ -29,12 +29,14 @@ public:
     void saveDeck(QString fileName);
     Flashcard* getHardest();
     std::vector<int> scoreTimes;
-
+    std::vector<Flashcard*> getDeck();
+    void updateDeck(std::vector<Flashcard*> cards_in);
 
 private:
     void parseCard(QString* line);
     void parseInfo(QString* line);
     void makeSaveText();
+
 
     int maxScore;
 };

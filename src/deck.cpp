@@ -217,3 +217,11 @@ Flashcard *Deck::getHardest()
     }
     return hardest;
 }
+
+void Deck::updateDeck(std::vector<Flashcard *> cards_in){
+    cards = cards_in;
+}
+
+std::vector<Flashcard*> Deck::getDeck(){
+    return cards;
+}

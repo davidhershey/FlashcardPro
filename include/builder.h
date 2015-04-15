@@ -11,11 +11,13 @@ class builder : public QFrame
 
 public:
     builder(QStackedWidget* pages_in, DecksView* decksview_in);
+    builder(QStackedWidget* pages_in, Deck* deck);
     ~builder();
 
 private:
     QStackedWidget* pages;
     DecksView* decksview;
+    Deck* decksave;
 
     QListWidget* card_list;
 
@@ -36,6 +38,7 @@ public slots:
     void delete_card();
     void cancel_slot();
     void done_slot();
+    void done_edit_slot();
     void listClicked(QListWidgetItem*);
 };
 
