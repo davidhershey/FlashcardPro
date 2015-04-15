@@ -1,5 +1,7 @@
 #include "user.h"
 #include "decksview.h"
+#include <fstream>
+#include <iostream>
 
 User::User(QString usrn_in, QString pw_in, QString fn_in, QString ln_in, std::vector<Deck*> decks_in)
 {
@@ -22,4 +24,15 @@ void User::goToDecksView(QStackedWidget* pages_in)
 {
     int index = pages_in->addWidget(new DecksView(pages_in));
     pages_in->setCurrentIndex(index);
+}
+
+void User::writeUserInfo(QString fileLoc)
+{
+    std::ofstream myFile;
+    myFile.open(fileLoc.toStdString().c_str(), std::ios::app);
+    myFile << username.toStdString().c_str() << " ";
+    myFile << password.toStdString().c_str() << " ";
+    myFile << first_name.toStdString().c_str() << " ";
+    myFile << last_name.toStdString().c_str() << "\n";
+    myFile.close();
 }

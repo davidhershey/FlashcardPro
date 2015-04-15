@@ -19,6 +19,7 @@ public:
     ~User();
     bool sameName(QString check);
     void goToDecksView(QStackedWidget* pages_in);
+    void writeUserInfo(QString fileLoc);
 };
 
 #endif // USER

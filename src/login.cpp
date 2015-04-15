@@ -206,13 +206,7 @@ void LogIn::addNewUser(User* user)
     curUsers.push_back(user);
 
     //write to login_names.txt
-    QString txtFile = fileLoc;
-    txtFile.append("/FlashcardPro/login_names.txt");
-    ofstream myFile;
-    myFile.open(txtFile.toStdString().c_str(), std::ios::app);
-    myFile << user->username.toStdString().c_str();
-    myFile << "\n";
-    myFile.close();
+    user->writeUserInfo(fileLoc + "/FlashcardPro/login_names.txt");
 
     //Create directory to contain decks
     QString folder;
