@@ -32,7 +32,8 @@ SOURCES +=     src/main.cpp \
     src/builder.cpp \
     src/builderitem.cpp \
     src/newuser.cpp \
-    src/user.cpp
+    src/user.cpp \
+    src/userselect.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
@@ -50,7 +51,8 @@ HEADERS  +=   include/mainwindow.h \
     include/builder.h \
     include/builderitem.h \
     include/newuser.h \
-    include/user.h
+    include/user.h \
+    include/userselect.h
 
 DISTFILES += \
     info.txt \

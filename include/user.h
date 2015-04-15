@@ -4,6 +4,7 @@
 #include <vector>
 #include "deck.h"
 #include <QString>
+#include <QStackedWidget>
 class User
 {
 private:
@@ -17,6 +18,7 @@ public:
     User(QString usrn_in, QString pw_in, QString fn_in, QString ln_in, std::vector<Deck*> decks_in = std::vector<Deck*>());
     ~User();
     bool sameName(QString check);
+    void goToDecksView(QStackedWidget* pages_in);
 };
 
 #endif // USER

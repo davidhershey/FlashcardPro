@@ -73,7 +73,8 @@ void DecksView::loadDeck()
 
 void DecksView::goBack()
 {
-    pages->setCurrentIndex(0);
+    pages->removeWidget(this);
+    pages->setCurrentIndex(pages->currentIndex() - 1);
 }
 
 void DecksView::addNewDeckLabel(Deck* insDeck)
