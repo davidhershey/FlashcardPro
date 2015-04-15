@@ -65,14 +65,6 @@ Flashcard::Flashcard(QString ftext, QString btext, int cscore, QWidget *parent) 
     frontLabel->setWordWrap(true);
     QFont naxa;
     QFontDatabase db;
-    int id = db.addApplicationFont(":/fonts/NexaLight.otf");
-    qDebug() << id;
-    QStringList list = db.applicationFontFamilies(id);
-    for (QStringList::iterator it = list.begin();
-            it != list.end(); ++it) {
-           QString current = *it;
-           qDebug() << "[[" << current << "]]";
-       }
     naxa = db.font("Nexa Light","Normal",22);
     frontLabel->setFont(naxa);
 

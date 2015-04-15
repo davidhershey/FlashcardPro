@@ -10,7 +10,12 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 
     QVBoxLayout *vbox = new QVBoxLayout;
 
+    QFont naxa;
+    QFontDatabase db;
+    naxa = db.font("Nexa Bold","Normal",40);
+
     QLabel *title = new QLabel(deck->deck_name);
+    title->setFont(naxa);
     vbox->addWidget(title);
     title->setAlignment(Qt::AlignCenter);
 

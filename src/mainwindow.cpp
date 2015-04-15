@@ -7,7 +7,9 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
-
+    QFontDatabase db;
+    db.addApplicationFont(":/fonts/NexaLight.otf");
+    db.addApplicationFont(":/fonts/NexaBold.otf");
     pages = new QStackedWidget();
     pages->setStyleSheet("QStackedWidget { background-color: rgb(191, 197, 255); }");
     LogIn* loginPage = new LogIn(pages);

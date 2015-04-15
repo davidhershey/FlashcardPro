@@ -29,6 +29,10 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
       }
       else
       {
+          QFont naxa;
+          QFontDatabase db;
+          naxa = db.font("Nexa Light","Normal",12);
+          this->setFont(naxa);
           QPixmap pm(":/deck.png");
           QPalette palette;
           palette.setBrush(this->backgroundRole(), QBrush(pm));
