@@ -7,17 +7,39 @@ DecksView::DecksView(QStackedWidget* pages_in)
 {
     pages = pages_in;
     QVBoxLayout* mainLayout = new QVBoxLayout();
+    QHBoxLayout* topBar = new QHBoxLayout();
+
+
+    QFont naxa;
+    QFontDatabase db;
+    naxa = db.font("Nexa Light","Normal",64);
+    QLabel* title = new QLabel("Your Decks");
+    title->setFont(naxa);
+    title->setAlignment(Qt::AlignHCenter);
+    title->setMaximumHeight(50);
+
+    backButton = new QPushButton("Switch User");
+    backButton->setMinimumSize(100, 30);
+    backButton->setMaximumSize(200, 30);
+    connect(backButton, SIGNAL(clicked()), this, SLOT(goBack()));
+
+    topBar->addWidget(backButton, 0, Qt::AlignLeft);
+    topBar->addSpacerItem(new QSpacerItem((title->width()/2) - backButton->width(), title->height(),QSizePolicy::Expanding));
+    topBar->addWidget(title, 0, Qt::AlignHCenter);
+    topBar->addSpacerItem(new QSpacerItem((title->width()/2), title->height(), QSizePolicy::Expanding));
+    topBar->setAlignment(mainLayout, Qt::AlignTop);
 
     decksLayout = new QGridLayout();
     loadLabel = new DeckLabel(NULL, pages);
     connect(loadLabel, SIGNAL(clicked()), this, SLOT(chooseCreateLoad()));
     decksLayout->addWidget(loadLabel, 0, 0);
+    QScrollArea *scrollArea = new QScrollArea();
+    scrollArea->setWidgetResizable(1);
+    scrollArea->setLayout(decksLayout);
+    scrollArea->setStyleSheet("background-color: rgb(191, 197, 255); border: 0pt");
 
-    backButton = new QPushButton("Switch User");
-    connect(backButton, SIGNAL(clicked()), this, SLOT(goBack()));
-
-    mainLayout->addLayout(decksLayout);
-    mainLayout->addWidget(backButton);
+    mainLayout->addLayout(topBar);
+    mainLayout->addWidget(scrollArea);
     setMinimumSize(700,500);
     setLayout(mainLayout);
 }

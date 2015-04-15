@@ -225,6 +225,7 @@ void LogIn::writeNewUserCallback(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LogIn::readCurrentUsers(){
+
     QString txtFile = fileLoc;
     txtFile.append("/FlashcardPro/login_names.txt");
 
@@ -234,6 +235,7 @@ void LogIn::readCurrentUsers(){
     while(getline(file,temp)){
         QString push = QString::fromStdString(temp);
         if(push != "") currentUsers.push_back(push);
+
     }
 }
 
@@ -242,3 +244,4 @@ void LogIn::userLoginCallback(){
     returnToLogInCallback();
     pages->setCurrentIndex(1);
 }
+
