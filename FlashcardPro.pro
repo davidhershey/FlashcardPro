@@ -33,6 +33,8 @@ SOURCES +=     src/main.cpp \
     src/builderitem.cpp \
     src/qcustomplot.cpp \
     src/scoreplot.cpp
+    src/newuser.cpp \
+    src/user.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
@@ -51,6 +53,8 @@ HEADERS  +=   include/mainwindow.h \
     include/builderitem.h \
     include/qcustomplot.h \
     include/scoreplot.h
+    include/newuser.h \
+    include/user.h
 
 DISTFILES += \
     info.txt \
