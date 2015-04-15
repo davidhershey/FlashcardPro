@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fonts/NexaBold.otf</file>
+        <file>fonts/NexaLight.otf</file>
+    </qresource>
+</RCC>

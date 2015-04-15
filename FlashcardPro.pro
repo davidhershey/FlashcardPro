@@ -56,4 +56,5 @@ DISTFILES += \
     working_deck.txt
 
 RESOURCES += \
-    images.qrc
+    images.qrc \
+    fonts.qrc

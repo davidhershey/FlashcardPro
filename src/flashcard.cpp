@@ -62,6 +62,20 @@ Flashcard::Flashcard(QString ftext, QString btext, int cscore, QWidget *parent) 
     frontLabel->setStyleSheet("QLabel { background-color : white; color : black; }");
     frontLabel->setText(ftext);
     frontLabel->setAlignment(Qt::AlignCenter);
+    frontLabel->setWordWrap(true);
+    QFont naxa;
+    QFontDatabase db;
+    int id = db.addApplicationFont(":/fonts/NexaLight.otf");
+    qDebug() << id;
+    QStringList list = db.applicationFontFamilies(id);
+    for (QStringList::iterator it = list.begin();
+            it != list.end(); ++it) {
+           QString current = *it;
+           qDebug() << "[[" << current << "]]";
+       }
+    naxa = db.font("Nexa Light","Normal",22);
+    frontLabel->setFont(naxa);
+
     frontWidgetLayout->addWidget(frontLabel);
 
     //--BackWidget
@@ -72,6 +86,8 @@ Flashcard::Flashcard(QString ftext, QString btext, int cscore, QWidget *parent) 
     backLabel->setStyleSheet("QLabel { background-color : white; color : black; }");
     backLabel->setText(btext);
     backLabel->setAlignment(Qt::AlignCenter);
+    backLabel->setWordWrap(true);
+    backLabel->setFont(naxa);
     backWidgetLayout->addWidget(backLabel);
 
     //--FlipWidget
