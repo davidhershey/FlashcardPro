@@ -1,4 +1,5 @@
 #include "login.h"
+#include "newuser.h"
 //#include <direct.h>
 #include <iostream>
 #include <fstream>
@@ -59,42 +60,8 @@ void LogIn::nextPage()
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LogIn::createNewUserCallback(){
 
-    for(int i=layout->count()-1; i >= 0; i--){
-        QLayoutItem *item = layout->takeAt(i);
-        layout->removeItem(item);
-        item->widget()->hide();
-    }
-
-    QLabel *label1 = new QLabel("Create new user:");
-    QLabel *label2 = new QLabel("First Name:");
-    QLabel *label3 = new QLabel("Last Name:");
-    QLabel *label4 = new QLabel("Username:");
-    QLabel *label5 = new QLabel("Password:");
-    QLabel *label6 = new QLabel("Re-enter Password:");
-    QTextEdit *edit1 = new QTextEdit();
-    QTextEdit *edit2 = new QTextEdit();
-    edit3 = new QTextEdit();
-    QTextEdit *edit4 = new QTextEdit();
-    QTextEdit *edit5 = new QTextEdit();
-    QPushButton *createNewUserBtn = new QPushButton("Submit");
-    QPushButton *returnBtn = new QPushButton("Cancel");
-
-    layout->addWidget(label1,0,0);
-    layout->addWidget(label2,1,0);
-    layout->addWidget(edit1,1,1);
-    layout->addWidget(label3,2,0);
-    layout->addWidget(edit2,2,1);
-    layout->addWidget(label4,3,0);
-    layout->addWidget(edit3,3,1);
-    layout->addWidget(label5,4,0);
-    layout->addWidget(edit4,4,1);
-    layout->addWidget(label6,5,0);
-    layout->addWidget(edit5,5,1);
-    layout->addWidget(createNewUserBtn,6,0);
-    layout->addWidget(returnBtn,7,0);
-
-    connect(returnBtn,SIGNAL(clicked()),this,SLOT(returnToLogInCallback()));
-    connect(createNewUserBtn,SIGNAL(clicked()),this,SLOT(writeNewUserCallback()));
+    int index = pages->addWidget(new NewUser(pages, this));
+    pages->setCurrentIndex(index);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -248,3 +215,34 @@ void LogIn::userLoginCallback(){
     pages->setCurrentIndex(1);
 }
 
+void LogIn::addNewUser(User* user)
+{
+    curUsers.push_back(user);
+
+    //write to login_names.txt
+    QString txtFile = fileLoc;
+    txtFile.append("/FlashcardPro/login_names.txt");
+    ofstream myFile;
+    myFile.open(txtFile.toStdString().c_str(), std::ios::app);
+    myFile << user->username.toStdString().c_str();
+    myFile << "\n";
+    myFile.close();
+
+    //Create directory to contain decks
+    QString folder;
+    folder = fileLoc + "/" + user->username + "_Decks";
+    QDir dir(folder);
+    //mkdir(folder.toStdString().c_str());
+    if(!dir.exists()) dir.mkdir(".");
+    else qDebug() << "Folder already exists!";
+
+    //Go to choose user
+    pages->removeWidget(pages->currentWidget());
+    pages->setCurrentIndex(pages->currentIndex()-1);
+
+    //Display success
+    QMessageBox msgBox;
+    msgBox.setText("Successfully Created User!");
+    msgBox.setFixedSize(500,200);
+    msgBox.exec();
+}

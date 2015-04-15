@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "user.h"
 
 using namespace std;
 
@@ -14,9 +15,12 @@ public:
     LogIn(QStackedWidget* pages_in);
     void initialSetup();
     void readCurrentUsers();
+    void writeNewUserCallback();
+    void addNewUser(User* user);
+    QTextEdit* edit3;
     QString fileLoc;
-    QTextEdit *edit3;
     vector<QString> currentUsers;
+    vector<User*> curUsers;
 
 private:
     QStackedWidget* pages;
@@ -26,7 +30,6 @@ private:
 public slots:
     void nextPage();
     void createNewUserCallback();
-    void writeNewUserCallback();
     void returnToLogInCallback();
     void userLoginCallback();
 };
