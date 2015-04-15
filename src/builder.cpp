@@ -36,20 +36,12 @@ builder::builder(QStackedWidget* pages_in, DecksView* decksview_in)
     QVBoxLayout *layout3 = new QVBoxLayout();
     layout2->addLayout(layout3);
 
-
-    QLabel* header0 = new QLabel(tr("Card title"));
-    card_title = new QTextEdit();
-
-
-
     QLabel* header1 = new QLabel(tr("Front text"));
     QLabel* header2 = new QLabel(tr("Back text"));
     front_text = new QTextEdit();
     back_text = new QTextEdit();
 
 
-    layout3->addWidget(header0);
-    layout3->addWidget(card_title);
     layout3->addWidget(header1);
     layout3->addWidget(front_text);
     layout3->addWidget(header2);
@@ -68,7 +60,6 @@ builder::builder(QStackedWidget* pages_in, DecksView* decksview_in)
     connect(done, SIGNAL(pressed()), this, SLOT(done_slot()));
 
     deck_title->setTabChangesFocus(true);
-    card_title->setTabChangesFocus(true);
     front_text->setTabChangesFocus(true);
     back_text->setTabChangesFocus(true);
 
@@ -86,7 +77,7 @@ builder::~builder()
 }
 
 void builder::submit_card(){
-    if ((card_title->toPlainText()).trimmed().isEmpty() | (front_text->toPlainText()).trimmed().isEmpty() | (back_text->toPlainText()).trimmed().isEmpty()){
+    if ((front_text->toPlainText()).trimmed().isEmpty() | (back_text->toPlainText()).trimmed().isEmpty()){
         qDebug() << "empty card";
     }
     else {
@@ -94,7 +85,7 @@ void builder::submit_card(){
         builderItem* update;
         for (int i=0; i < card_list->count(); i++){
 
-            if (card_list->item(i)->text() == card_title->toPlainText()){
+            if (card_list->item(i)->text() == front_text->toPlainText()){
                 free = false;
                 update = dynamic_cast <builderItem*> (card_list->item(i));
             }
@@ -103,23 +94,24 @@ void builder::submit_card(){
 
         if (free == true){
         builderItem *add = new builderItem(card_list);
-        add->setCardInfo(card_title->toPlainText(), front_text->toPlainText(), back_text->toPlainText());
-        add->setText(card_title->toPlainText());
+        add->setCardInfo( front_text->toPlainText(), back_text->toPlainText());
+        add->setText(front_text->toPlainText());
         card_list->insertItem(0, add);
 
-        card_title->clear();
         front_text->clear();
         back_text->clear();
         }
         else {
             qDebug() << "update existing card";
-            update->setCardInfo(card_title->toPlainText(), front_text->toPlainText(), back_text->toPlainText());
+            update->setCardInfo(front_text->toPlainText(), back_text->toPlainText());
         }
     }
 }
 
 void builder::delete_card(){
     card_list->takeItem(card_list->currentRow());
+    front_text->clear();
+    back_text->clear();
 }
 
 void builder::cancel_slot(){
@@ -154,7 +146,7 @@ void builder::done_slot(){
 void builder::listClicked(QListWidgetItem* item){
 
     builderItem* myItem = dynamic_cast <builderItem*> (card_list->currentItem());
-    card_title->setText(myItem->card_title);
+
     front_text->setText(myItem->ftext());
     back_text->setText(myItem->btext());
 }

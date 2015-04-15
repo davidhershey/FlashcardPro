@@ -22,7 +22,7 @@ private:
     QListWidgetItem* selected;
 
     QTextEdit* deck_title;
-    QTextEdit* card_title;
+
     QTextEdit* front_text;
     QTextEdit* back_text;
 

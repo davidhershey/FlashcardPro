@@ -11,8 +11,7 @@ builderItem::~builderItem()
 
 }
 
-void builderItem::setCardInfo(QString titlein, QString frontin, QString backin){
-    card_title = titlein;
+void builderItem::setCardInfo(QString frontin, QString backin){
     front_text = frontin;
     back_text = backin;
 }
