@@ -26,7 +26,7 @@ protected:
 
 public slots:
     void chooseNext();
-    void initStudyArea();
+    //void initStudyArea();
     void saveDeckCallback();
     void openDeck();
 

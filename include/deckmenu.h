@@ -14,6 +14,7 @@ public:
     explicit DeckMenu(Deck* _deck, QStackedWidget *pages_in, QWidget *parent = 0);
     QLabel* title;
     ~DeckMenu();
+    void updateMenu();
 
 signals:
 
@@ -26,6 +27,7 @@ public slots:
 private:
     Deck* deck;
     QStackedWidget* pages;
+    QLabel* quick_stats;
 
 };
 

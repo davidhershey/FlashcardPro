@@ -95,13 +95,13 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
       return;
   }
 
-  void DeckLabel::initStudyArea()
+  /*void DeckLabel::initStudyArea()
   {
       StudyArea* area = new StudyArea(deck, pages);
       int index = pages->addWidget(area);
       pages->setCurrentIndex(index);
 //      area->exec();
-  }
+  }*/
 
   void DeckLabel::openDeck()
   {

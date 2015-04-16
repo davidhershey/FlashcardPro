@@ -17,10 +17,19 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 
     _deck->menu = this;
 
+    QHBoxLayout* topLayout = new QHBoxLayout();
     title = new QLabel(deck->deck_name);
     title->setFont(naxa);
-    vbox->addWidget(title);
-    title->setAlignment(Qt::AlignCenter);
+    topLayout->addWidget(title);
+    title->setAlignment(Qt::AlignLeft);
+
+    quick_stats = new QLabel();
+    quick_stats->setStyleSheet("color : blue;");
+    quick_stats->setFont(naxa);
+    quick_stats->setText("Current Deck Score:\n" + QString::number(deck->getDeckScore()));
+    topLayout->addWidget(quick_stats);
+
+    vbox->addLayout(topLayout);
 
     QPushButton *study = new QPushButton("Study Deck");
     vbox->addWidget(study);
@@ -42,6 +51,7 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
     vbox->addWidget(back);
     connect(back,SIGNAL(clicked()),this,SLOT(back()));
 
+
     this->setLayout(vbox);
 }
 
@@ -52,7 +62,7 @@ DeckMenu::~DeckMenu()
 
 void DeckMenu::study()
 {
-    StudyArea* area = new StudyArea(deck, pages);
+    StudyArea* area = new StudyArea(deck, pages, this);
     int index = pages->addWidget(area);
     pages->setCurrentIndex(index);
 }
@@ -83,8 +93,10 @@ void DeckMenu::saveDeckCallback()
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save Selected Deck"),
                                                     QDir::homePath() + QDir::separator() + "*",
                                                     "");
-
    deck->saveDeck(fileName);
 }
 
-
+void DeckMenu::updateMenu()
+{
+    quick_stats->setText("Current Deck Score:\n" + QString::number(deck->getDeckScore()));
+}

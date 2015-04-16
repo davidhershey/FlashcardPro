@@ -5,12 +5,13 @@
 #include <QtWidgets>
 #include "deck.h"
 #include "flashcard.h"
+#include "deckmenu.h"
 
 class StudyArea : public QGraphicsView
 {
     Q_OBJECT
 public:
-    explicit StudyArea(Deck* _deck, QStackedWidget* pages_in, QWidget *parent = 0);
+    explicit StudyArea(Deck* _deck, QStackedWidget* pages_in, DeckMenu* parent_in);
     ~StudyArea();
 
 signals:
@@ -26,6 +27,7 @@ private:
     Deck *deck;
     QStackedWidget* pages;
     Flashcard *curCard;
+    DeckMenu* parent;
 };
 
 #endif // STUDYAREA_H

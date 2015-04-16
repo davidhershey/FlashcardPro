@@ -74,7 +74,7 @@ void DecksView::loadDeck()
 void DecksView::goBack()
 {
     pages->removeWidget(this);
-    pages->setCurrentIndex(pages->currentIndex() - 1);
+    //pages->setCurrentIndex(pages->currentIndex() - 1);
 }
 
 void DecksView::addNewDeckLabel(Deck* insDeck)
@@ -85,6 +85,7 @@ void DecksView::addNewDeckLabel(Deck* insDeck)
 
     connect(insLabel, SIGNAL(clicked()) , insLabel, SLOT(openDeck()));
     int i = decks.size()-1;
+
     QWidget* last = decksLayout->itemAtPosition(int(i/5),i%5)->widget();
     decksLayout->addWidget(insLabel,int(i/5),i%5);
     ++i;

@@ -4,10 +4,11 @@
 #include <QtWidgets>
 #include <QtGui>
 
-StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, QWidget *parent) : QGraphicsView(parent)
+StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, DeckMenu* parent_in)
 {
     scores = new QLabel;
     grid = new QGridLayout;
+    parent = parent_in;
     deck = _deck;
     pages = pages_in;
     curCard = _deck->getTop();
@@ -83,6 +84,7 @@ void StudyArea::incorrect()
 
 void StudyArea::goBack()
 {
+    parent->updateMenu();
     int nextIndex = pages->currentIndex()-1;
     pages->removeWidget(pages->currentWidget());
     pages->setCurrentIndex(nextIndex);
