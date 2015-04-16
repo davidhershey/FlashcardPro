@@ -9,11 +9,12 @@
 #include <QWidget>
 #include <vector>
 #include "imagebox.h"
+
 class ImageBox : public QLabel
 {
     Q_OBJECT
 public:
-    explicit ImageBox(QWidget *parent = 0);
+    explicit ImageBox( QWidget *parent = 0);
     ImageBox(QString fileName, QWidget *parent = 0);
     ImageBox(QImage image, QWidget *parent=0);
     ~ImageBox();
@@ -22,6 +23,7 @@ public:
     bool selected = false;
     void setBoxNo(int no);
     QImage getImage();
+
 signals:
     void clicked();
 
