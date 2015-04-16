@@ -5,7 +5,7 @@
 
 
 DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent ):
-    QPushButton(parent)
+    QLabel(parent)
 
   {
       deck = deck_in;
@@ -13,36 +13,31 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
       if(deck == NULL)
       {
           QPixmap pm(":/add_deck.png");
-          /*QPalette palette;
-          palette.setBrush(this->backgroundRole(), QBrush(pm));
-          this->setFlat(true);
-          this->setAutoFillBackground(true);
-          this->setPalette(palette);
-          this->setText("Add Deck");*/
-          QIcon ic(pm);
-          this->setIcon(ic);
-          QSize iconSize(pm.width(), pm.height());
-          this->setIconSize(iconSize);
+          this->setPixmap(pm);
           hover = false;
           this->setMinimumSize(pm.width(), pm.height());
           this->setMaximumSize(pm.width(), pm.height());
+          qDebug() << pm.width();
+          qDebug() << pm.height();
       }
       else
       {
-          QFont naxa;
-          QFontDatabase db;
-          naxa = db.font("Nexa Light","Normal",12);
-          this->setFont(naxa);
-          QPixmap pm(":/deck.png");
+          /*QPixmap pm(":/deck.png");
           QPalette palette;
           palette.setBrush(this->backgroundRole(), QBrush(pm));
           this->setFlat(true);
           this->setAutoFillBackground(true);
           this->setPalette(palette);
+          this->setText(deck->deck_name);*/
+          QFont naxa;
+          QFontDatabase db;
+          naxa = db.font("Nexa Light","Normal",12);
+          this->setFont(naxa);
           this->setText(deck->deck_name);
+
+          this->setStyleSheet("border: 1px solid; background-color: white; qproperty-alignment: AlignCenter;");
+          this->setFixedSize(129, 200);
           hover = true;
-          this->setMinimumSize(pm.width(), pm.height());
-          this->setMaximumSize(pm.width(), pm.height());
       }
 
 
@@ -54,26 +49,24 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
 
   }
 
-  /*void DeckLabel::mousePressEvent ( QMouseEvent * event )
+  void DeckLabel::mousePressEvent ( QMouseEvent * event )
 
   {
       //std::cout << "Got click" << std::endl;
-      emit clicked(deck);
+      emit clicked();
   }
 
   void DeckLabel::enterEvent(QEvent * event)
   {
     qDebug() << "entered!";
-    if(hover) this->setStyleSheet("border: 2px solid");
-    else this->setStyleSheet("border: 2px solid; background: white");
+    if(hover) this->setStyleSheet("border: 2px solid; background-color: white;");
   }
 
   void DeckLabel::leaveEvent(QEvent * event)
   {
     qDebug() << "exited!";
-    if(hover) this->setStyleSheet("border: 1px solid");
-    else this->setStyleSheet("border: 1px solid; background: white");
-  }*/
+    if(hover) this->setStyleSheet("border: 1px solid; background-color: white;");
+  }
 
   void DeckLabel::chooseNext()
   {
@@ -118,5 +111,6 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
      deck->saveDeck(fileName);
   }
 void DeckLabel::updateName(){
+    if(deck == NULL) return;
     this->setText(deck->deck_name);
 }

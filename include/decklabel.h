@@ -4,7 +4,7 @@
 #include <QtWidgets>
 #include "deck.h"
 
-class DeckLabel:public QPushButton
+class DeckLabel:public QLabel
 {
     Q_OBJECT
 public:
@@ -17,12 +17,12 @@ private:
     bool hover;
 
 signals:
-    void clicked(Deck* _deck);
+    void clicked();
 
 protected:
-    //void mousePressEvent ( QMouseEvent * event );
-    //void enterEvent(QEvent * event);
-    //void leaveEvent(QEvent * event);
+    void mousePressEvent ( QMouseEvent * event );
+    void enterEvent(QEvent * event);
+    void leaveEvent(QEvent * event);
 
 public slots:
     void chooseNext();
