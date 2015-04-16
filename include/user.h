@@ -5,11 +5,15 @@
 #include "deck.h"
 #include <QString>
 #include <QStackedWidget>
+#include <fstream>
+#include <iostream>
+#include <QDir>
 class User
 {
 private:
     std::vector<Deck*> decks;
     QString dir;
+    QDir *directory;
     //ADD STATS INFO IN HERE
 public:
     QString username;
@@ -18,6 +22,7 @@ public:
     bool sameName(QString check);
     void goToDecksView(QStackedWidget* pages_in);
     void writeUserInfo(QString fileLoc);
+    QStringList getDeckFiles();
 
 public slots:
     void startSession();

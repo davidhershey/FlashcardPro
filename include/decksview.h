@@ -4,13 +4,14 @@
 #include <vector>
 #include <QGridLayout>
 #include "deck.h"
+#include "user.h"
 #include "decklabel.h"
 
 class DecksView :public QFrame
 {
     Q_OBJECT
 public:
-    DecksView(QStackedWidget* pages_in);
+    DecksView(QStackedWidget* pages_in,User *_user);
     ~DecksView();
 
 private:
@@ -20,7 +21,8 @@ private:
     QGridLayout* decksLayout;
     DeckLabel* loadLabel;
     QPushButton* backButton;
-
+    User *user;
+    void getUserDecks();
 public:
 void addNewDeckLabel(Deck* insDeck);
 
