@@ -3,17 +3,19 @@
 
 #include <QStackedWidget>
 #include "login.h"
+#include "userselect.h"
 
 class NewUser : public QFrame
 {
     Q_OBJECT
 
 public:
-    NewUser(QStackedWidget* pages_in, LogIn* parent_in);
+    NewUser(QStackedWidget* pages_in, LogIn* parent_in, UserSelect* select_parent = NULL);
     ~NewUser();
 
     QStackedWidget* pages;
     LogIn* parent;
+    UserSelect* select;
 
     QTextEdit *username;
 
