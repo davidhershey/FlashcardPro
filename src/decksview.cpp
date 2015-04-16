@@ -17,7 +17,8 @@ DecksView::DecksView(QStackedWidget* pages_in, User *_user)
     QLabel* title = new QLabel("Your Decks");
     title->setFont(naxa);
     title->setAlignment(Qt::AlignHCenter);
-    title->setMaximumHeight(70);
+    title->setMaximumHeight(120);
+    title->setMinimumHeight(120);
 
     backButton = new QPushButton("Back");
     backButton->setMinimumSize(100, 30);
@@ -34,13 +35,18 @@ DecksView::DecksView(QStackedWidget* pages_in, User *_user)
     loadLabel = new DeckLabel(NULL, pages);
     connect(loadLabel, SIGNAL(clicked()), this, SLOT(chooseCreateLoad()));
     decksLayout->addWidget(loadLabel, 0, 0);
+
+    QSplitter *splitter = new QSplitter();
+    QFrame *rightWidget = new QFrame();
+    rightWidget->setLayout(decksLayout);
+    rightWidget->setStyleSheet("QFrame { background-color: rgb(191, 197, 255); }");
     QScrollArea *scrollArea = new QScrollArea();
     scrollArea->setWidgetResizable(1);
-    scrollArea->setLayout(decksLayout);
-    scrollArea->setStyleSheet("background-color: rgb(191, 197, 255); border: 0pt");
+    scrollArea->setWidget(rightWidget);
+    splitter->addWidget(scrollArea);
 
     mainLayout->addLayout(topBar);
-    mainLayout->addWidget(scrollArea);
+    mainLayout->addWidget(splitter);
     setMinimumSize(700,500);
     setLayout(mainLayout);
     getUserDecks();

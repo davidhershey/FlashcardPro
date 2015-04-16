@@ -45,7 +45,7 @@ builder::~builder()
 
 void builder::submit_card(){
     if ((front_text->toPlainText()).trimmed().isEmpty() | (back_text->toPlainText()).trimmed().isEmpty()){
-        qDebug() << "empty card";
+        QMessageBox::warning(this, "Incomplete Card", "Incomplete Card. Please filling in card before adding/updating.");
     }
     else {
         bool free = true;
@@ -90,7 +90,7 @@ void builder::cancel_slot(){
 void builder::done_slot(){
 
     if (card_list->count() == 0){
-        QMessageBox::warning(this, "Deck is empty", "Deck is empty.");
+        QMessageBox::warning(this, "Deck is empty", "Deck is empty. Please create at least one notecard.");
     }
     else {
 
@@ -129,7 +129,7 @@ void builder::listClicked(QListWidgetItem* item){
 
 void builder::done_edit_slot(){
     if (card_list->count() == 0){
-        QMessageBox::warning(this, "Deck is empty", "Deck is empty.");
+        QMessageBox::warning(this, "Deck is empty", "Deck is empty. Please create at least one notecard.");
     }
     else {
 
