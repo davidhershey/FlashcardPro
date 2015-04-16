@@ -17,7 +17,7 @@ public:
 private:
     //QAction* loadAct;
     QStackedWidget* pages;
-    std::vector<Deck*> decks;
+    //std::vector<Deck*> decks;
     QGridLayout* decksLayout;
     DeckLabel* loadLabel;
     QPushButton* backButton;

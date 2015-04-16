@@ -32,7 +32,7 @@ DecksView::DecksView(QStackedWidget* pages_in, User *_user)
     topBar->setAlignment(mainLayout, Qt::AlignTop);
 
     decksLayout = new QGridLayout();
-    loadLabel = new DeckLabel(NULL, pages);
+    loadLabel = new DeckLabel(NULL, pages, decksLayout);
     connect(loadLabel, SIGNAL(clicked()), this, SLOT(chooseCreateLoad()));
     decksLayout->addWidget(loadLabel, 0, 0);
 
@@ -104,12 +104,13 @@ void DecksView::goBack()
 
 void DecksView::addNewDeckLabel(Deck* insDeck)
 {
-    decks.push_back(insDeck);
-    DeckLabel* insLabel = new DeckLabel(insDeck, pages);
+    //decks.push_back(insDeck);
+    DeckLabel* insLabel = new DeckLabel(insDeck, pages, decksLayout);
     insDeck->label = insLabel;
 
     connect(insLabel, SIGNAL(clicked()) , insLabel, SLOT(openDeck()));
-    int i = decks.size()-1;
+    //int i = decks.size()-1;
+    int i = decksLayout->count()-1;
 
     QWidget* last = decksLayout->itemAtPosition(int(i/5),i%5)->widget();
     decksLayout->addWidget(insLabel,int(i/5),i%5);

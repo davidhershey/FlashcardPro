@@ -4,7 +4,7 @@
 #include "statsview.h"
 #include "builder.h"
 
-DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
+DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in,QWidget *parent)
 {
     pages = pages_in;
     deck = _deck;

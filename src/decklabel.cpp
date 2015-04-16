@@ -4,12 +4,14 @@
 #include "deckmenu.h"
 
 
-DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent ):
+DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QGridLayout* grid_in, QWidget * parent ):
     QLabel(parent)
 
   {
       deck = deck_in;
       pages = pages_in;
+      grid = grid_in;
+
       if(deck == NULL)
       {
           QPixmap pm(":/add_deck.png");
@@ -22,13 +24,6 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
       }
       else
       {
-          /*QPixmap pm(":/deck.png");
-          QPalette palette;
-          palette.setBrush(this->backgroundRole(), QBrush(pm));
-          this->setFlat(true);
-          this->setAutoFillBackground(true);
-          this->setPalette(palette);
-          this->setText(deck->deck_name);*/
           QFont naxa;
           QFontDatabase db;
           naxa = db.font("Nexa Light","Normal",12);
@@ -68,34 +63,6 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
     if(hover) this->setStyleSheet("border: 1px solid; background-color: white; qproperty-alignment: AlignCenter; border-radius: 8px;");
   }
 
-  void DeckLabel::chooseNext()
-  {
-      QDialog* chooseDialog = new QDialog();
-      QVBoxLayout* layout = new QVBoxLayout();
-      QPushButton* studyButton = new QPushButton("Study Deck");
-      QPushButton* saveButton = new QPushButton("Save Deck");
-      QPushButton* cancButton = new QPushButton("Cancel");
-      connect(studyButton, SIGNAL(clicked()), this, SLOT(initStudyArea()));
-      connect(saveButton, SIGNAL(clicked()), this, SLOT(saveDeck()));
-      connect(studyButton, SIGNAL(clicked()), chooseDialog, SLOT(accept()));
-      connect(saveButton, SIGNAL(clicked()), chooseDialog, SLOT(accept()));
-      connect(cancButton, SIGNAL(clicked()), chooseDialog, SLOT(reject()));
-      layout->addWidget(studyButton);
-      layout->addWidget(saveButton);
-      layout->addWidget(cancButton);
-      chooseDialog->setLayout(layout);
-      chooseDialog->exec();
-      return;
-  }
-
-  /*void DeckLabel::initStudyArea()
-  {
-      StudyArea* area = new StudyArea(deck, pages);
-      int index = pages->addWidget(area);
-      pages->setCurrentIndex(index);
-//      area->exec();
-  }*/
-
   void DeckLabel::openDeck()
   {
       DeckMenu *dm = new DeckMenu(deck,pages);
@@ -110,7 +77,24 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
                                                       "");
      deck->saveDeck(fileName);
   }
+
 void DeckLabel::updateName(){
     if(deck == NULL) return;
     this->setText(deck->deck_name);
+}
+
+void DeckLabel::SELFDESTRUCT()
+{
+    int index = grid->indexOf(this);
+    QWidget* del = grid->itemAt(index)->widget();
+
+    //reposition everything in decksLayout
+    for(int i = index+1; i < grid->count(); ++i)
+    {
+        QWidget* move = grid->itemAtPosition(int(i/5),i%5)->widget();
+        grid->addWidget(move, int((i-1)/5),(i-1)%5);
+    }
+    grid->removeWidget(del);
+    delete deck;
+    delete this;
 }

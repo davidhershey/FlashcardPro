@@ -90,9 +90,11 @@ void StudyArea::incorrect()
 void StudyArea::goBack()
 {
 
+    DeckMenu* newMen = new DeckMenu(deck, pages);
+
     pages->removeWidget(pages->currentWidget());
     pages->removeWidget(pages->currentWidget());
-    int index = pages->addWidget(new DeckMenu(deck, pages));
+    int index = pages->addWidget(newMen);
     pages->setCurrentIndex(index);
 
 }

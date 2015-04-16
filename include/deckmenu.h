@@ -5,20 +5,20 @@
 #include <QWidget>
 #include <QStackedWidget>
 #include "deck.h"
-#include "decklabel.h"
 #include "scoreplot.h"
+#include "decklabel.h"
+
 class ScorePlot;
 
 class DeckMenu : public QWidget
 {
     Q_OBJECT
 public:
-    explicit DeckMenu(Deck* _deck, QStackedWidget *pages_in, QWidget *parent = 0);
+    DeckMenu(Deck* _deck, QStackedWidget *pages_in,QWidget *parent = 0);
     QLabel* title;
     ~DeckMenu();
     void updateMenu();
     ScorePlot *sp;
-
 signals:
 
 public slots:

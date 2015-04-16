@@ -237,6 +237,7 @@ void Deck::SELFDESTRUCT()
     QDir *dir = user->getDirectory();
     QFile *fil = new QFile(dir->absoluteFilePath(deck_name+".dek"));
     fil->remove();
+    label->SELFDESTRUCT();
 }
 
 void Deck::autoSave()
