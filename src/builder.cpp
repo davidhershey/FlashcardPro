@@ -1,5 +1,6 @@
 #include "builder.h"
 #include "flashcard.h"
+#include "deckmenu.h"
 
 builder::builder(QStackedWidget* pages_in, DecksView* decksview_in)
 {
@@ -247,4 +248,6 @@ void builder::done_edit_slot(){
 
     decksave->updateDeck(_cards);
     decksave->deck_name = deck_title->toPlainText();
+    decksave->label->updateName();
+    decksave->menu->title->setText(decksave->deck_name);
 }

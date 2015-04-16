@@ -10,6 +10,10 @@
 #include <QString>
 #include <QGraphicsWidget>
 #include "flashcard.h"
+
+class DeckLabel;    //forward declaration
+class DeckMenu;     //forward declaration
+
 class Deck
 {
 public:
@@ -24,6 +28,8 @@ public:
     QString saveText;
     Flashcard* getTop();
     int getDeckScore();
+    DeckLabel* label;
+    DeckMenu* menu;
 
     void shuffle();
     void saveDeck(QString fileName);
