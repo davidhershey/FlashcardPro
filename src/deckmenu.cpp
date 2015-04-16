@@ -46,7 +46,7 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 
     sp = new ScorePlot(deck);
     mainLayout->addWidget(sp);
-    sp->setMinimumSize(500, 300);
+    sp->setMinimumSize(this->width()*.8, 300);
 
     QPushButton *study = new QPushButton("Study Deck");
     mainLayout->addWidget(study, 0, Qt::AlignCenter);
@@ -60,7 +60,7 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
     mainLayout->addWidget(deleteDeck, 0, Qt::AlignCenter);
     connect(deleteDeck,SIGNAL(clicked()), this, SLOT(deleteDeck()));
 
-    mainLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/5));
+//    mainLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/5));
 
     this->setLayout(mainLayout);
 }
