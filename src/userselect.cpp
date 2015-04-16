@@ -54,7 +54,6 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
     connect(newUserButton, SIGNAL(clicked()), this, SLOT(newUserCallback()));
     newUserButton->setMinimumSize(250,50);
     newUserButton->setMaximumSize(300,100);
-    newUserButton->setStyleSheet("background-color: rgb(250,236,191);");
     newUserButton->setFont(naxa3);
     layout->addWidget(newUserButton, 0, Qt::AlignHCenter);
 
