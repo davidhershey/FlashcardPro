@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "tutorial.h"
 
 using namespace std;
 
@@ -169,8 +170,12 @@ void LogIn::addNewUser(User* user)
     //pages->setCurrentIndex(pages->currentIndex()-1);
 
     //Display success
-    QMessageBox msgBox;
+    /*QMessageBox msgBox;
     msgBox.setText("Successfully Created User!");
     msgBox.setFixedSize(500,200);
-    msgBox.exec();
+    msgBox.exec();*/
+
+    //Display tutorial
+    Tutorial* tut = new Tutorial();
+    tut->exec();
 }

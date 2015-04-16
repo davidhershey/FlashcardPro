@@ -35,7 +35,8 @@ SOURCES +=     src/main.cpp \
     src/scoreplot.cpp \
     src/newuser.cpp \
     src/user.cpp \
-    src/userselect.cpp
+    src/userselect.cpp \
+    src/tutorial.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
@@ -56,7 +57,8 @@ HEADERS  +=   include/mainwindow.h \
     include/scoreplot.h \
     include/newuser.h \
     include/user.h \
-    include/userselect.h
+    include/userselect.h \
+    include/tutorial.h
 
 DISTFILES += \
     info.txt \
