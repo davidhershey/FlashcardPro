@@ -2,9 +2,10 @@
 #include "decklabel.h"
 #include "builder.h"
 
-DecksView::DecksView(QStackedWidget* pages_in)
+DecksView::DecksView(QStackedWidget* pages_in, User *_user)
     :QFrame()
 {
+    user = _user;
     pages = pages_in;
     QVBoxLayout* mainLayout = new QVBoxLayout();
     QHBoxLayout* topBar = new QHBoxLayout();
@@ -42,10 +43,27 @@ DecksView::DecksView(QStackedWidget* pages_in)
     mainLayout->addWidget(scrollArea);
     setMinimumSize(700,500);
     setLayout(mainLayout);
+    getUserDecks();
 }
 
 DecksView::~DecksView()
 {
+
+}
+
+void DecksView::getUserDecks()
+{
+    QStringList list =  user->getDeckFiles();
+    for (QStringList::iterator it = list.begin();it != list.end(); ++it) {
+        QString fileName = *it;
+        QFile myFile(fileName);
+        myFile.open(QIODevice::ReadOnly);
+        int fileHandle = myFile.handle();
+        qDebug() << fileName;
+        FILE* fh = fdopen(fileHandle, "rb");
+        Deck* insDeck = new Deck(fh);
+        addNewDeckLabel(insDeck);
+    }
 
 }
 
@@ -73,8 +91,9 @@ void DecksView::loadDeck()
 
 void DecksView::goBack()
 {
+    int index = pages->currentIndex();
     pages->removeWidget(this);
-    //pages->setCurrentIndex(pages->currentIndex() - 1);
+    pages->setCurrentIndex(index - 1);
 }
 
 void DecksView::addNewDeckLabel(Deck* insDeck)
