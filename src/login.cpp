@@ -33,6 +33,7 @@ void LogIn::nextPage()
 
     if(curUsers.empty()){
         int index = pages->addWidget(new NewUser(pages, this));
+        pages->setCurrentIndex(index);
         return;
     }
 
