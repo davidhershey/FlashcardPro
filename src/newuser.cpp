@@ -45,7 +45,7 @@ void NewUser::submit()
 
     QString pathName = QFileDialog::getExistingDirectory(this,tr("Select a Save Directory"), QDir::homePath());
 //    QDir dir(pathName);
-    User* newUser = new User(username->toPlainText(),
+    User* newUser = new User(validName(),
                              pathName
                              );
 
@@ -79,6 +79,11 @@ bool NewUser::invalidUsername()
 bool NewUser::passwordMismatch()
 {
     return false;
+}
+
+QString NewUser::validName()
+{
+    return username->toPlainText().replace(" ","_");
 }
 
 void NewUser::showError(QString text)

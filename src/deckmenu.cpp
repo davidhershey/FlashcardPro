@@ -3,7 +3,7 @@
 #include "studyarea.h"
 #include "statsview.h"
 #include "builder.h"
-
+#include "scoreplot.h"
 DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 {
     pages = pages_in;
@@ -33,7 +33,11 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
     quick_stats->setAlignment(Qt::AlignHCenter);
     rightLayout->addWidget(quick_stats, 0, Qt::AlignCenter);
 
-    rightLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/4));
+
+    ScorePlot *sp = new ScorePlot(deck);
+    rightLayout->addWidget(sp);
+
+    rightLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/8));
     QPushButton *study = new QPushButton("Study Deck");
     rightLayout->addWidget(study, 0, Qt::AlignCenter);
     connect(study,SIGNAL(clicked()),this,SLOT(study()));

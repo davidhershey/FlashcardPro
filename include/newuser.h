@@ -20,6 +20,7 @@ public:
     bool anyEmpty();
     bool invalidUsername();
     bool passwordMismatch();
+    QString validName();
     void showError(QString text);
 
 public slots:

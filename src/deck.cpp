@@ -116,7 +116,7 @@ void Deck::parseInfo(QString* line)
 
     read = "";
     ++i;
-    i++;
+//    i++;
     while(i < line->size()) //&& line->at(i).isDigit())
     {
         read = "";
@@ -127,7 +127,7 @@ void Deck::parseInfo(QString* line)
             ++i;
             ++j;
         }
-        i+=2;
+        i+=1;
         scoreTimes.push_back(read.toInt());
         qDebug() << read.toInt();
     }
