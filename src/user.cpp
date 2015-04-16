@@ -3,11 +3,18 @@
 #include <fstream>
 #include <iostream>
 
+
+QDir *User::getDirectory() const
+{
+    return directory;
+}
+
+
 User::User(QString usrn_in,QString _dir)
 {
     username = usrn_in;
     dir = _dir;
-//    dir += "/" + username + "_FCP";
+    //    dir += "/" + username + "_FCP";
     directory = new QDir(dir);
     if(directory->exists(username + "_FCP")){}
     else directory->mkdir(username + "_FCP");

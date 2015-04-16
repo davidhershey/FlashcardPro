@@ -969,6 +969,11 @@ release\moc_studyarea.cpp: F:\Qt\5.4\msvc2013_64\include\QtWidgets\QWidget \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		include\decklabel.h \
+		include\deckmenu.h \
 		include\studyarea.h
 	F:\Qt\5.4\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IF:/Qt/5.4/msvc2013_64/mkspecs/win32-msvc2013 -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/src -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/include -IF:/Qt/5.4/msvc2013_64/include -IF:/Qt/5.4/msvc2013_64/include/QtOpenGL -IF:/Qt/5.4/msvc2013_64/include/QtWidgets -IF:/Qt/5.4/msvc2013_64/include/QtGui -IF:/Qt/5.4/msvc2013_64/include/QtANGLE -IF:/Qt/5.4/msvc2013_64/include/QtCore include\studyarea.h -o release\moc_studyarea.cpp
 
@@ -1894,6 +1899,11 @@ release\moc_decklabel.cpp: F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		include\decklabel.h \
+		include\deckmenu.h \
 		include\decklabel.h
 	F:\Qt\5.4\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IF:/Qt/5.4/msvc2013_64/mkspecs/win32-msvc2013 -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/src -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/include -IF:/Qt/5.4/msvc2013_64/include -IF:/Qt/5.4/msvc2013_64/include/QtOpenGL -IF:/Qt/5.4/msvc2013_64/include/QtWidgets -IF:/Qt/5.4/msvc2013_64/include/QtGui -IF:/Qt/5.4/msvc2013_64/include/QtANGLE -IF:/Qt/5.4/msvc2013_64/include/QtCore include\decklabel.h -o release\moc_decklabel.cpp
 
@@ -2015,6 +2025,12 @@ release\moc_decksview.cpp: F:\Qt\5.4\msvc2013_64\include\QtWidgets\QFrame \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialog.h \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
 		include\decklabel.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgetsDepends \
@@ -2033,8 +2049,6 @@ release\moc_decksview.cpp: F:\Qt\5.4\msvc2013_64\include\QtWidgets\QFrame \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibraryinfo.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qdatetime.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qbuffer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qdiriterator.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileselector.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
@@ -2354,13 +2368,13 @@ release\moc_decksview.cpp: F:\Qt\5.4\msvc2013_64\include\QtWidgets\QFrame \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qspinbox.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplashscreen.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplitter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedwidget.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstatusbar.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtextbrowser.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbar.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbox.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbutton.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtwidgetsversion.h \
+		include\deckmenu.h \
 		include\decksview.h
 	F:\Qt\5.4\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IF:/Qt/5.4/msvc2013_64/mkspecs/win32-msvc2013 -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/src -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/include -IF:/Qt/5.4/msvc2013_64/include -IF:/Qt/5.4/msvc2013_64/include/QtOpenGL -IF:/Qt/5.4/msvc2013_64/include/QtWidgets -IF:/Qt/5.4/msvc2013_64/include/QtGui -IF:/Qt/5.4/msvc2013_64/include/QtANGLE -IF:/Qt/5.4/msvc2013_64/include/QtCore include\decksview.h -o release\moc_decksview.cpp
 
@@ -2826,7 +2840,10 @@ release\moc_login.cpp: F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\decklabel.h \
+		include\deckmenu.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
 		include\login.h
 	F:\Qt\5.4\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IF:/Qt/5.4/msvc2013_64/mkspecs/win32-msvc2013 -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/src -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/include -IF:/Qt/5.4/msvc2013_64/include -IF:/Qt/5.4/msvc2013_64/include/QtOpenGL -IF:/Qt/5.4/msvc2013_64/include/QtWidgets -IF:/Qt/5.4/msvc2013_64/include/QtGui -IF:/Qt/5.4/msvc2013_64/include/QtANGLE -IF:/Qt/5.4/msvc2013_64/include/QtCore include\login.h -o release\moc_login.cpp
 
@@ -3975,6 +3992,10 @@ release\moc_deckmenu.cpp: F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialog.h \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
 		include\decklabel.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgetsDepends \
@@ -3993,8 +4014,6 @@ release\moc_deckmenu.cpp: F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibraryinfo.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qdatetime.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qbuffer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qdiriterator.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileselector.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\QStringList \
@@ -4322,6 +4341,7 @@ release\moc_deckmenu.cpp: F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbox.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbutton.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtwidgetsversion.h \
+		include\deckmenu.h \
 		include\deckmenu.h
 	F:\Qt\5.4\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IF:/Qt/5.4/msvc2013_64/mkspecs/win32-msvc2013 -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/src -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/include -IF:/Qt/5.4/msvc2013_64/include -IF:/Qt/5.4/msvc2013_64/include/QtOpenGL -IF:/Qt/5.4/msvc2013_64/include/QtWidgets -IF:/Qt/5.4/msvc2013_64/include/QtGui -IF:/Qt/5.4/msvc2013_64/include/QtANGLE -IF:/Qt/5.4/msvc2013_64/include/QtCore include\deckmenu.h -o release\moc_deckmenu.cpp
 
@@ -4786,6 +4806,11 @@ release\moc_statsview.cpp: F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		include\decklabel.h \
+		include\deckmenu.h \
 		include\statsview.h
 	F:\Qt\5.4\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IF:/Qt/5.4/msvc2013_64/mkspecs/win32-msvc2013 -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/src -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/include -IF:/Qt/5.4/msvc2013_64/include -IF:/Qt/5.4/msvc2013_64/include/QtOpenGL -IF:/Qt/5.4/msvc2013_64/include/QtWidgets -IF:/Qt/5.4/msvc2013_64/include/QtGui -IF:/Qt/5.4/msvc2013_64/include/QtANGLE -IF:/Qt/5.4/msvc2013_64/include/QtCore include\statsview.h -o release\moc_statsview.cpp
 
@@ -5255,7 +5280,11 @@ release\moc_builder.cpp: F:\Qt\5.4\msvc2013_64\include\QtWidgets\Qtwidgets \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
 		include\decklabel.h \
+		include\deckmenu.h \
 		include\builder.h
 	F:\Qt\5.4\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IF:/Qt/5.4/msvc2013_64/mkspecs/win32-msvc2013 -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/src -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/include -IF:/Qt/5.4/msvc2013_64/include -IF:/Qt/5.4/msvc2013_64/include/QtOpenGL -IF:/Qt/5.4/msvc2013_64/include/QtWidgets -IF:/Qt/5.4/msvc2013_64/include/QtGui -IF:/Qt/5.4/msvc2013_64/include/QtANGLE -IF:/Qt/5.4/msvc2013_64/include/QtCore include\builder.h -o release\moc_builder.cpp
 
@@ -6230,6 +6259,11 @@ release\moc_scoreplot.cpp: F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		include\decklabel.h \
+		include\deckmenu.h \
 		include\scoreplot.h
 	F:\Qt\5.4\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IF:/Qt/5.4/msvc2013_64/mkspecs/win32-msvc2013 -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/src -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/include -IF:/Qt/5.4/msvc2013_64/include -IF:/Qt/5.4/msvc2013_64/include/QtOpenGL -IF:/Qt/5.4/msvc2013_64/include/QtWidgets -IF:/Qt/5.4/msvc2013_64/include/QtGui -IF:/Qt/5.4/msvc2013_64/include/QtANGLE -IF:/Qt/5.4/msvc2013_64/include/QtCore include\scoreplot.h -o release\moc_scoreplot.cpp
 
@@ -6697,6 +6731,9 @@ release\moc_newuser.cpp: F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget 
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\decklabel.h \
+		include\deckmenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
 		include\newuser.h
 	F:\Qt\5.4\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IF:/Qt/5.4/msvc2013_64/mkspecs/win32-msvc2013 -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/src -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/include -IF:/Qt/5.4/msvc2013_64/include -IF:/Qt/5.4/msvc2013_64/include/QtOpenGL -IF:/Qt/5.4/msvc2013_64/include/QtWidgets -IF:/Qt/5.4/msvc2013_64/include/QtGui -IF:/Qt/5.4/msvc2013_64/include/QtANGLE -IF:/Qt/5.4/msvc2013_64/include/QtCore include\newuser.h -o release\moc_newuser.cpp
 
@@ -6815,8 +6852,359 @@ release\moc_userselect.cpp: F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidg
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialog.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QButtonGroup \
+		include\decklabel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgetsDepends \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QtCore \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QtCoreDepends \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qanimationgroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qparallelanimationgroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpauseanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpropertyanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qvariantanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qeasingcurve.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsequentialanimationgroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtextcodec.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qendian.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibraryinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdatetime.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbuffer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdiriterator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileselector.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QStringList \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfilesystemwatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlockfile.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qloggingcategory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qprocess.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qresource.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsavefile.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsettings.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstandardpaths.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstorageinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtemporarydir.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QScopedPointer \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtemporaryfile.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractitemmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractproxymodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qidentityproxymodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qitemselectionmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsortfilterproxymodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstringlistmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonarray.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonvalue.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsondocument.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstracteventdispatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qeventloop.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractnativeeventfilter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbasictimer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcoreapplication.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmath.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmetaobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimedata.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qobjectcleanuphandler.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpointer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsharedmemory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsignalmapper.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsocketnotifier.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsystemsemaphore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtranslator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qwineventnotifier.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimedatabase.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimetype.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfactoryinterface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibrary.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpluginloader.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\quuid.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractstate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstracttransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qeventtransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfinalstate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qhistorystate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsignaltransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstatemachine.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qexception.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfutureinterface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qrunnable.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qresultstore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuturesynchronizer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuturewatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qreadwritelock.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsemaphore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qthread.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qthreadpool.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qthreadstorage.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qwaitcondition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qarraydataops.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qarraydatapointer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbitarray.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbytearraymatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcache.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcollator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcommandlineoption.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcommandlineparser.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcryptographichash.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qelapsedtimer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlinkedlist.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmessageauthenticationcode.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qqueue.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qregularexpression.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qscopedvaluerollback.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstack.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtextboundaryfinder.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimeline.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimezone.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qxmlstream.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtcoreversion.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QtGui \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QtGuiDepends \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessible.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessiblebridge.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessibleobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessibleplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qbitmap.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qicon.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qiconengine.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qiconengineplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qimageiohandler.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qimagereader.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qimagewriter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qmovie.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpicture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpictureformatplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpixmapcache.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qstandarditemmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qclipboard.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qdrag.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericpluginfactory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qguiapplication.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qinputmethod.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qoffscreensurface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsurface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsurfaceformat.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglcontext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QSurfaceFormat \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengl.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qt_windows.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES3\gl3.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES3\gl3platform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\KHR\khrplatform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES2\gl2.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES2\gl2platform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengles2ext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglversionfunctions.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QPaintDeviceWindow \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpaintdevicewindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QWindow \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QEvent \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QMargins \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QRect \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QPaintDevice \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QOpenGLContext \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QImage \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qrasterwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qscreen.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QList \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QSize \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QSizeF \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QTransform \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsessionmanager.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qstylehints.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericmatrix.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qmatrix4x4.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qvector3d.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qvector4d.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qquaternion.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglbuffer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengldebug.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglframebufferobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglfunctions.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglpaintdevice.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglpixeltransferoptions.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QSharedDataPointer \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglshaderprogram.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengltexture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengltimerquery.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglvertexarrayobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qbackingstore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagedpaintdevice.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagelayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagesize.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpaintengine.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpainter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextoption.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpen.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpdfwriter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qabstracttextdocumentlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextformat.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qglyphrun.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qrawfont.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontdatabase.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextcursor.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocument.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qstatictext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsyntaxhighlighter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocumentfragment.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocumentwriter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextlist.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtexttable.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qdesktopservices.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qvalidator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtguiversion.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\complexwidgets.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblewidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractitemview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractitemdelegate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleoption.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractspinbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qslider.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractslider.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyle.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtabbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtabwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qrubberband.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\itemviews.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qheaderview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblemenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblewidgets.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QPointer \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QPair \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\rangecontrols.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\simplewidgets.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolordialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qerrormessage.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfiledialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfilesystemmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfontdialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qinputdialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlineedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmessagebox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qprogressdialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwizard.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicseffect.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsanchorlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicslayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsgridlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsitemanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicslinearlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsproxywidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicssceneevent.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicstransform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QVector3D \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QMatrix4x4 \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollarea.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolumnview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdatawidgetmapper.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdirmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfileiconprovider.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qitemdelegate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qitemeditorfactory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlistview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlistwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleditemdelegate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtableview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtablewidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreeview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreewidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreewidgetitemiterator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaction.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qactiongroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qapplication.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdesktopwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qboxlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlayoutitem.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgridlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qformlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QLayout \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgesture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgesturerecognizer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qopenglwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qshortcut.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtooltip.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwhatsthis.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwidgetaction.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qkeyeventtransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmouseeventtransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcommonstyle.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdrawutil.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qproxystyle.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QCommonStyle \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstylefactory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstylepainter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolormap.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcompleter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscroller.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QPointF \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QScrollerProperties \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollerproperties.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QMetaType \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QVariant \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsystemtrayicon.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundogroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundostack.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundoview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractbutton.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qbuttongroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcalendarwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcheckbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcombobox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcommandlinkbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qpushbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdatetimeedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdial.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialogbuttonbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdockwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfocusframe.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfontcombobox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgroupbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qkeysequenceedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlabel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlcdnumber.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmainwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmdiarea.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmdisubwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmenubar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qplaintextedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtextedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qprogressbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qradiobutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsizegrip.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qspinbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplashscreen.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplitter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstatusbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtextbrowser.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtwidgetsversion.h \
+		include\deckmenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QButtonGroup \
+		include\login.h \
 		include\userselect.h
 	F:\Qt\5.4\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IF:/Qt/5.4/msvc2013_64/mkspecs/win32-msvc2013 -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/src -IF:/Users/David/Documents/School/EECS493/Group/FlashcardPro/include -IF:/Qt/5.4/msvc2013_64/include -IF:/Qt/5.4/msvc2013_64/include/QtOpenGL -IF:/Qt/5.4/msvc2013_64/include/QtWidgets -IF:/Qt/5.4/msvc2013_64/include/QtGui -IF:/Qt/5.4/msvc2013_64/include/QtANGLE -IF:/Qt/5.4/msvc2013_64/include/QtCore include\userselect.h -o release\moc_userselect.cpp
 
@@ -7420,9 +7808,11 @@ release\mainwindow.obj: src\mainwindow.cpp include\mainwindow.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
-		include\decklabel.h \
-		include\login.h \
 		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		include\decklabel.h \
+		include\deckmenu.h \
+		include\login.h \
 		include\mainmenu.h
 
 release\flashcard.obj: src\flashcard.cpp include\FlipWidget.h \
@@ -8011,6 +8401,361 @@ release\deck.obj: src\deck.cpp include\deck.h \
 		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontmetrics.h \
 		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontinfo.h \
 		F:\Qt\5.4\msvc2013_64\include\QtGui\qcursor.h \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qframe.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
+		include\decklabel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgetsDepends \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QtCore \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QtCoreDepends \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qanimationgroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qparallelanimationgroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpauseanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpropertyanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qvariantanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qeasingcurve.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsequentialanimationgroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtextcodec.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qendian.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibraryinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdatetime.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbuffer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdiriterator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileselector.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QStringList \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfilesystemwatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlockfile.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qloggingcategory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qprocess.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qresource.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsavefile.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsettings.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstandardpaths.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstorageinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtemporarydir.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QScopedPointer \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtemporaryfile.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractitemmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractproxymodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qidentityproxymodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qitemselectionmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsortfilterproxymodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstringlistmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonarray.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonvalue.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsondocument.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstracteventdispatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qeventloop.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractnativeeventfilter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbasictimer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcoreapplication.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmath.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmetaobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimedata.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qobjectcleanuphandler.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpointer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsharedmemory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsignalmapper.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsocketnotifier.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsystemsemaphore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtranslator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qwineventnotifier.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimedatabase.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimetype.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfactoryinterface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibrary.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpluginloader.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\quuid.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractstate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstracttransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qeventtransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfinalstate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qhistorystate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsignaltransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstatemachine.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qexception.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfutureinterface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qrunnable.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qresultstore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuturesynchronizer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuturewatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qreadwritelock.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsemaphore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qthread.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qthreadpool.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qthreadstorage.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qwaitcondition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qarraydataops.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qarraydatapointer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbitarray.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbytearraymatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcache.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcollator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcommandlineoption.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcommandlineparser.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcryptographichash.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qelapsedtimer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlinkedlist.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmessageauthenticationcode.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qqueue.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qregularexpression.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qscopedvaluerollback.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstack.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtextboundaryfinder.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimeline.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimezone.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qxmlstream.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtcoreversion.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QtGui \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QtGuiDepends \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessible.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessiblebridge.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessibleobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessibleplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qbitmap.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qicon.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qiconengine.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qiconengineplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qimageiohandler.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qimagereader.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qimagewriter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qmovie.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpicture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpictureformatplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpixmapcache.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qstandarditemmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qclipboard.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qdrag.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericpluginfactory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qguiapplication.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qinputmethod.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qoffscreensurface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsurface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsurfaceformat.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglcontext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QSurfaceFormat \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengl.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qt_windows.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES3\gl3.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES3\gl3platform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\KHR\khrplatform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES2\gl2.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES2\gl2platform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengles2ext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglversionfunctions.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QPaintDeviceWindow \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpaintdevicewindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QWindow \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QEvent \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QMargins \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QRect \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QPaintDevice \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QOpenGLContext \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QImage \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qrasterwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qscreen.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QList \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QSize \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QSizeF \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QTransform \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsessionmanager.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qstylehints.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericmatrix.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qmatrix4x4.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qvector3d.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qvector4d.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qquaternion.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglbuffer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengldebug.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglframebufferobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglfunctions.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglpaintdevice.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglpixeltransferoptions.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QSharedDataPointer \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglshaderprogram.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengltexture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengltimerquery.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglvertexarrayobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qbackingstore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagedpaintdevice.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagelayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagesize.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpaintengine.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpainter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextoption.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpen.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpdfwriter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qabstracttextdocumentlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextformat.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qglyphrun.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qrawfont.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontdatabase.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextcursor.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocument.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qstatictext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsyntaxhighlighter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocumentfragment.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocumentwriter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextlist.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtexttable.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qdesktopservices.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qvalidator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtguiversion.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\complexwidgets.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblewidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractitemview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractitemdelegate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleoption.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractspinbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qslider.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractslider.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyle.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtabbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtabwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qrubberband.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\itemviews.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qheaderview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblemenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblewidgets.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QPointer \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QPair \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\rangecontrols.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\simplewidgets.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolordialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qerrormessage.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfiledialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfilesystemmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfontdialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qinputdialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlineedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmessagebox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qprogressdialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwizard.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicseffect.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsanchorlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicslayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsgridlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsitemanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicslinearlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsproxywidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicssceneevent.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicstransform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QVector3D \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QMatrix4x4 \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollarea.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolumnview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdatawidgetmapper.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdirmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfileiconprovider.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qitemdelegate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qitemeditorfactory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlistview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlistwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleditemdelegate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtableview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtablewidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreeview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreewidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreewidgetitemiterator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaction.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qactiongroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qapplication.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdesktopwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qboxlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlayoutitem.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgridlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qformlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QLayout \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgesture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgesturerecognizer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qopenglwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qshortcut.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtooltip.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwhatsthis.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwidgetaction.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qkeyeventtransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmouseeventtransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcommonstyle.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdrawutil.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qproxystyle.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QCommonStyle \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstylefactory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstylepainter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolormap.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcompleter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscroller.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QPointF \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QScrollerProperties \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollerproperties.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QMetaType \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QVariant \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsystemtrayicon.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundogroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundostack.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundoview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qbuttongroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcalendarwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcheckbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcombobox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcommandlinkbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qpushbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdatetimeedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdial.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialogbuttonbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdockwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfocusframe.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfontcombobox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgroupbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qkeysequenceedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlabel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlcdnumber.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmainwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmdiarea.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmdisubwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmenubar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qplaintextedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtextedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qprogressbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qradiobutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsizegrip.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qspinbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplashscreen.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplitter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstatusbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtextbrowser.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtwidgetsversion.h \
+		include\deckmenu.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\QTextStream \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\QDebug
 
@@ -8475,7 +9220,12 @@ release\studyarea.obj: src\studyarea.cpp include\studyarea.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\QString \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		include\decklabel.h \
+		include\deckmenu.h
 
 release\imagebox.obj: src\imagebox.cpp include\imagebox.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QMenu \
@@ -9399,10 +10149,12 @@ release\decklabel.obj: src\decklabel.cpp include\decklabel.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QMouseEvent \
-		include\studyarea.h \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
 		include\deckmenu.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QMouseEvent \
+		include\studyarea.h
 
 release\decksview.obj: src\decksview.cpp include\decksview.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QFrame \
@@ -9523,6 +10275,12 @@ release\decksview.obj: src\decksview.cpp include\decksview.h \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialog.h \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
 		include\decklabel.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgetsDepends \
@@ -9541,8 +10299,6 @@ release\decksview.obj: src\decksview.cpp include\decksview.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibraryinfo.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qdatetime.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qbuffer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qdiriterator.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileselector.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
@@ -9862,13 +10618,13 @@ release\decksview.obj: src\decksview.cpp include\decksview.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qspinbox.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplashscreen.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplitter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedwidget.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstatusbar.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtextbrowser.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbar.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbox.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbutton.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtwidgetsversion.h \
+		include\deckmenu.h \
 		include\builder.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\Qtwidgets \
 		include\builderitem.h
@@ -10336,7 +11092,10 @@ release\login.obj: src\login.cpp include\login.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\decklabel.h \
+		include\deckmenu.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
 		include\newuser.h \
 		include\userselect.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QButtonGroup
@@ -11837,6 +12596,10 @@ release\deckmenu.obj: src\deckmenu.cpp include\deckmenu.h \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialog.h \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
 		include\decklabel.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgetsDepends \
@@ -11855,8 +12618,6 @@ release\deckmenu.obj: src\deckmenu.cpp include\deckmenu.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibraryinfo.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qdatetime.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qbuffer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qdiriterator.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileselector.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\QStringList \
@@ -12185,7 +12946,13 @@ release\deckmenu.obj: src\deckmenu.cpp include\deckmenu.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbutton.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtwidgetsversion.h \
 		include\studyarea.h \
-		include\statsview.h
+		include\statsview.h \
+		include\builder.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\Qtwidgets \
+		include\builderitem.h \
+		include\decksview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QFrame \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGridLayout
 
 release\statsview.obj: src\statsview.cpp include\statsview.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
@@ -12649,6 +13416,11 @@ release\statsview.obj: src\statsview.cpp include\statsview.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		include\decklabel.h \
+		include\deckmenu.h \
 		include\scoreplot.h \
 		include\qcustomplot.h \
 		F:\Qt\5.4\msvc2013_64\include\QtGui\QPainter \
@@ -13144,7 +13916,11 @@ release\builder.obj: src\builder.cpp include\builder.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
-		include\decklabel.h
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		include\decklabel.h \
+		include\deckmenu.h
 
 release\builderitem.obj: src\builderitem.cpp include\builderitem.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
@@ -14573,7 +15349,12 @@ release\scoreplot.obj: src\scoreplot.cpp include\scoreplot.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\QFile \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\user.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		include\decklabel.h \
+		include\deckmenu.h
 
 release\newuser.obj: src\newuser.cpp include\newuser.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
@@ -15039,7 +15820,10 @@ release\newuser.obj: src\newuser.cpp include\newuser.h \
 		F:\Qt\5.4\msvc2013_64\include\QtCore\QString \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
 		include\flashcard.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		include\decklabel.h \
+		include\deckmenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir
 
 release\user.obj: src\user.cpp include\user.h \
 		include\deck.h \
@@ -15153,16 +15937,480 @@ release\user.obj: src\user.cpp include\user.h \
 		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontmetrics.h \
 		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontinfo.h \
 		F:\Qt\5.4\msvc2013_64\include\QtGui\qcursor.h \
+		include\decklabel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgetsDepends \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QtCore \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QtCoreDepends \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qanimationgroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qparallelanimationgroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpauseanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpropertyanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qvariantanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qeasingcurve.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsequentialanimationgroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtextcodec.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qendian.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibraryinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdatetime.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbuffer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdiriterator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileselector.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QStringList \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfilesystemwatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlockfile.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qloggingcategory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qprocess.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qresource.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsavefile.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsettings.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstandardpaths.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstorageinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtemporarydir.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QScopedPointer \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtemporaryfile.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractitemmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractproxymodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qidentityproxymodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qitemselectionmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsortfilterproxymodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstringlistmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonarray.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonvalue.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsondocument.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstracteventdispatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qeventloop.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractnativeeventfilter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbasictimer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcoreapplication.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmath.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmetaobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimedata.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qobjectcleanuphandler.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpointer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsharedmemory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsignalmapper.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsocketnotifier.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsystemsemaphore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtranslator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qwineventnotifier.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimedatabase.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimetype.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfactoryinterface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibrary.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpluginloader.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\quuid.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractstate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstracttransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qeventtransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfinalstate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qhistorystate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsignaltransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstatemachine.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qexception.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfutureinterface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qrunnable.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qresultstore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuturesynchronizer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuturewatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qreadwritelock.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsemaphore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qthread.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qthreadpool.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qthreadstorage.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qwaitcondition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qarraydataops.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qarraydatapointer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbitarray.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbytearraymatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcache.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcollator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcommandlineoption.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcommandlineparser.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcryptographichash.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qelapsedtimer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlinkedlist.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmessageauthenticationcode.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qqueue.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qregularexpression.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qscopedvaluerollback.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstack.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtextboundaryfinder.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimeline.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimezone.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qxmlstream.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtcoreversion.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QtGui \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QtGuiDepends \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessible.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessiblebridge.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessibleobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessibleplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qbitmap.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qicon.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qiconengine.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qiconengineplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qimageiohandler.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qimagereader.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qimagewriter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qmovie.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpicture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpictureformatplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpixmapcache.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qstandarditemmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qclipboard.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qdrag.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericpluginfactory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qguiapplication.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qinputmethod.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qoffscreensurface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsurface.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsurfaceformat.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglcontext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QSurfaceFormat \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengl.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qt_windows.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES3\gl3.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES3\gl3platform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\KHR\khrplatform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES2\gl2.h \
+		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES2\gl2platform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengles2ext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglversionfunctions.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QPaintDeviceWindow \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpaintdevicewindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QWindow \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QEvent \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QMargins \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QRect \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QPaintDevice \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QOpenGLContext \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QImage \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qrasterwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qscreen.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QList \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QSize \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QSizeF \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QTransform \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsessionmanager.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qstylehints.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericmatrix.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qmatrix4x4.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qvector3d.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qvector4d.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qquaternion.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglbuffer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengldebug.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglframebufferobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglfunctions.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglpaintdevice.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglpixeltransferoptions.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QSharedDataPointer \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglshaderprogram.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengltexture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengltimerquery.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglvertexarrayobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qbackingstore.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagedpaintdevice.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagelayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagesize.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpaintengine.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpainter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextoption.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpen.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpdfwriter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qabstracttextdocumentlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextformat.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qglyphrun.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qrawfont.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontdatabase.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextcursor.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocument.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qstatictext.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qsyntaxhighlighter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocumentfragment.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocumentwriter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextlist.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtexttable.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qdesktopservices.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qvalidator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtguiversion.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\complexwidgets.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblewidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractitemview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qframe.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractitemdelegate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleoption.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractspinbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qslider.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractslider.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyle.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtabbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtabwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qrubberband.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\itemviews.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qheaderview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblemenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblewidgets.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QPointer \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QPair \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\rangecontrols.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\simplewidgets.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolordialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qerrormessage.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfiledialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfilesystemmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfontdialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qinputdialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlineedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmessagebox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qprogressdialog.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwizard.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicseffect.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsanchorlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicslayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsgridlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsitemanimation.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicslinearlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsproxywidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicssceneevent.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicstransform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QVector3D \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\QMatrix4x4 \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollarea.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolumnview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdatawidgetmapper.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdirmodel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfileiconprovider.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qitemdelegate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qitemeditorfactory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlistview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlistwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleditemdelegate.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtableview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtablewidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreeview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreewidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreewidgetitemiterator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaction.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qactiongroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qapplication.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdesktopwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qboxlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlayoutitem.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgridlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qformlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QLayout \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgesture.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgesturerecognizer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qopenglwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qshortcut.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtooltip.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwhatsthis.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwidgetaction.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qkeyeventtransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmouseeventtransition.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcommonstyle.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdrawutil.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qproxystyle.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QCommonStyle \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstylefactory.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstylepainter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleplugin.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolormap.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcompleter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscroller.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QPointF \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QScrollerProperties \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollerproperties.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QMetaType \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QVariant \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsystemtrayicon.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundogroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundostack.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundoview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qbuttongroup.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcalendarwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcheckbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcombobox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcommandlinkbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qpushbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdatetimeedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdial.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialogbuttonbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdockwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfocusframe.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfontcombobox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgroupbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qkeysequenceedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlabel.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlcdnumber.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmainwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmdiarea.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmdisubwindow.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmenubar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qplaintextedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtextedit.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qprogressbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qradiobutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsizegrip.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qspinbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplashscreen.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplitter.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstatusbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtextbrowser.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbox.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtwidgetsversion.h \
+		include\deckmenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		include\decksview.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QFrame \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGridLayout
+
+release\userselect.obj: src\userselect.cpp include\userselect.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedwidget.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qframe.h \
-		include\decksview.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QFrame \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGridLayout \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgridlayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlayoutitem.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qboxlayout.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qwindowdefs.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qglobal.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qconfig.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfeatures.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsystemdetection.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qprocessordetection.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcompilerdetection.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtypeinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtypetraits.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsysinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlogging.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qflags.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbasicatomic.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_bootstrap.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qgenericatomic.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_msvc.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_armv7.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_armv6.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_armv5.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_ia64.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_mips.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_x86.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_cxx11.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_gcc.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_unix.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qglobalstatic.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmutex.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qnumeric.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qobjectdefs.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qnamespace.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qobjectdefs_impl.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qwindowdefs_win.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qobject.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstring.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qchar.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbytearray.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qrefcount.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qarraydata.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstringbuilder.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlist.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qalgorithms.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qiterator.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qbytearraylist.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcoreevent.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qscopedpointer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmetatype.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qvarlengtharray.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcontainerfwd.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qisenum.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qobject_impl.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmargins.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpaintdevice.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qrect.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsize.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpoint.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpalette.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qcolor.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qrgb.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstringlist.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdatastream.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qiodevice.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qpair.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qregexp.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qstringmatcher.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qbrush.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qvector.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qmatrix.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpolygon.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qregion.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qline.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtransform.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpainterpath.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qimage.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpixelformat.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qpixmap.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsharedpointer.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qshareddata.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qhash.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qsharedpointer_impl.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qfont.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontmetrics.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontinfo.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsizepolicy.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qcursor.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qkeysequence.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qevent.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qvariant.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qmap.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qdebug.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qtextstream.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qlocale.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qset.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qcontiguouscache.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qurl.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qurlquery.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfile.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\qfiledevice.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qvector2d.h \
+		F:\Qt\5.4\msvc2013_64\include\QtGui\qtouchdevice.h \
+		include\user.h \
+		include\deck.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QFile \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QString \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicswidget.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicslayoutitem.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsitem.h \
+		include\flashcard.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialog.h \
 		include\decklabel.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgetsDepends \
@@ -15439,471 +16687,6 @@ release\user.obj: src\user.cpp include\user.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qactiongroup.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qapplication.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdesktopwidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qformlayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QLayout \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgesture.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgesturerecognizer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qopenglwidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QWidget \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qshortcut.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedlayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtooltip.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwhatsthis.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwidgetaction.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qkeyeventtransition.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmouseeventtransition.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcommonstyle.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdrawutil.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qproxystyle.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QCommonStyle \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstylefactory.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstylepainter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleplugin.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolormap.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcompleter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscroller.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QPointF \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QScrollerProperties \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollerproperties.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QMetaType \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QVariant \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsystemtrayicon.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundogroup.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundostack.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundoview.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractbutton.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qbuttongroup.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcalendarwidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcheckbox.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcombobox.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcommandlinkbutton.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qpushbutton.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdatetimeedit.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdial.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialogbuttonbox.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdockwidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfocusframe.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfontcombobox.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgroupbox.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qkeysequenceedit.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlabel.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlcdnumber.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmainwindow.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmdiarea.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmdisubwindow.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmenu.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmenubar.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qplaintextedit.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtextedit.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qprogressbar.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qradiobutton.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollbar.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsizegrip.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qspinbox.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplashscreen.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsplitter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstatusbar.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtextbrowser.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbar.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbox.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbutton.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtwidgetsversion.h
-
-release\userselect.obj: src\userselect.cpp include\userselect.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QStackedWidget \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstackedwidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qframe.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qwindowdefs.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qglobal.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qconfig.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfeatures.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsystemdetection.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qprocessordetection.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qcompilerdetection.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtypeinfo.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtypetraits.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsysinfo.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qlogging.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qflags.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qbasicatomic.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_bootstrap.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qgenericatomic.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_msvc.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_armv7.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_armv6.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_armv5.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_ia64.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_mips.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_x86.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_cxx11.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_gcc.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qatomic_unix.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qglobalstatic.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qmutex.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qnumeric.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qobjectdefs.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qnamespace.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qobjectdefs_impl.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qwindowdefs_win.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qobject.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qstring.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qchar.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qbytearray.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qrefcount.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qarraydata.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qstringbuilder.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qlist.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qalgorithms.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qiterator.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qbytearraylist.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qcoreevent.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qscopedpointer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qmetatype.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qvarlengtharray.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qcontainerfwd.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qisenum.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qobject_impl.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qmargins.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpaintdevice.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qrect.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsize.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qpoint.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpalette.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qcolor.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qrgb.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qstringlist.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qdatastream.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qiodevice.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qpair.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qregexp.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qstringmatcher.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qbrush.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qvector.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qmatrix.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpolygon.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qregion.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qline.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtransform.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpainterpath.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qimage.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpixelformat.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpixmap.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsharedpointer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qshareddata.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qhash.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsharedpointer_impl.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qfont.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontmetrics.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontinfo.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qsizepolicy.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qcursor.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qkeysequence.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qevent.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qvariant.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qmap.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qdebug.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtextstream.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qlocale.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qset.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qcontiguouscache.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qurl.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qurlquery.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfile.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfiledevice.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qvector2d.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtouchdevice.h \
-		include\user.h \
-		include\deck.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QFile \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QString \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QGraphicsWidget \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicswidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicslayoutitem.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsitem.h \
-		include\flashcard.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QDialog \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdialog.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QButtonGroup \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qbuttongroup.h \
-		include\newuser.h \
-		include\login.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgets \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QtWidgetsDepends \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QtCore \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QtCoreDepends \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractanimation.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qanimationgroup.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qparallelanimationgroup.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qpauseanimation.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qpropertyanimation.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qvariantanimation.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qeasingcurve.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsequentialanimationgroup.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtextcodec.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qendian.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibraryinfo.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qdatetime.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qbuffer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qdir.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileinfo.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qdiriterator.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfileselector.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QObject \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QStringList \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfilesystemwatcher.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qlockfile.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qloggingcategory.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qprocess.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qresource.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsavefile.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsettings.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qstandardpaths.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qstorageinfo.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtemporarydir.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QScopedPointer \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtemporaryfile.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractitemmodel.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractproxymodel.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qidentityproxymodel.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qitemselectionmodel.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsortfilterproxymodel.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qstringlistmodel.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonarray.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonvalue.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsondocument.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qjsonobject.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstracteventdispatcher.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qeventloop.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractnativeeventfilter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qbasictimer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qcoreapplication.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qmath.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qmetaobject.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimedata.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qobjectcleanuphandler.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qpointer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsharedmemory.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsignalmapper.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsocketnotifier.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsystemsemaphore.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtranslator.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qwineventnotifier.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimedatabase.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qmimetype.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfactoryinterface.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qlibrary.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qplugin.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qpluginloader.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\quuid.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstractstate.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qabstracttransition.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qeventtransition.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfinalstate.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qhistorystate.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsignaltransition.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qstate.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qstatemachine.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qexception.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuture.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfutureinterface.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qrunnable.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qresultstore.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuturesynchronizer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qfuturewatcher.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qreadwritelock.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qsemaphore.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qthread.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qthreadpool.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qthreadstorage.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qwaitcondition.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qarraydataops.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qarraydatapointer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qbitarray.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qbytearraymatcher.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qcache.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qcollator.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qcommandlineoption.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qcommandlineparser.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qcryptographichash.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qelapsedtimer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qlinkedlist.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qmessageauthenticationcode.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qqueue.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qregularexpression.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qscopedvaluerollback.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qstack.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtextboundaryfinder.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimeline.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtimezone.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qxmlstream.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qtcoreversion.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QtGui \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QtGuiDepends \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessible.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessiblebridge.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessibleobject.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qaccessibleplugin.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qbitmap.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qicon.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qiconengine.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qiconengineplugin.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qimageiohandler.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qimagereader.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qimagewriter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qmovie.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpicture.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpictureformatplugin.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpixmapcache.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qstandarditemmodel.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qclipboard.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qdrag.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericplugin.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericpluginfactory.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qguiapplication.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qinputmethod.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qoffscreensurface.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qsurface.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qsurfaceformat.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglcontext.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QSurfaceFormat \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengl.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\qt_windows.h \
-		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES3\gl3.h \
-		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES3\gl3platform.h \
-		F:\Qt\5.4\msvc2013_64\include\QtANGLE\KHR\khrplatform.h \
-		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES2\gl2.h \
-		F:\Qt\5.4\msvc2013_64\include\QtANGLE\GLES2\gl2platform.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengles2ext.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglext.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglversionfunctions.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglwindow.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QPaintDeviceWindow \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpaintdevicewindow.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QWindow \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qwindow.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QEvent \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QMargins \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QRect \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QPaintDevice \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QOpenGLContext \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QImage \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qrasterwindow.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qscreen.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QList \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QSize \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QSizeF \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QTransform \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qsessionmanager.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qstylehints.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qgenericmatrix.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qmatrix4x4.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qvector3d.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qvector4d.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qquaternion.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglbuffer.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengldebug.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglframebufferobject.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglfunctions.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglpaintdevice.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglpixeltransferoptions.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QSharedDataPointer \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglshaderprogram.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengltexture.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopengltimerquery.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qopenglvertexarrayobject.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qbackingstore.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagedpaintdevice.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagelayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpagesize.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpaintengine.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpainter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextoption.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpen.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qpdfwriter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qabstracttextdocumentlayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextlayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextformat.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qglyphrun.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qrawfont.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qfontdatabase.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextcursor.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocument.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qstatictext.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qsyntaxhighlighter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextobject.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocumentfragment.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextdocumentwriter.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtextlist.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtexttable.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qdesktopservices.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qvalidator.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\qtguiversion.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\complexwidgets.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblewidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractitemview.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractitemdelegate.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleoption.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractspinbox.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qslider.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractslider.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyle.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtabbar.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtabwidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qrubberband.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\itemviews.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qheaderview.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblemenu.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaccessiblewidgets.h \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QPointer \
-		F:\Qt\5.4\msvc2013_64\include\QtCore\QPair \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\rangecontrols.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\simplewidgets.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolordialog.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qerrormessage.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfiledialog.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfilesystemmodel.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfontdialog.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qinputdialog.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlineedit.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qmessagebox.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qprogressdialog.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qwizard.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicseffect.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsanchorlayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicslayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsgridlayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsitemanimation.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicslinearlayout.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsproxywidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicssceneevent.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicstransform.h \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QVector3D \
-		F:\Qt\5.4\msvc2013_64\include\QtGui\QMatrix4x4 \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qgraphicsview.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qscrollarea.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcolumnview.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdatawidgetmapper.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdirmodel.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qfileiconprovider.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qitemdelegate.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qitemeditorfactory.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlistview.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlistwidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qstyleditemdelegate.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtableview.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtablewidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreeview.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreewidget.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtreewidgetitemiterator.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qaction.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qactiongroup.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qapplication.h \
-		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qdesktopwidget.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qboxlayout.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlayout.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qlayoutitem.h \
@@ -15941,6 +16724,7 @@ release\userselect.obj: src\userselect.cpp include\userselect.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundostack.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qundoview.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qabstractbutton.h \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qbuttongroup.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcalendarwidget.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcheckbox.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qcombobox.h \
@@ -15976,6 +16760,11 @@ release\userselect.obj: src\userselect.cpp include\userselect.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbox.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtoolbutton.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\qtwidgetsversion.h \
+		include\deckmenu.h \
+		F:\Qt\5.4\msvc2013_64\include\QtCore\QDir \
+		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QButtonGroup \
+		include\login.h \
+		include\newuser.h \
 		F:\Qt\5.4\msvc2013_64\include\QtWidgets\QVBoxLayout
 
 release\qrc_images.obj: release\qrc_images.cpp 

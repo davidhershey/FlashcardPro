@@ -61,7 +61,7 @@ void DecksView::getUserDecks()
         int fileHandle = myFile.handle();
         qDebug() << fileName;
         FILE* fh = fdopen(fileHandle, "rb");
-        Deck* insDeck = new Deck(fh);
+        Deck* insDeck = new Deck(fh,user);
         addNewDeckLabel(insDeck);
     }
 
@@ -82,7 +82,7 @@ void DecksView::loadDeck()
         myFile.open(QIODevice::ReadOnly);
         int fileHandle = myFile.handle();
         FILE* fh = fdopen(fileHandle, "rb");
-        Deck* insDeck = new Deck(fh);
+        Deck* insDeck = new Deck(fh,user);
         addNewDeckLabel(insDeck);
 
         qDebug() << insDeck->num_cards;
@@ -133,7 +133,7 @@ void DecksView::chooseCreateLoad()
 
 void DecksView::goToCreator()
 {
-    builder* build = new builder(pages, this);
+    builder* build = new builder(pages, this,user);
     int go = pages->addWidget(build);
     pages->setCurrentIndex(go);
 }

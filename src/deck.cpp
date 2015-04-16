@@ -4,8 +4,9 @@
 #include <QDebug>
 #include <time.h>
 
-Deck::Deck(FILE* deck_file)
+Deck::Deck(FILE* deck_file, User *_user)
 {
+    user = _user;
     maxScore = 0;
     QTextStream instream(deck_file, QIODevice::ReadOnly);
 
@@ -31,8 +32,9 @@ Deck::Deck(FILE* deck_file)
 
 }
 
-Deck::Deck(std::vector<Flashcard *> _cards, QString deck_name_in) : cards(_cards)
+Deck::Deck(std::vector<Flashcard *> _cards, QString deck_name_in, User *_user) : cards(_cards)
 {
+    user = _user;
     deck_name = deck_name_in;
     deck_score = 1;
     num_cards = _cards.size();
@@ -41,6 +43,7 @@ Deck::Deck(std::vector<Flashcard *> _cards, QString deck_name_in) : cards(_cards
     time_t cur;
     time(&cur);
     this->scoreTimes.push_back(cur);
+    autoSave();
 }
 
 Deck::~Deck()
@@ -176,20 +179,24 @@ void Deck::parseCard(QString* line)
 
 void Deck::makeSaveText()
 {
+    saveText = "";
     saveText += deck_name;
     saveText += char(30);
     saveText += num_cards;
     saveText += char(30);
-    saveText += deck_score;
+    for(int i = 0;i<scoreTimes.size();i++){
+        saveText+=QString::number(scoreTimes[i]);
+        saveText+=',';
+    }
     saveText += '\n';
 
-    for(int i = 0; i < num_cards; ++i)
+    for(int i = 0; i < cards.size(); ++i)
     {
         saveText += cards[i]->fstr;
         saveText += char(30);
         saveText += cards[i]->bstr;
         saveText += char(30);
-        saveText += cards[i]->cardScore;
+        saveText += QString::number(cards[i]->getScore());
         saveText += '\n';
     }
 
@@ -223,6 +230,21 @@ Flashcard *Deck::getHardest()
 
 void Deck::updateDeck(std::vector<Flashcard *> cards_in){
     cards = cards_in;
+}
+
+void Deck::autoSave()
+{
+    makeSaveText();
+    QDir *dir = user->getDirectory();
+    QString fname = dir->absoluteFilePath(deck_name+".dek");
+    QFile file(fname);
+            if (!file.open(QIODevice::WriteOnly)) {
+                qDebug() << "File couldn't be opened";
+                return;
+            }
+    QTextStream out(&file);
+    out << saveText;
+    file.close();
 }
 
 std::vector<Flashcard*> Deck::getDeck(){

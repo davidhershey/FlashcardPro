@@ -4,21 +4,24 @@
 
 #ifndef DECK_H
 #define DECK_H
-
+class Deck;
+class User;
 #include <QFile>
 #include <vector>
 #include <QString>
 #include <QGraphicsWidget>
 #include "flashcard.h"
-
+#include "user.h"
+#include "decklabel.h"
+#include "deckmenu.h"
 class DeckLabel;    //forward declaration
 class DeckMenu;     //forward declaration
 
 class Deck
 {
 public:
-    Deck(FILE* deck_file);
-    Deck(std::vector<Flashcard*> _cards, QString deck_name_in);
+    Deck(FILE* deck_file, User* _user);
+    Deck(std::vector<Flashcard*> _cards, QString deck_name_in, User* _user);
     ~Deck();
 
     int deck_score;
@@ -38,11 +41,12 @@ public:
     std::vector<Flashcard*> getDeck();
     void updateDeck(std::vector<Flashcard*> cards_in);
 
+    void autoSave();
 private:
     void parseCard(QString* line);
     void parseInfo(QString* line);
     void makeSaveText();
-
+    User *user;
 
     int maxScore;
 };

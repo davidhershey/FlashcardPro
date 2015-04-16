@@ -65,6 +65,7 @@ void StudyArea::correct()
     grid->addWidget(curCard,1,0,1,3);
     curCard->show();
     scores->setText("Card Score: " + QString::number(curCard->getScore()));
+    deck->autoSave();
 
 }
 
@@ -79,7 +80,7 @@ void StudyArea::incorrect()
     grid->addWidget(curCard,1,0,1,3);
     curCard->show();
     scores->setText("Card Score: " + QString::number(curCard->getScore()));
-
+    deck->autoSave();
 }
 
 void StudyArea::goBack()
