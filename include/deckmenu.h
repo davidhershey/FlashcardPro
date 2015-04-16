@@ -6,6 +6,7 @@
 #include <QStackedWidget>
 #include "deck.h"
 #include "decklabel.h"
+#include "scoreplot.h"
 
 class DeckMenu : public QWidget
 {
@@ -15,6 +16,7 @@ public:
     QLabel* title;
     ~DeckMenu();
     void updateMenu();
+    ScorePlot *sp;
 
 signals:
 

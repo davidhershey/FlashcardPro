@@ -3,7 +3,7 @@
 #include "studyarea.h"
 #include "statsview.h"
 #include "builder.h"
-#include "scoreplot.h"
+
 DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 {
     pages = pages_in;
@@ -17,45 +17,48 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 
     _deck->menu = this;
 
-    QVBoxLayout* rightLayout = new QVBoxLayout();
+    QVBoxLayout* mainLayout = new QVBoxLayout();
+    QHBoxLayout* topBar = new QHBoxLayout();
 
-    rightLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/4));
 
     title = new QLabel(deck->deck_name);
     title->setFont(naxa);
     title->setAlignment(Qt::AlignHCenter);
-    rightLayout->addWidget(title, 0, Qt::AlignCenter);
+    title->setFixedHeight(70);
+
+    QPushButton *backButton = new QPushButton("Back");
+    connect(backButton,SIGNAL(clicked()),this,SLOT(back()));
+
+    topBar->addWidget(backButton, 0, Qt::AlignLeft);
+    topBar->addSpacerItem(new QSpacerItem((title->width()/2) - (backButton->width()/2), title->height(),QSizePolicy::Expanding));
+    topBar->addWidget(title, 0, Qt::AlignHCenter);
+    topBar->addSpacerItem(new QSpacerItem((title->width()/2), title->height(), QSizePolicy::Expanding));
+    topBar->setAlignment(mainLayout, Qt::AlignTop);
+
+    mainLayout->addLayout(topBar);
 
     quick_stats = new QLabel();
     quick_stats->setStyleSheet("color : blue;");
     quick_stats->setFont(naxa);
     quick_stats->setText("Current Deck Score:\n" + QString::number(deck->getDeckScore()));
     quick_stats->setAlignment(Qt::AlignHCenter);
-    rightLayout->addWidget(quick_stats, 0, Qt::AlignCenter);
+    mainLayout->addWidget(quick_stats, 0, Qt::AlignCenter);
 
+    sp = new ScorePlot(deck);
+    mainLayout->addWidget(sp);
+    sp->setMinimumSize(500, 300);
 
-    ScorePlot *sp = new ScorePlot(deck);
-    rightLayout->addWidget(sp);
-
-    rightLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/8));
     QPushButton *study = new QPushButton("Study Deck");
-    rightLayout->addWidget(study, 0, Qt::AlignCenter);
+    mainLayout->addWidget(study, 0, Qt::AlignCenter);
     connect(study,SIGNAL(clicked()),this,SLOT(study()));
 
     QPushButton *edit = new QPushButton("Edit Deck");
-    rightLayout->addWidget(edit, 0, Qt::AlignCenter);
+    mainLayout->addWidget(edit, 0, Qt::AlignCenter);
     connect(edit,SIGNAL(clicked()), this, SLOT(edit()));
 
-    QPushButton *stats = new QPushButton("View Deck Statistics");
-    rightLayout->addWidget(stats, 0, Qt::AlignCenter);
-    connect(stats,SIGNAL(clicked()),this,SLOT(stats()));
+    mainLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/5));
 
-    QPushButton *back = new QPushButton("Back to Decks");
-    rightLayout->addWidget(back, 0, Qt::AlignCenter);
-    connect(back,SIGNAL(clicked()),this,SLOT(back()));
-    rightLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/4));
-
-    this->setLayout(rightLayout);
+    this->setLayout(mainLayout);
 }
 
 DeckMenu::~DeckMenu()
@@ -102,4 +105,7 @@ void DeckMenu::saveDeckCallback()
 void DeckMenu::updateMenu()
 {
     quick_stats->setText("Current Deck Score:\n" + QString::number(deck->getDeckScore()));
+    sp->hide();
+    sp = new ScorePlot(deck);
+    sp->show();
 }
