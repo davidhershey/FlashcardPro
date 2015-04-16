@@ -20,10 +20,11 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
 
 
     QLabel* title = new QLabel("Current Users");
-    QFont naxa, naxa2;
+    QFont naxa, naxa2, naxa3;
     QFontDatabase db;
     naxa = db.font("Nexa Light","Normal",64);
     naxa2= db.font("Nexa Light", "Normal", 18);
+    naxa3= db.font("Nexa Light", "Normal", 24);
     title->setFont(naxa);
     title->setMaximumHeight(70);
     backButton->setFont(naxa2);
@@ -41,7 +42,8 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
         QPushButton *btn = new QPushButton(users.at(i)->username.toStdString().c_str());
         btn->setMinimumSize(250,50);
         btn->setMaximumSize(300,100);
-        btn->setStyleSheet("background-color: rgb(200,200,200);");
+        btn->setStyleSheet("background-color: rgb(250,236,191);");
+        btn->setFont(naxa3);
         userButtons->addButton(btn);
         userButtons->setId(btn,i);
         layout->addWidget(btn, 0, Qt::AlignHCenter);
@@ -52,6 +54,8 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
     connect(newUserButton, SIGNAL(clicked()), this, SLOT(newUserCallback()));
     newUserButton->setMinimumSize(250,50);
     newUserButton->setMaximumSize(300,100);
+    newUserButton->setStyleSheet("background-color: rgb(250,236,191);");
+    newUserButton->setFont(naxa3);
     layout->addWidget(newUserButton, 0, Qt::AlignHCenter);
 
     this->setLayout(layout);
