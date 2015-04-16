@@ -4,11 +4,13 @@
 #include <vector>
 #include <QVBoxLayout>
 #include <QtWidgets>
-UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in)
+#include "newuser.h"
+UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, LogIn* parent_in)
 {
     QFrame();
     pages = pages_in;
     users = users_in;
+    parent = parent_in;
 
     QVBoxLayout* layout = new QVBoxLayout();
     QLabel* title = new QLabel("Current Users");
@@ -53,7 +55,9 @@ void UserSelect::goBackCallback()
 
 void UserSelect::newUserCallback()
 {
-    qDebug() << "Still needs to be implemented!";
+    pages->removeWidget(this);
+    int index = pages->addWidget(new NewUser(pages, parent));
+    pages->setCurrentIndex(index);
 }
 
 void UserSelect::openClickedUser(int id)

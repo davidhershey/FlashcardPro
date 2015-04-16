@@ -30,8 +30,6 @@ private:
 public slots:
     void nextPage();
     void createNewUserCallback();
-    void returnToLogInCallback();
-    void userLoginCallback();
 };
 
 #endif // LOGIN_H
