@@ -1,11 +1,12 @@
 #include "newuser.h"
 #include <QtWidgets>
 
-NewUser::NewUser(QStackedWidget* pages_in, LogIn* parent_in)
+NewUser::NewUser(QStackedWidget* pages_in, LogIn* parent_in, UserSelect* select_parent)
 {
     QFrame();
     pages = pages_in;
     parent = parent_in;
+    select = select_parent;
     qDebug() << "making new user ";
     QLabel* title = new QLabel("Create New User");
     QFont naxa;
@@ -23,20 +24,25 @@ NewUser::NewUser(QStackedWidget* pages_in, LogIn* parent_in)
     form->addRow(name, username);
     username->setMaximumHeight(40);
     username->setFont(naxa2);
-
-    QPushButton *submitButton = new QPushButton("Select a Save Directory");
+    QLabel *select = new QLabel(tr("Select a Save Directory:"));
+    select->setFont(naxa2);
+    QPushButton *submitButton = new QPushButton("Browse");
+    submitButton->setFont(naxa2);
     QPushButton *cancelButton = new QPushButton("Cancel");
     connect(submitButton,SIGNAL(clicked()),this,SLOT(submit()));
     connect(cancelButton,SIGNAL(clicked()),this,SLOT(cancel()));
+    form->addRow(select, submitButton);
 
     submitButton->setFont(naxa2);
     cancelButton->setFont(naxa2);
 
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(title, 0, Qt::AlignHCenter);
+    layout->addSpacerItem(new QSpacerItem(this->width(), this->height()/4));
     layout->addLayout(form);
-    layout->addWidget(submitButton, 0, Qt::AlignHCenter);
+    layout->addSpacerItem(new QSpacerItem(this->width(), this->height()/4));
     layout->addWidget(cancelButton, 0, Qt::AlignHCenter);
+
 
     this->setLayout(layout);
 }
@@ -60,6 +66,7 @@ void NewUser::submit()
                              );
 
     parent->addNewUser(newUser);
+    if(select != NULL) select->updateUserSelect();
     return;
 }
 

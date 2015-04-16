@@ -17,6 +17,7 @@ public:
     std::vector<User*> users;
     QButtonGroup* userButtons;
     LogIn* parent;
+    void updateUserSelect();
 
 public slots:
     void goBackCallback();

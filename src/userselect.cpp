@@ -69,11 +69,19 @@ void UserSelect::goBackCallback()
 void UserSelect::newUserCallback()
 {
     //pages->removeWidget(this);
-    int index = pages->addWidget(new NewUser(pages, parent));
+    int index = pages->addWidget(new NewUser(pages, parent, this));
     pages->setCurrentIndex(index);
 }
 
 void UserSelect::openClickedUser(int id)
 {
     users[id]->goToDecksView(pages);
+}
+
+void UserSelect::updateUserSelect()
+{
+    UserSelect* refreshed = new UserSelect(this->pages, parent->curUsers, this->parent);
+    pages->removeWidget(this);
+    int index = pages->addWidget(refreshed);
+    pages->setCurrentIndex(index);
 }
