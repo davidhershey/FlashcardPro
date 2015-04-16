@@ -41,6 +41,8 @@ public:
     std::vector<Flashcard*> getDeck();
     void updateDeck(std::vector<Flashcard*> cards_in);
 
+    void SELFDESTRUCT();
+
     void autoSave();
 private:
     void parseCard(QString* line);

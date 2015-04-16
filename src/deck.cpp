@@ -232,6 +232,13 @@ void Deck::updateDeck(std::vector<Flashcard *> cards_in){
     cards = cards_in;
 }
 
+void Deck::SELFDESTRUCT()
+{
+    QDir *dir = user->getDirectory();
+    QFile *fil = new QFile(dir->absoluteFilePath(deck_name+".dek"));
+    fil->remove();
+}
+
 void Deck::autoSave()
 {
     makeSaveText();
