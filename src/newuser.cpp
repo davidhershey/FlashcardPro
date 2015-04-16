@@ -59,6 +59,13 @@ void NewUser::submit()
         return;
     }
 
+    for(int i=0; i < parent->curUsers.size(); i++){
+        if(parent->curUsers.at(i)->username == validName()){
+            showError("Please choose a unique name");
+            return;
+        }
+    }
+
     QString pathName = QFileDialog::getExistingDirectory(this,tr("Select a Save Directory"), QDir::homePath());
 //    QDir dir(pathName);
     User* newUser = new User(validName(),

@@ -22,7 +22,7 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
     QLabel* title = new QLabel("Current Users");
     QFont naxa, naxa2, naxa3;
     QFontDatabase db;
-    naxa = db.font("Nexa Light","Normal",64);
+    naxa = db.font("Nexa Light","Normal", 64);
     naxa2= db.font("Nexa Light", "Normal", 18);
     naxa3= db.font("Nexa Light", "Normal", 24);
     title->setFont(naxa);
@@ -36,11 +36,24 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
     topBar->setAlignment(layout, Qt::AlignTop);
     layout->addLayout(topBar);
 
+    QSplitter *splitter = new QSplitter();
+    QFrame *rightWidget = new QFrame();
+    rightWidget->setLayout(layout);
+    rightWidget->setStyleSheet("QFrame { background-color: rgb(191, 197, 255); }");
+    QScrollArea *scrollArea = new QScrollArea();
+    scrollArea->setWidgetResizable(1);
+    scrollArea->setWidget(rightWidget);
+    splitter->addWidget(scrollArea);
+    QGridLayout *lay = new QGridLayout();
+    lay->addWidget(splitter);
+    this->setLayout(lay);
+
+
     userButtons = new QButtonGroup();
     connect(userButtons, SIGNAL(buttonClicked(int)), this, SLOT(openClickedUser(int)));
     for(int i=0; i < users.size(); i++){
         QPushButton *btn = new QPushButton(users.at(i)->username.toStdString().c_str());
-        btn->setMinimumSize(250,50);
+        btn->setMinimumSize(250,75);
         btn->setMaximumSize(300,100);
         btn->setStyleSheet("background-color: rgb(250,236,191);");
         btn->setFont(naxa3);
@@ -52,13 +65,11 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
 
     QPushButton* newUserButton = new QPushButton("Create New User");
     connect(newUserButton, SIGNAL(clicked()), this, SLOT(newUserCallback()));
-    newUserButton->setMinimumSize(250,50);
+    newUserButton->setMinimumSize(250,75);
     newUserButton->setMaximumSize(300,100);
     newUserButton->setStyleSheet("background-color: rgb(250,236,191);");
     newUserButton->setFont(naxa3);
     layout->addWidget(newUserButton, 0, Qt::AlignHCenter);
-
-    this->setLayout(layout);
 }
 
 UserSelect::~UserSelect(){}
