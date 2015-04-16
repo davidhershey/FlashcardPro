@@ -17,7 +17,7 @@ DecksView::DecksView(QStackedWidget* pages_in, User *_user)
     QLabel* title = new QLabel("Your Decks");
     title->setFont(naxa);
     title->setAlignment(Qt::AlignHCenter);
-    title->setMaximumHeight(64);
+    title->setMaximumHeight(70);
 
     backButton = new QPushButton("Back");
     backButton->setMinimumSize(100, 30);

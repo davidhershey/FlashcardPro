@@ -23,7 +23,7 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
     QFontDatabase db;
     naxa = db.font("Nexa Light","Normal",64);
     title->setFont(naxa);
-    title->setMaximumHeight(64);
+    title->setMaximumHeight(70);
 
     topBar->addWidget(backButton, 0, Qt::AlignLeft);
     topBar->addSpacerItem(new QSpacerItem((title->width()/2), title->height(),QSizePolicy::Expanding));
