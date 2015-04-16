@@ -18,12 +18,15 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
     QPushButton* backButton = new QPushButton("Back");
     connect(backButton, SIGNAL(clicked()), this, SLOT(goBackCallback()));
 
+
     QLabel* title = new QLabel("Current Users");
-    QFont naxa;
+    QFont naxa, naxa2;
     QFontDatabase db;
     naxa = db.font("Nexa Light","Normal",64);
+    naxa2= db.font("Nexa Light", "Normal", 18);
     title->setFont(naxa);
     title->setMaximumHeight(70);
+    backButton->setFont(naxa2);
 
     topBar->addWidget(backButton, 0, Qt::AlignLeft);
     topBar->addSpacerItem(new QSpacerItem((title->width()/2), title->height(),QSizePolicy::Expanding));
