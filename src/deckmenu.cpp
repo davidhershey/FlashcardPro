@@ -72,6 +72,7 @@ DeckMenu::~DeckMenu()
 
 void DeckMenu::study()
 {
+    if(pages == NULL) return;
     StudyArea* area = new StudyArea(deck, pages, this);
     int index = pages->addWidget(area);
     pages->setCurrentIndex(index);
@@ -79,6 +80,7 @@ void DeckMenu::study()
 
 void DeckMenu::edit()
 {
+    if(pages == NULL) return;
     builder* edit = new builder(pages, deck);
     int index = pages->addWidget(edit);
     pages->setCurrentIndex(index);
@@ -86,12 +88,14 @@ void DeckMenu::edit()
 
 void DeckMenu::deleteDeck()
 {
+    if(pages == NULL) return;
     deck->SELFDESTRUCT();
     back();
 }
 
 void DeckMenu::stats()
 {
+    if(pages == NULL) return;
     StatsView *sv = new StatsView(deck,pages);
     int index = pages->addWidget(sv);
     pages->setCurrentIndex(index);
@@ -99,6 +103,7 @@ void DeckMenu::stats()
 
 void DeckMenu::back()
 {
+    if(pages == NULL) return;
     int nextIndex = pages->currentIndex()-1;
     pages->removeWidget(pages->currentWidget());
     pages->setCurrentIndex(nextIndex);
@@ -106,6 +111,7 @@ void DeckMenu::back()
 
 void DeckMenu::saveDeckCallback()
 {
+    if(pages == NULL) return;
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save Selected Deck"),
                                                     QDir::homePath() + QDir::separator() + "*",
                                                     "");

@@ -20,8 +20,8 @@ private:
     //std::vector<Deck*> decks;
     QGridLayout* decksLayout;
     DeckLabel* loadLabel;
-    QPushButton* backButton;
     User *user;
+    QPushButton* backButton;
     void getUserDecks();
 public:
 void addNewDeckLabel(Deck* insDeck);

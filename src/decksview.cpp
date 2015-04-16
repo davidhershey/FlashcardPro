@@ -59,6 +59,7 @@ DecksView::~DecksView()
 
 void DecksView::getUserDecks()
 {
+    if(user == NULL) return;
     QStringList list =  user->getDeckFiles();
     for (QStringList::iterator it = list.begin();it != list.end(); ++it) {
         QString fileName = *it;
@@ -75,6 +76,7 @@ void DecksView::getUserDecks()
 
 void DecksView::loadDeck()
 {
+    if(user == NULL) return;
     QString fileName =QFileDialog::getOpenFileName(this, tr("Pick a Deck"),
                                                    "*",
                                                    tr("Text File (*.txt)"));
@@ -97,6 +99,7 @@ void DecksView::loadDeck()
 
 void DecksView::goBack()
 {
+    if(pages == NULL) return;
     int index = pages->currentIndex();
     pages->removeWidget(this);
     pages->setCurrentIndex(index - 1);
@@ -140,6 +143,7 @@ void DecksView::chooseCreateLoad()
 
 void DecksView::goToCreator()
 {
+    if(pages==NULL) return;
     builder* build = new builder(pages, this,user);
     int go = pages->addWidget(build);
     pages->setCurrentIndex(go);

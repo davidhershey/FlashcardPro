@@ -91,6 +91,7 @@ void StudyArea::incorrect()
 
 void StudyArea::goBack()
 {
+    if(pages == NULL) return;
 
     DeckMenu* newMen = new DeckMenu(deck, pages);
 

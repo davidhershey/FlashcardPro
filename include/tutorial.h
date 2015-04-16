@@ -4,6 +4,8 @@
 #include <QStackedWidget>
 #include <QPushButton>
 #include <QFrame>
+#include "deck.h"
+#include "deckmenu.h"
 
 class Tutorial : public QDialog
 {
@@ -20,6 +22,9 @@ public:
     QFrame* createDeckMenuTutPage();
     QFrame* createStudyAreaTutPage();
     QFrame* createDonePage();
+
+    Deck* mocDeck;
+    DeckMenu* mocMenu;
 
 public slots:
     void prevCallback();

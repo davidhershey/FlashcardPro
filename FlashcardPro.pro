@@ -65,7 +65,8 @@ DISTFILES += \
     test_set.txt \
     test_set2.txt \
     login_names.txt \
-    working_deck.txt
+    working_deck.txt \
+    ../../../../../Desktop/Lauren_FCP/Tutorial Deck.dek
 
 RESOURCES += \
     images.qrc \
