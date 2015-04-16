@@ -25,7 +25,7 @@ public:
     QString validName();
     void showError(QString text);
     QString pathName;
-    QLabel* direct;
+    QTextEdit* direct;
 
 public slots:
     void submit();
