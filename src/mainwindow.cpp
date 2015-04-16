@@ -14,10 +14,10 @@ MainWindow::MainWindow(QWidget *parent) :
     pages->setStyleSheet("QStackedWidget { background-color: rgb(191, 197, 255); }");
     LogIn* loginPage = new LogIn(pages);
 
-    mainmenu* menuPage = new mainmenu(pages);
-    DecksView *decksPage = new DecksView(pages);
+   // mainmenu* menuPage = new mainmenu(pages);
+    //DecksView *decksPage = new DecksView(pages);
     pages->addWidget(loginPage);                //Login is index 0
-    pages->addWidget(decksPage);
+    //pages->addWidget(decksPage);
 
     this->setCentralWidget(pages);
 }
