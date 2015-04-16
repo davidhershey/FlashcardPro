@@ -12,6 +12,7 @@ class DeckMenu : public QWidget
     Q_OBJECT
 public:
     explicit DeckMenu(Deck* _deck, QStackedWidget *pages_in, QWidget *parent = 0);
+    QLabel* title;
     ~DeckMenu();
 
 signals:

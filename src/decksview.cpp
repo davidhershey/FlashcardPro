@@ -81,6 +81,8 @@ void DecksView::addNewDeckLabel(Deck* insDeck)
 {
     decks.push_back(insDeck);
     DeckLabel* insLabel = new DeckLabel(insDeck, pages);
+    insDeck->label = insLabel;
+
     connect(insLabel, SIGNAL(clicked()) , insLabel, SLOT(openDeck()));
     int i = decks.size()-1;
     QWidget* last = decksLayout->itemAtPosition(int(i/5),i%5)->widget();
