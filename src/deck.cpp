@@ -4,8 +4,9 @@
 #include <QDebug>
 #include <time.h>
 
-Deck::Deck(FILE* deck_file)
+Deck::Deck(FILE* deck_file, User *_user)
 {
+    user = _user;
     maxScore = 0;
     QTextStream instream(deck_file, QIODevice::ReadOnly);
 
@@ -31,8 +32,9 @@ Deck::Deck(FILE* deck_file)
 
 }
 
-Deck::Deck(std::vector<Flashcard *> _cards, QString deck_name_in) : cards(_cards)
+Deck::Deck(std::vector<Flashcard *> _cards, QString deck_name_in, User *_user) : cards(_cards)
 {
+    user = _user;
     deck_name = deck_name_in;
     deck_score = 1;
     num_cards = _cards.size();

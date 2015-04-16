@@ -2,8 +2,9 @@
 #include "flashcard.h"
 #include "deckmenu.h"
 
-builder::builder(QStackedWidget* pages_in, DecksView* decksview_in)
+builder::builder(QStackedWidget* pages_in, DecksView* decksview_in, User* _user)
 {
+    user = _user;
     pages = pages_in;
     decksview = decksview_in;
 
@@ -214,7 +215,7 @@ void builder::done_slot(){
     _cards.push_back(card);
     }
 
-    Deck* send_deck = new Deck(_cards, deck_title->toPlainText());
+    Deck* send_deck = new Deck(_cards, deck_title->toPlainText(),user);
     decksview->addNewDeckLabel(send_deck);
 
     int index = pages->currentIndex();

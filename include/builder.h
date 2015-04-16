@@ -4,13 +4,14 @@
 #include <Qtwidgets>
 #include "builderitem.h"
 #include "decksview.h"
+#include "user.h"
 
 class builder : public QFrame
 {
     Q_OBJECT
 
 public:
-    builder(QStackedWidget* pages_in, DecksView* decksview_in);
+    builder(QStackedWidget* pages_in, DecksView* decksview_in, User *_user);
     builder(QStackedWidget* pages_in, Deck* deck);
     ~builder();
 
@@ -32,7 +33,7 @@ private:
     QPushButton* remove;
     QPushButton* cancel;
     QPushButton* done;
-
+    User* user;
 public slots:
     void submit_card();
     void delete_card();
