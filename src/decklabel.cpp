@@ -19,8 +19,8 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QGridLayout* grid_
           hover = false;
           this->setMinimumSize(pm.width(), pm.height());
           this->setMaximumSize(pm.width(), pm.height());
-          qDebug() << pm.width();
-          qDebug() << pm.height();
+          //qDebug() << pm.width();
+          //qDebug() << pm.height();
       }
       else
       {
@@ -53,13 +53,13 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QGridLayout* grid_
 
   void DeckLabel::enterEvent(QEvent * event)
   {
-    qDebug() << "entered!";
+    //qDebug() << "entered!";
     if(hover) this->setStyleSheet("border: 2px solid; background-color: white; qproperty-alignment: AlignCenter; border-radius: 8px;");
   }
 
   void DeckLabel::leaveEvent(QEvent * event)
   {
-    qDebug() << "exited!";
+    //qDebug() << "exited!";
     if(hover) this->setStyleSheet("border: 1px solid; background-color: white; qproperty-alignment: AlignCenter; border-radius: 8px;");
   }
 

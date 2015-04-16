@@ -19,6 +19,7 @@ public:
     ~DeckMenu();
     void updateMenu();
     ScorePlot *sp;
+    QDialog* confirm;
 signals:
 
 public slots:
@@ -28,6 +29,8 @@ public slots:
     void stats();
     void saveDeckCallback();
     void back();
+    void yes();
+    void no();
 private:
     Deck* deck;
     QStackedWidget* pages;

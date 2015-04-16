@@ -69,7 +69,7 @@ void builder::submit_card(){
         back_text->clear();
         }
         else {
-            qDebug() << "update existing card";
+            //qDebug() << "update existing card";
             update->setCardInfo(front_text->toPlainText(), back_text->toPlainText());
         }
     }
@@ -144,7 +144,7 @@ void builder::done_edit_slot(){
     builderItem* item = dynamic_cast <builderItem*> (card_list->takeItem(0));
     Flashcard* card = new Flashcard(item->ftext(), item->btext(), 1);
     _cards.push_back(card);
-    qDebug() << "push card";
+    //qDebug() << "push card";
     }
 
     decksave->updateDeck(_cards);
@@ -161,7 +161,7 @@ void builder::setup(){
     cancel = new QPushButton(tr("Cancel"));
     done = new QPushButton(tr("Add Deck"));
 
-    titleplate = new QLabel(tr("Deck title"));
+    titleplate = new QLabel(tr("Deck Builder"));
     deck_title = new QTextEdit();
 
     QVBoxLayout* layout = new QVBoxLayout();

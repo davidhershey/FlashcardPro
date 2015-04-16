@@ -7,7 +7,7 @@ NewUser::NewUser(QStackedWidget* pages_in, LogIn* parent_in, UserSelect* select_
     pages = pages_in;
     parent = parent_in;
     select = select_parent;
-    qDebug() << "making new user ";
+    //qDebug() << "making new user ";
     QLabel* title = new QLabel("Create New User");
     QFont naxa;
     QFontDatabase db;

@@ -31,13 +31,13 @@ LogIn::LogIn(QStackedWidget* pages_in)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LogIn::nextPage()
 {
-    qDebug() << "at next page";
+    //qDebug() << "at next page";
     if(curUsers.empty()){
         int index = pages->addWidget(new NewUser(pages, this));
         pages->setCurrentIndex(index);
         return;
     }
-    qDebug() << "not empty";
+    //qDebug() << "not empty";
 
     int index = pages->addWidget(new UserSelect(pages, curUsers, this));
     pages->setCurrentIndex(index);
@@ -121,7 +121,7 @@ void LogIn::readCurrentUsers(){
     QString txtFile = fileLoc;
     txtFile.append("/users.txt");
 
-    qDebug() << txtFile;
+    //qDebug() << txtFile;
 
     ifstream file(txtFile.toStdString().c_str());
     string temp;
@@ -131,7 +131,7 @@ void LogIn::readCurrentUsers(){
         //create new
         std::ofstream myFile;
         myFile.open(txtFile.toStdString().c_str(), std::ios::app);
-        qDebug() << "New User!";
+        //qDebug() << "New User!";
         return;
     }
 
@@ -141,10 +141,10 @@ void LogIn::readCurrentUsers(){
         QStringList list = push.split(" ");
         if(list.size() != 2)
         {
-            qDebug() << "issue in login readCurrentUsers";
+            //qDebug() << "issue in login readCurrentUsers";
             return;
         }
-        qDebug() << "added user " << list[0];
+        //qDebug() << "added user " << list[0];
         curUsers.push_back(new User(list[0], list[1]));
     }
 }
@@ -162,8 +162,8 @@ void LogIn::addNewUser(User* user)
     folder = fileLoc + "/" + user->username + "_Decks";
     QDir dir(folder);
     //mkdir(folder.toStdString().c_str());
-    if(!dir.exists()) dir.mkdir(".");
-    else qDebug() << "Folder already exists!";
+    //if(!dir.exists()) dir.mkdir(".");
+    //else qDebug() << "Folder already exists!";
 
     //Go to choose user
     pages->removeWidget(pages->currentWidget());
