@@ -20,6 +20,9 @@ public:
     bool sameName(QString check);
     void goToDecksView(QStackedWidget* pages_in);
     void writeUserInfo(QString fileLoc);
+
+public slots:
+    void startSession();
 };
 
 #endif // USER

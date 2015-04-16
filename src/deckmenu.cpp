@@ -2,6 +2,7 @@
 #include <QtWidgets>
 #include "studyarea.h"
 #include "statsview.h"
+#include "builder.h"
 
 DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 {
@@ -14,7 +15,9 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
     QFontDatabase db;
     naxa = db.font("Nexa Bold","Normal",40);
 
-    QLabel *title = new QLabel(deck->deck_name);
+    _deck->menu = this;
+
+    title = new QLabel(deck->deck_name);
     title->setFont(naxa);
     vbox->addWidget(title);
     title->setAlignment(Qt::AlignCenter);
@@ -25,6 +28,7 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 
     QPushButton *edit = new QPushButton("Edit Deck");
     vbox->addWidget(edit);
+    connect(edit,SIGNAL(clicked()), this, SLOT(edit()));
 
     QPushButton *stats = new QPushButton("View Deck Statistics");
     vbox->addWidget(stats);
@@ -55,7 +59,9 @@ void DeckMenu::study()
 
 void DeckMenu::edit()
 {
-
+    builder* edit = new builder(pages, deck);
+    int index = pages->addWidget(edit);
+    pages->setCurrentIndex(index);
 }
 
 void DeckMenu::stats()

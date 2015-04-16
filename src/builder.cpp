@@ -1,5 +1,6 @@
 #include "builder.h"
 #include "flashcard.h"
+#include "deckmenu.h"
 
 builder::builder(QStackedWidget* pages_in, DecksView* decksview_in)
 {
@@ -67,9 +68,86 @@ builder::builder(QStackedWidget* pages_in, DecksView* decksview_in)
 
     this->setLayout(layout);
 
+}
 
+builder::builder(QStackedWidget* pages_in, Deck* deck)
+{
+    pages = pages_in;
+    decksave = deck;
+
+    submit = new QPushButton(tr("Add/Update Card"));
+    remove = new QPushButton(tr("Delete Card"));
+    done = new QPushButton(tr("Save Deck Changes"));
+    cancel = new QPushButton(tr("Cancel"));
+
+
+    QLabel* header00 = new QLabel(tr("Deck title"));
+    deck_title = new QTextEdit();
+
+    QVBoxLayout* layout = new QVBoxLayout();
+    layout->addWidget(header00);
+    layout->addWidget(deck_title);
+
+    QLabel* title = new QLabel(tr("Deck Builder"));
+    layout->addWidget(title);
+
+    QHBoxLayout* layout2 = new QHBoxLayout();
+    layout->addLayout(layout2);
+
+    card_list = new QListWidget();
+
+    QVBoxLayout *cardlay = new QVBoxLayout();
+    cardlay->addWidget(card_list);
+    cardlay->addWidget(remove);
+
+    layout2->addLayout(cardlay);
+
+    QVBoxLayout *layout3 = new QVBoxLayout();
+    layout2->addLayout(layout3);
+
+    QLabel* header1 = new QLabel(tr("Front text"));
+    QLabel* header2 = new QLabel(tr("Back text"));
+    front_text = new QTextEdit();
+    back_text = new QTextEdit();
+
+
+    layout3->addWidget(header1);
+    layout3->addWidget(front_text);
+    layout3->addWidget(header2);
+    layout3->addWidget(back_text);
+    layout3->addWidget(submit);
+
+    layout->addSpacing(20);
+    QVBoxLayout* layout4 = new QVBoxLayout();
+    layout4->addWidget(done);
+    layout4->addWidget(cancel);
+    layout->addLayout(layout4);
+
+    connect(submit, SIGNAL(pressed()), this, SLOT(submit_card()));
+    connect(remove, SIGNAL(pressed()), this, SLOT(delete_card()));
+    connect(cancel, SIGNAL(pressed()), this, SLOT(cancel_slot()));
+    connect(done, SIGNAL(pressed()), this, SLOT(done_edit_slot()));
+
+    deck_title->setTabChangesFocus(true);
+    front_text->setTabChangesFocus(true);
+    back_text->setTabChangesFocus(true);
+
+    connect(card_list, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(listClicked(QListWidgetItem*)));
+
+    this->setLayout(layout);
+
+    std::vector <Flashcard*> import = deck->getDeck();
+    for (int i=0; i < import.size(); i++){
+        builderItem *add = new builderItem(card_list);
+        add->setCardInfo(import[i]->fstr, import[i]->bstr);
+        add->setText(import[i]->fstr);
+        card_list->insertItem(0,add);
+    }
+    deck_title->setText(deck->deck_name);
 
 }
+
+
 
 builder::~builder()
 {
@@ -115,8 +193,9 @@ void builder::delete_card(){
 }
 
 void builder::cancel_slot(){
+    int index = pages->currentIndex();
     pages->removeWidget(this);
-    pages->setCurrentIndex(1);
+    pages->setCurrentIndex(index-1);
 }
 
 void builder::done_slot(){
@@ -138,8 +217,9 @@ void builder::done_slot(){
     Deck* send_deck = new Deck(_cards, deck_title->toPlainText());
     decksview->addNewDeckLabel(send_deck);
 
+    int index = pages->currentIndex();
     pages->removeWidget(this);
-    pages->setCurrentIndex(1);
+    pages->setCurrentIndex(index-1);
     }
 }
 
@@ -149,4 +229,25 @@ void builder::listClicked(QListWidgetItem* item){
 
     front_text->setText(myItem->ftext());
     back_text->setText(myItem->btext());
+}
+
+void builder::done_edit_slot(){
+    int index = pages->currentIndex();
+    pages->removeWidget(this);
+    pages->setCurrentIndex(index-1);
+
+
+    std::vector<Flashcard*> _cards;
+
+    while (card_list->count() > 0){
+    builderItem* item = dynamic_cast <builderItem*> (card_list->takeItem(0));
+    Flashcard* card = new Flashcard(item->ftext(), item->btext(), 0);
+    _cards.push_back(card);
+    qDebug() << "push card";
+    }
+
+    decksave->updateDeck(_cards);
+    decksave->deck_name = deck_title->toPlainText();
+    decksave->label->updateName();
+    decksave->menu->title->setText(decksave->deck_name);
 }

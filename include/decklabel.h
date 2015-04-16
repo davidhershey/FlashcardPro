@@ -3,13 +3,14 @@
 
 #include <QtWidgets>
 #include "deck.h"
+
 class DeckLabel:public QPushButton
 {
     Q_OBJECT
 public:
     explicit DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent = 0 );
     ~DeckLabel();
-
+    void updateName();
 private:
     Deck* deck;
     QStackedWidget* pages;

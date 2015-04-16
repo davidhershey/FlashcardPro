@@ -117,3 +117,6 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
                                                       "");
      deck->saveDeck(fileName);
   }
+void DeckLabel::updateName(){
+    this->setText(deck->deck_name);
+}

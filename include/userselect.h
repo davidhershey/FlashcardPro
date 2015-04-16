@@ -21,6 +21,8 @@ public slots:
     void openClickedUser(int);
     void newUserCallback();
 
+private:
+
 };
 
 #endif // USERSELECT
