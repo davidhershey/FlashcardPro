@@ -3,7 +3,10 @@
 builderItem::builderItem(QListWidget *list_in)
 {
     list = list_in;
-
+    QFont naxa;
+    QFontDatabase db;
+    naxa = db.font("Nexa Light", "Normal", 18);
+    this->setFont(naxa);
 }
 
 builderItem::~builderItem()
