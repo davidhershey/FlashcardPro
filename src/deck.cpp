@@ -34,10 +34,13 @@ Deck::Deck(FILE* deck_file)
 Deck::Deck(std::vector<Flashcard *> _cards, QString deck_name_in) : cards(_cards)
 {
     deck_name = deck_name_in;
-    deck_score = 0;
+    deck_score = 1;
     num_cards = _cards.size();
 
     makeSaveText();
+    time_t cur;
+    time(&cur);
+    this->scoreTimes.push_back(cur);
 }
 
 Deck::~Deck()
