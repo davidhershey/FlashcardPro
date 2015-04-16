@@ -30,13 +30,13 @@ LogIn::LogIn(QStackedWidget* pages_in)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LogIn::nextPage()
 {
-
+    qDebug() << "at next page";
     if(curUsers.empty()){
         int index = pages->addWidget(new NewUser(pages, this));
         pages->setCurrentIndex(index);
         return;
     }
-
+    qDebug() << "not empty";
     int index = pages->addWidget(new UserSelect(pages, curUsers));
     pages->setCurrentIndex(index);
 
@@ -144,13 +144,13 @@ void LogIn::readCurrentUsers(){
 
         QString push = QString::fromStdString(temp);
         QStringList list = push.split(" ");
-        if(list.size() != 4)
+        if(list.size() != 2)
         {
             qDebug() << "issue in login readCurrentUsers";
             return;
         }
         qDebug() << "added user " << list[0];
-        curUsers.push_back(new User(list[0], list[1], list[2], list[3]));
+        curUsers.push_back(new User(list[0], list[1]));
     }
 }
 
