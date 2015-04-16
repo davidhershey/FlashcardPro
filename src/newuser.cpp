@@ -6,7 +6,7 @@ NewUser::NewUser(QStackedWidget* pages_in, LogIn* parent_in)
     QFrame();
     pages = pages_in;
     parent = parent_in;
-
+    qDebug() << "making new user ";
     QLabel* title = new QLabel("Create New User");
     QFont naxa;
     QFontDatabase db;
@@ -14,19 +14,10 @@ NewUser::NewUser(QStackedWidget* pages_in, LogIn* parent_in)
     title->setFont(naxa);
 
     QFormLayout* form = new QFormLayout();
-    first_name = new QTextEdit();
-    last_name = new QTextEdit();
     username = new QTextEdit();
-    password = new QTextEdit();
-    password_check = new QTextEdit();
+    form->addRow(tr("Name:"), username);
 
-    form->addRow(tr("First Name:"), first_name);
-    form->addRow(tr("Last Name:"), last_name);
-    form->addRow(tr("Username:"), username);
-    form->addRow(tr("Password:"), password);
-    form->addRow(tr("Re-enter Password:"), password_check);
-
-    QPushButton *submitButton = new QPushButton("Submit");
+    QPushButton *submitButton = new QPushButton("Select a Save Directory");
     QPushButton *cancelButton = new QPushButton("Cancel");
     connect(submitButton,SIGNAL(clicked()),this,SLOT(submit()));
     connect(cancelButton,SIGNAL(clicked()),this,SLOT(cancel()));
@@ -51,21 +42,11 @@ void NewUser::submit()
         showError("Please fill in all fields.");
         return;
     }
-    if(invalidUsername())
-    {
-        showError("That username already exists. Please enter another username.");
-        return;
-    }
-    if(passwordMismatch())
-    {
-        showError("Your passwords do not match.");
-        return;
-    }
 
+    QString pathName = QFileDialog::getExistingDirectory(this,tr("Select a Save Directory"), QDir::homePath());
+//    QDir dir(pathName);
     User* newUser = new User(username->toPlainText(),
-                             password->toPlainText(),
-                             first_name->toPlainText(),
-                             last_name->toPlainText()
+                             pathName
                              );
 
     parent->addNewUser(newUser);
@@ -80,11 +61,7 @@ void NewUser::cancel()
 
 bool NewUser::anyEmpty()
 {
-    if(first_name->toPlainText().isEmpty()) return true;
-    if(last_name->toPlainText().isEmpty()) return true;
     if(username->toPlainText().isEmpty()) return true;
-    if(password->toPlainText().isEmpty()) return true;
-    if(password_check->toPlainText().isEmpty()) return true;
     return false;
 }
 
@@ -100,8 +77,6 @@ bool NewUser::invalidUsername()
 
 bool NewUser::passwordMismatch()
 {
-    if(password->toPlainText() != password_check->toPlainText())
-        return true;
     return false;
 }
 

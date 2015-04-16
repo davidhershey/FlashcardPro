@@ -9,13 +9,11 @@ class User
 {
 private:
     std::vector<Deck*> decks;
-    QString password;
-    QString first_name;
-    QString last_name;
+    QString dir;
     //ADD STATS INFO IN HERE
 public:
     QString username;
-    User(QString usrn_in, QString pw_in, QString fn_in, QString ln_in, std::vector<Deck*> decks_in = std::vector<Deck*>());
+    User(QString usrn_in, QString _dir);
     ~User();
     bool sameName(QString check);
     void goToDecksView(QStackedWidget* pages_in);

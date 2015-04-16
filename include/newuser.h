@@ -14,11 +14,8 @@ public:
 
     QStackedWidget* pages;
     LogIn* parent;
-    QTextEdit *first_name;
-    QTextEdit *last_name;
+
     QTextEdit *username;
-    QTextEdit *password;
-    QTextEdit *password_check;
 
     bool anyEmpty();
     bool invalidUsername();

@@ -3,13 +3,18 @@
 #include <fstream>
 #include <iostream>
 
-User::User(QString usrn_in, QString pw_in, QString fn_in, QString ln_in, std::vector<Deck*> decks_in)
+User::User(QString usrn_in,QString _dir)
 {
     username = usrn_in;
-    password = pw_in;
-    first_name = fn_in;
-    last_name = ln_in;
-    decks= decks_in;
+    dir = _dir;
+//    dir += "/" + username + "_FCP";
+    QDir *directory = new QDir(dir);
+    if(directory->exists(username + "_FCP")){}
+    else directory->mkdir(username + "_FCP");
+    directory->cd(username + "_FCP");
+
+
+
 }
 
 User::~User(){}
@@ -33,8 +38,6 @@ void User::writeUserInfo(QString fileLoc)
     myFile.open(fileLoc.toStdString().c_str(), std::ios::app);
     qDebug() << "Got here";
     myFile << username.toStdString().c_str() << " ";
-    myFile << password.toStdString().c_str() << " ";
-    myFile << first_name.toStdString().c_str() << " ";
-    myFile << last_name.toStdString().c_str() << "\n";
+    myFile << dir.toStdString().c_str() << "\n";
     myFile.close();
 }
