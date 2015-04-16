@@ -128,6 +128,11 @@ void builder::listClicked(QListWidgetItem* item){
 }
 
 void builder::done_edit_slot(){
+    if (card_list->count() == 0){
+        QMessageBox::warning(this, "Deck is empty", "Deck is empty.");
+    }
+    else {
+
     int index = pages->currentIndex();
     pages->removeWidget(this);
     pages->setCurrentIndex(index-1);
@@ -146,6 +151,7 @@ void builder::done_edit_slot(){
     decksave->deck_name = deck_title->toPlainText();
     decksave->label->updateName();
     decksave->menu->title->setText(decksave->deck_name);
+    }
 }
 
 void builder::setup(){
