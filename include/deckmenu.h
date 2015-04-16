@@ -7,6 +7,7 @@
 #include "deck.h"
 #include "decklabel.h"
 #include "scoreplot.h"
+class ScorePlot;
 
 class DeckMenu : public QWidget
 {
@@ -23,6 +24,7 @@ signals:
 public slots:
     void study();
     void edit();
+    void deleteDeck();
     void stats();
     void saveDeckCallback();
     void back();

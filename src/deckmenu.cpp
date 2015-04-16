@@ -56,6 +56,10 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
     mainLayout->addWidget(edit, 0, Qt::AlignCenter);
     connect(edit,SIGNAL(clicked()), this, SLOT(edit()));
 
+    QPushButton *deleteDeck = new QPushButton("Delete Deck");
+    mainLayout->addWidget(deleteDeck, 0, Qt::AlignCenter);
+    connect(deleteDeck,SIGNAL(clicked()), this, SLOT(deleteDeck()));
+
     mainLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/5));
 
     this->setLayout(mainLayout);
@@ -78,6 +82,12 @@ void DeckMenu::edit()
     builder* edit = new builder(pages, deck);
     int index = pages->addWidget(edit);
     pages->setCurrentIndex(index);
+}
+
+void DeckMenu::deleteDeck()
+{
+    deck->SELFDESTRUCT();
+    back();
 }
 
 void DeckMenu::stats()
