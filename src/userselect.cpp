@@ -56,7 +56,7 @@ void UserSelect::goBackCallback()
 
 void UserSelect::newUserCallback()
 {
-    pages->removeWidget(this);
+    //pages->removeWidget(this);
     int index = pages->addWidget(new NewUser(pages, parent));
     pages->setCurrentIndex(index);
 }
