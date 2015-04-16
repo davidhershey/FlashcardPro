@@ -26,6 +26,7 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in)
         btn->setMinimumHeight(50);
         btn->setMaximumWidth(150);
         userButtons->addButton(btn);
+        userButtons->setId(btn,i);
         layout->addWidget(btn);
     }
 
