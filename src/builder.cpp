@@ -5,71 +5,12 @@
 
 builder::builder(QStackedWidget* pages_in, DecksView* decksview_in, User* _user)
 {
-    user = _user;
-    pages = pages_in;
-    decksview = decksview_in;
+        decksview = decksview_in;
+        user = _user;
+        pages = pages_in;
 
-    submit = new QPushButton(tr("Add/Update Card"));
-    remove = new QPushButton(tr("Delete Card"));
-    done = new QPushButton(tr("Add Deck"));
-    cancel = new QPushButton(tr("Cancel"));
-
-
-    QLabel* header00 = new QLabel(tr("Deck title"));
-    deck_title = new QTextEdit();
-
-    QVBoxLayout* layout = new QVBoxLayout();
-    layout->addWidget(header00);
-    layout->addWidget(deck_title);
-
-    QLabel* title = new QLabel(tr("Deck Builder"));
-    layout->addWidget(title);
-
-    QHBoxLayout* layout2 = new QHBoxLayout();
-    layout->addLayout(layout2);
-
-    card_list = new QListWidget();
-
-    QVBoxLayout *cardlay = new QVBoxLayout();
-    cardlay->addWidget(card_list);
-    cardlay->addWidget(remove);
-
-    layout2->addLayout(cardlay);
-
-    QVBoxLayout *layout3 = new QVBoxLayout();
-    layout2->addLayout(layout3);
-
-    QLabel* header1 = new QLabel(tr("Front text"));
-    QLabel* header2 = new QLabel(tr("Back text"));
-    front_text = new QTextEdit();
-    back_text = new QTextEdit();
-
-
-    layout3->addWidget(header1);
-    layout3->addWidget(front_text);
-    layout3->addWidget(header2);
-    layout3->addWidget(back_text);
-    layout3->addWidget(submit);
-
-    layout->addSpacing(20);
-    QVBoxLayout* layout4 = new QVBoxLayout();
-    layout4->addWidget(done);
-    layout4->addWidget(cancel);
-    layout->addLayout(layout4);
-
-    connect(submit, SIGNAL(pressed()), this, SLOT(submit_card()));
-    connect(remove, SIGNAL(pressed()), this, SLOT(delete_card()));
-    connect(cancel, SIGNAL(pressed()), this, SLOT(cancel_slot()));
-    connect(done, SIGNAL(pressed()), this, SLOT(done_slot()));
-
-    deck_title->setTabChangesFocus(true);
-    front_text->setTabChangesFocus(true);
-    back_text->setTabChangesFocus(true);
-
-    connect(card_list, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(listClicked(QListWidgetItem*)));
-
-    this->setLayout(layout);
-
+        setup();
+        connect(done, SIGNAL(pressed()), this, SLOT(done_slot()));
 }
 
 builder::builder(QStackedWidget* pages_in, Deck* deck)
@@ -77,66 +18,12 @@ builder::builder(QStackedWidget* pages_in, Deck* deck)
     pages = pages_in;
     decksave = deck;
 
-    submit = new QPushButton(tr("Add/Update Card"));
-    remove = new QPushButton(tr("Delete Card"));
-    done = new QPushButton(tr("Save Deck Changes"));
-    cancel = new QPushButton(tr("Cancel"));
+    setup();
 
+    done->setText("Save Changes");
+    titleplate->setText("Deck Editor");
 
-    QLabel* header00 = new QLabel(tr("Deck title"));
-    deck_title = new QTextEdit();
-
-    QVBoxLayout* layout = new QVBoxLayout();
-    layout->addWidget(header00);
-    layout->addWidget(deck_title);
-
-    QLabel* title = new QLabel(tr("Deck Builder"));
-    layout->addWidget(title);
-
-    QHBoxLayout* layout2 = new QHBoxLayout();
-    layout->addLayout(layout2);
-
-    card_list = new QListWidget();
-
-    QVBoxLayout *cardlay = new QVBoxLayout();
-    cardlay->addWidget(card_list);
-    cardlay->addWidget(remove);
-
-    layout2->addLayout(cardlay);
-
-    QVBoxLayout *layout3 = new QVBoxLayout();
-    layout2->addLayout(layout3);
-
-    QLabel* header1 = new QLabel(tr("Front text"));
-    QLabel* header2 = new QLabel(tr("Back text"));
-    front_text = new QTextEdit();
-    back_text = new QTextEdit();
-
-
-    layout3->addWidget(header1);
-    layout3->addWidget(front_text);
-    layout3->addWidget(header2);
-    layout3->addWidget(back_text);
-    layout3->addWidget(submit);
-
-    layout->addSpacing(20);
-    QVBoxLayout* layout4 = new QVBoxLayout();
-    layout4->addWidget(done);
-    layout4->addWidget(cancel);
-    layout->addLayout(layout4);
-
-    connect(submit, SIGNAL(pressed()), this, SLOT(submit_card()));
-    connect(remove, SIGNAL(pressed()), this, SLOT(delete_card()));
-    connect(cancel, SIGNAL(pressed()), this, SLOT(cancel_slot()));
     connect(done, SIGNAL(pressed()), this, SLOT(done_edit_slot()));
-
-    deck_title->setTabChangesFocus(true);
-    front_text->setTabChangesFocus(true);
-    back_text->setTabChangesFocus(true);
-
-    connect(card_list, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(listClicked(QListWidgetItem*)));
-
-    this->setLayout(layout);
 
     std::vector <Flashcard*> import = deck->getDeck();
     for (int i=0; i < import.size(); i++){
@@ -259,4 +146,92 @@ void builder::done_edit_slot(){
     decksave->deck_name = deck_title->toPlainText();
     decksave->label->updateName();
     decksave->menu->title->setText(decksave->deck_name);
+}
+
+void builder::setup(){
+
+    submit = new QPushButton(tr("Add/Update Card"));
+    remove = new QPushButton(tr("Delete Card"));
+    cancel = new QPushButton(tr("Cancel"));
+    done = new QPushButton(tr("Add Deck"));
+
+    titleplate = new QLabel(tr("Deck title"));
+    deck_title = new QTextEdit();
+
+    QVBoxLayout* layout = new QVBoxLayout();
+    layout->addWidget(titleplate);
+    deck_title->setMaximumHeight(40);
+
+    QHBoxLayout* titlelay = new QHBoxLayout();
+    QLabel* title2 = new QLabel(tr("Deck Name"));
+
+    titlelay->addWidget(title2);
+    titlelay->addWidget(deck_title);
+
+    layout->addLayout(titlelay);
+
+    QHBoxLayout* layout2 = new QHBoxLayout();
+    layout->addLayout(layout2);
+
+    card_list = new QListWidget();
+
+    QVBoxLayout *cardlay = new QVBoxLayout();
+    cardlay->addWidget(card_list);
+    cardlay->addWidget(remove);
+
+    layout2->addLayout(cardlay);
+
+    QVBoxLayout *layout3 = new QVBoxLayout();
+    layout2->addLayout(layout3);
+
+    QLabel* header1 = new QLabel(tr("Front text"));
+    QLabel* header2 = new QLabel(tr("Back text"));
+    front_text = new QTextEdit();
+    back_text = new QTextEdit();
+
+
+    layout3->addWidget(header1);
+    layout3->addWidget(front_text);
+    layout3->addWidget(header2);
+    layout3->addWidget(back_text);
+    layout3->addWidget(submit);
+
+    layout->addSpacing(20);
+    QVBoxLayout* layout4 = new QVBoxLayout();
+    layout4->addWidget(done);
+    layout4->addWidget(cancel);
+    layout->addLayout(layout4);
+
+    connect(submit, SIGNAL(pressed()), this, SLOT(submit_card()));
+    connect(remove, SIGNAL(pressed()), this, SLOT(delete_card()));
+    connect(cancel, SIGNAL(pressed()), this, SLOT(cancel_slot()));
+
+    deck_title->setTabChangesFocus(true);
+    front_text->setTabChangesFocus(true);
+    back_text->setTabChangesFocus(true);
+
+    connect(card_list, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(listClicked(QListWidgetItem*)));
+
+    this->setLayout(layout);
+
+    QFont headerfont, smallfont, medfont;
+    QFontDatabase db;
+
+    headerfont = db.font("Nexa Light", "Normal", 48);
+    smallfont = db.font("Nexa Light", "Normal", 18);
+    medfont = db.font("Nexa Light", "Normal", 24);
+
+    titleplate->setFont(headerfont);
+    title2->setFont(medfont);
+
+    submit->setFont(medfont);
+    remove->setFont(medfont);
+    cancel->setFont(medfont);
+    done->setFont(medfont);
+    deck_title->setFont(smallfont);
+    front_text->setFont(smallfont);
+    back_text->setFont(smallfont);
+    header1->setFont(medfont);
+    header2->setFont(medfont);
+
 }

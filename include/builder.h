@@ -32,7 +32,10 @@ private:
     QPushButton* submit;
     QPushButton* remove;
     QPushButton* cancel;
-    QPushButton* done;
+    QPushButton* done;\
+
+    QLabel* titleplate;
+    void setup();
     User* user;
 public slots:
     void submit_card();
