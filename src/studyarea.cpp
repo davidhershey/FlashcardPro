@@ -12,13 +12,16 @@ StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, DeckMenu* parent_in)
     deck = _deck;
     pages = pages_in;
     curCard = _deck->getTop();
+    curCard->setToolTip("Click to flip!");
     grid->addWidget(curCard,1,0,1,3);
 
-    QPushButton *back = new QPushButton("Back to Deck Selection");
+    QPushButton *back = new QPushButton("Back");
+    back->setShortcut(QKeySequence(" "));
     connect(back, SIGNAL(clicked()), this, SLOT(goBack()));
     grid->addWidget(back,0,0,1,1);
 
     QPushButton *right = new QPushButton;
+    right->setToolTip("Click if you knew the answer");
     right->setFixedSize(65,65);
     QPixmap pm(":/green_check.png");
     pm = pm.scaled(65, 65, Qt::KeepAspectRatio);
@@ -30,6 +33,7 @@ StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, DeckMenu* parent_in)
     connect(right,SIGNAL(clicked()),this,SLOT(correct()));
 
     QPushButton *wrong = new QPushButton;
+    wrong->setToolTip("Click if you didn't know the answer.");
     wrong->setFixedSize(65,65);
     QPixmap pm2(":/red_x.png");
     pm2 = pm2.scaled(65, 65, Qt::KeepAspectRatio);
