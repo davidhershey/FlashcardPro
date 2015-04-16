@@ -17,6 +17,8 @@ LogIn::LogIn(QStackedWidget* pages_in)
     :QFrame(){
     pages = pages_in;
     layout = new QGridLayout();
+    QDir directory;
+    fileLoc = directory.currentPath();
     readCurrentUsers();
     initialSetup();
 }
@@ -30,7 +32,7 @@ void LogIn::nextPage()
 {
 
     if(curUsers.empty()){
-        qDebug() << "Add a setup page here because this means it's the first time ever using app";
+        int index = pages->addWidget(new NewUser(pages, this));
         return;
     }
 
@@ -57,21 +59,6 @@ void LogIn::createNewUserCallback(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LogIn::initialSetup(){
 
-    QDir directory;
-    fileLoc = directory.currentPath();
-    int cutpoint = 0;
-    for(int i = fileLoc.size() - 1; i > 0; i--){
-        if(fileLoc.at(i) == '/'){
-            cutpoint = i;
-            i = 0;
-        }
-    }
-    fileLoc = fileLoc.left(cutpoint);
-    /*
-    QString picLoc;
-    picLoc = fileLoc;
-    picLoc.append(":/flashcard.png");*/
-
     QPixmap newPixmap(":/flashcard.png");
 
     if (newPixmap.isNull()){
@@ -93,17 +80,17 @@ void LogIn::initialSetup(){
     naxa = db.font("Nexa Light","Normal",18);
     title_info->setFont(naxa);
 
-    nextButton = new QPushButton("Log In");
-    QPushButton *cr = new QPushButton("Sign Up");
+    QPushButton* startButton = new QPushButton("Start");
+    //QPushButton *cr = new QPushButton("Sign Up");
 
 
     layout->addWidget(title_info,1,0);
-    layout->addWidget(nextButton,2,0);
-    layout->addWidget(cr,3,0);
+    layout->addWidget(startButton,2,0);
+    //layout->addWidget(cr,3,0);
     setLayout(layout);
 
-    connect(nextButton, SIGNAL(clicked()), this, SLOT(nextPage()));
-    connect(cr, SIGNAL(clicked()),this,SLOT(createNewUserCallback()));
+    connect(startButton, SIGNAL(clicked()), this, SLOT(nextPage()));
+    //connect(cr, SIGNAL(clicked()),this,SLOT(createNewUserCallback()));
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -126,54 +113,7 @@ void LogIn::returnToLogInCallback(){
 ////////////////////////////////// Writes New User to Text File ///////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-void LogIn::writeNewUserCallback(){
-    QString txtFile;
-    txtFile = fileLoc;
-    txtFile.append("/FlashcardPro/login_names.txt");
 
-    if(edit3->toPlainText() == ""){
-        QMessageBox msgBox;
-        msgBox.critical(0,"Error", "Please enter a username");
-        msgBox.setFixedSize(500,200);
-        return;
-    }
-
-    for(int i=0; i < currentUsers.size(); i++){
-        if(edit3->toPlainText() == currentUsers.at(i)){
-            QMessageBox msgBox;
-            msgBox.critical(0,"Error", "Username Already exists. Please choose a new username");
-            msgBox.setFixedSize(500,200);
-            return;
-        }
-    }
-
-    currentUsers.push_back(edit3->toPlainText());
-
-    ofstream myFile;
-    myFile.open(txtFile.toStdString().c_str(), std::ios::app);
-    myFile << edit3->toPlainText().toStdString().c_str();
-    myFile << "\n";
-    myFile.close();
-
-    returnToLogInCallback();
-
-    QString folder;
-    folder = fileLoc + "/" + edit3->toPlainText() + "_Decks";
-    QDir dir(folder);
-    //mkdir(folder.toStdString().c_str());
-    if(!dir.exists()) dir.mkdir(".");
-    else qDebug() << "Folder already exists!";
-
-
-    //LOGIC FOR LOGGING INTO DATABASE HERE
-    //int current = pages->currentIndex();
-    pages->setCurrentIndex(1);
-
-    QMessageBox msgBox;
-    msgBox.setText("Successfully Created User!");
-    msgBox.setFixedSize(500,200);
-    msgBox.exec();
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -183,15 +123,33 @@ void LogIn::writeNewUserCallback(){
 void LogIn::readCurrentUsers(){
 
     QString txtFile = fileLoc;
-    txtFile.append("/FlashcardPro/login_names.txt");
+    txtFile.append("/users.txt");
+
+    qDebug() << txtFile;
 
     ifstream file(txtFile.toStdString().c_str());
     string temp;
 
-    while(getline(file,temp)){
-        QString push = QString::fromStdString(temp);
-        if(push != "") currentUsers.push_back(push);
+    if(!file.is_open())
+    {
+        //create new
+        std::ofstream myFile;
+        myFile.open(txtFile.toStdString().c_str(), std::ios::app);
+        qDebug() << "New User!";
+        return;
+    }
 
+    while(getline(file,temp)){
+
+        QString push = QString::fromStdString(temp);
+        QStringList list = push.split(" ");
+        if(list.size() != 4)
+        {
+            qDebug() << "issue in login readCurrentUsers";
+            return;
+        }
+        qDebug() << "added user " << list[0];
+        curUsers.push_back(new User(list[0], list[1], list[2], list[3]));
     }
 }
 
@@ -206,7 +164,7 @@ void LogIn::addNewUser(User* user)
     curUsers.push_back(user);
 
     //write to login_names.txt
-    user->writeUserInfo(fileLoc + "/FlashcardPro/login_names.txt");
+    user->writeUserInfo(fileLoc + "/users.txt");
 
     //Create directory to contain decks
     QString folder;

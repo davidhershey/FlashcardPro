@@ -47,7 +47,7 @@ UserSelect::~UserSelect(){}
 void UserSelect::goBackCallback()
 {
     pages->removeWidget(this);
-    pages->setCurrentIndex(pages->currentIndex() - 1);
+    //pages->setCurrentIndex(pages->currentIndex() - 1);
 }
 
 void UserSelect::newUserCallback()

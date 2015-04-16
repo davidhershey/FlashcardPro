@@ -75,7 +75,7 @@ void NewUser::submit()
 void NewUser::cancel()
 {
     pages->removeWidget(this);
-    pages->setCurrentIndex(pages->currentIndex() - 1);
+    //pages->setCurrentIndex(pages->currentIndex() - 1);
 }
 
 bool NewUser::anyEmpty()

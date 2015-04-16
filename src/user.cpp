@@ -29,7 +29,9 @@ void User::goToDecksView(QStackedWidget* pages_in)
 void User::writeUserInfo(QString fileLoc)
 {
     std::ofstream myFile;
+    qDebug() << fileLoc;
     myFile.open(fileLoc.toStdString().c_str(), std::ios::app);
+    qDebug() << "Got here";
     myFile << username.toStdString().c_str() << " ";
     myFile << password.toStdString().c_str() << " ";
     myFile << first_name.toStdString().c_str() << " ";
