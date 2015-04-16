@@ -13,14 +13,24 @@ NewUser::NewUser(QStackedWidget* pages_in, LogIn* parent_in)
     naxa = db.font("Nexa Light","Normal",64);
     title->setFont(naxa);
 
+    QFont naxa2= db.font("Nexa Light", "Normal", 18);
+
     QFormLayout* form = new QFormLayout();
     username = new QTextEdit();
-    form->addRow(tr("Name:"), username);
+
+    QLabel *name = new QLabel(tr("Name:"));
+    name->setFont(naxa2);
+    form->addRow(name, username);
+    username->setMaximumHeight(40);
+    username->setFont(naxa2);
 
     QPushButton *submitButton = new QPushButton("Select a Save Directory");
     QPushButton *cancelButton = new QPushButton("Cancel");
     connect(submitButton,SIGNAL(clicked()),this,SLOT(submit()));
     connect(cancelButton,SIGNAL(clicked()),this,SLOT(cancel()));
+
+    submitButton->setFont(naxa2);
+    cancelButton->setFont(naxa2);
 
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(title, 0, Qt::AlignHCenter);

@@ -84,6 +84,9 @@ void LogIn::initialSetup(){
     title_info->setFont(naxa);
 
     QPushButton* startButton = new QPushButton("Start");
+    QFont naxa2= db.font("Nexa Light", "Normal", 18);
+    startButton->setFont(naxa2);
+
     //QPushButton *cr = new QPushButton("Sign Up");
 
 
