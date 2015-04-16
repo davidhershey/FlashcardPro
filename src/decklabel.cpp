@@ -35,7 +35,7 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
           this->setFont(naxa);
           this->setText(deck->deck_name);
 
-          this->setStyleSheet("border: 1px solid; background-color: white; qproperty-alignment: AlignCenter;");
+          this->setStyleSheet("border: 1px solid; background-color: white; qproperty-alignment: AlignCenter; border-radius: 8px;");
           this->setFixedSize(129, 200);
           hover = true;
       }
@@ -59,13 +59,13 @@ DeckLabel::DeckLabel(Deck* deck_in, QStackedWidget* pages_in, QWidget * parent )
   void DeckLabel::enterEvent(QEvent * event)
   {
     qDebug() << "entered!";
-    if(hover) this->setStyleSheet("border: 2px solid; background-color: white;");
+    if(hover) this->setStyleSheet("border: 2px solid; background-color: white; qproperty-alignment: AlignCenter; border-radius: 8px;");
   }
 
   void DeckLabel::leaveEvent(QEvent * event)
   {
     qDebug() << "exited!";
-    if(hover) this->setStyleSheet("border: 1px solid; background-color: white;");
+    if(hover) this->setStyleSheet("border: 1px solid; background-color: white; qproperty-alignment: AlignCenter; border-radius: 8px;");
   }
 
   void DeckLabel::chooseNext()

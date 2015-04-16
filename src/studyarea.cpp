@@ -85,8 +85,10 @@ void StudyArea::incorrect()
 
 void StudyArea::goBack()
 {
-    parent->updateMenu();
-    int nextIndex = pages->currentIndex()-1;
+
     pages->removeWidget(pages->currentWidget());
-    pages->setCurrentIndex(nextIndex);
+    pages->removeWidget(pages->currentWidget());
+    int index = pages->addWidget(new DeckMenu(deck, pages));
+    pages->setCurrentIndex(index);
+
 }
