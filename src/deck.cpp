@@ -43,6 +43,7 @@ Deck::Deck(std::vector<Flashcard *> _cards, QString deck_name_in, User *_user) :
     time_t cur;
     time(&cur);
     this->scoreTimes.push_back(cur);
+    autoSave();
 }
 
 Deck::~Deck()
@@ -178,11 +179,15 @@ void Deck::parseCard(QString* line)
 
 void Deck::makeSaveText()
 {
+    saveText = "";
     saveText += deck_name;
     saveText += char(30);
     saveText += num_cards;
     saveText += char(30);
-    saveText += deck_score;
+    for(int i = 0;i<scoreTimes.size();i++){
+        saveText+=QString::number(scoreTimes[i]);
+        saveText+=',';
+    }
     saveText += '\n';
 
     for(int i = 0; i < num_cards; ++i)
@@ -225,6 +230,21 @@ Flashcard *Deck::getHardest()
 
 void Deck::updateDeck(std::vector<Flashcard *> cards_in){
     cards = cards_in;
+}
+
+void Deck::autoSave()
+{
+    makeSaveText();
+    QDir *dir = user->getDirectory();
+    QString fname = dir->absoluteFilePath(deck_name+".dek");
+    QFile file(fname);
+            if (!file.open(QIODevice::WriteOnly)) {
+                qDebug() << "File couldn't be opened";
+                return;
+            }
+    QTextStream out(&file);
+    out << saveText;
+    file.close();
 }
 
 std::vector<Flashcard*> Deck::getDeck(){

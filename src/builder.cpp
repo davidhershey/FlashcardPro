@@ -242,7 +242,7 @@ void builder::done_edit_slot(){
 
     while (card_list->count() > 0){
     builderItem* item = dynamic_cast <builderItem*> (card_list->takeItem(0));
-    Flashcard* card = new Flashcard(item->ftext(), item->btext(), 0);
+    Flashcard* card = new Flashcard(item->ftext(), item->btext(), 1);
     _cards.push_back(card);
     qDebug() << "push card";
     }

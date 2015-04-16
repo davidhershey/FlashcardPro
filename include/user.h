@@ -24,6 +24,8 @@ public:
     void writeUserInfo(QString fileLoc);
     QStringList getDeckFiles();
 
+    QDir *getDirectory() const;
+
 public slots:
     void startSession();
 };
