@@ -17,42 +17,41 @@ DeckMenu::DeckMenu(Deck* _deck,QStackedWidget* pages_in, QWidget *parent)
 
     _deck->menu = this;
 
-    QHBoxLayout* topLayout = new QHBoxLayout();
+    QVBoxLayout* rightLayout = new QVBoxLayout();
+
+    rightLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/4));
+
     title = new QLabel(deck->deck_name);
     title->setFont(naxa);
-    topLayout->addWidget(title);
-    title->setAlignment(Qt::AlignLeft);
+    title->setAlignment(Qt::AlignHCenter);
+    rightLayout->addWidget(title, 0, Qt::AlignCenter);
 
     quick_stats = new QLabel();
     quick_stats->setStyleSheet("color : blue;");
     quick_stats->setFont(naxa);
     quick_stats->setText("Current Deck Score:\n" + QString::number(deck->getDeckScore()));
-    topLayout->addWidget(quick_stats);
+    quick_stats->setAlignment(Qt::AlignHCenter);
+    rightLayout->addWidget(quick_stats, 0, Qt::AlignCenter);
 
-    vbox->addLayout(topLayout);
-
+    rightLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/4));
     QPushButton *study = new QPushButton("Study Deck");
-    vbox->addWidget(study);
+    rightLayout->addWidget(study, 0, Qt::AlignCenter);
     connect(study,SIGNAL(clicked()),this,SLOT(study()));
 
     QPushButton *edit = new QPushButton("Edit Deck");
-    vbox->addWidget(edit);
+    rightLayout->addWidget(edit, 0, Qt::AlignCenter);
     connect(edit,SIGNAL(clicked()), this, SLOT(edit()));
 
     QPushButton *stats = new QPushButton("View Deck Statistics");
-    vbox->addWidget(stats);
+    rightLayout->addWidget(stats, 0, Qt::AlignCenter);
     connect(stats,SIGNAL(clicked()),this,SLOT(stats()));
 
-    QPushButton *save = new QPushButton("Save Deck Progress");
-    vbox->addWidget(save);
-    connect(save, SIGNAL(clicked()), this, SLOT(saveDeckCallback()));
-
     QPushButton *back = new QPushButton("Back to Decks");
-    vbox->addWidget(back);
+    rightLayout->addWidget(back, 0, Qt::AlignCenter);
     connect(back,SIGNAL(clicked()),this,SLOT(back()));
+    rightLayout->addSpacerItem(new QSpacerItem(this->width(), this->height()/4));
 
-
-    this->setLayout(vbox);
+    this->setLayout(rightLayout);
 }
 
 DeckMenu::~DeckMenu()

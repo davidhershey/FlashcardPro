@@ -17,15 +17,15 @@ DecksView::DecksView(QStackedWidget* pages_in, User *_user)
     QLabel* title = new QLabel("Your Decks");
     title->setFont(naxa);
     title->setAlignment(Qt::AlignHCenter);
-    title->setMaximumHeight(50);
+    title->setMaximumHeight(64);
 
-    backButton = new QPushButton("Switch User");
+    backButton = new QPushButton("Back");
     backButton->setMinimumSize(100, 30);
     backButton->setMaximumSize(200, 30);
     connect(backButton, SIGNAL(clicked()), this, SLOT(goBack()));
 
     topBar->addWidget(backButton, 0, Qt::AlignLeft);
-    topBar->addSpacerItem(new QSpacerItem((title->width()/2) - backButton->width(), title->height(),QSizePolicy::Expanding));
+    topBar->addSpacerItem(new QSpacerItem((title->width()/2), title->height(),QSizePolicy::Expanding));
     topBar->addWidget(title, 0, Qt::AlignHCenter);
     topBar->addSpacerItem(new QSpacerItem((title->width()/2), title->height(), QSizePolicy::Expanding));
     topBar->setAlignment(mainLayout, Qt::AlignTop);

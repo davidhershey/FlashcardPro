@@ -13,34 +13,43 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
     parent = parent_in;
 
     QVBoxLayout* layout = new QVBoxLayout();
+    QHBoxLayout* topBar = new QHBoxLayout();
+
+    QPushButton* backButton = new QPushButton("Back");
+    connect(backButton, SIGNAL(clicked()), this, SLOT(goBackCallback()));
+
     QLabel* title = new QLabel("Current Users");
     QFont naxa;
     QFontDatabase db;
     naxa = db.font("Nexa Light","Normal",64);
     title->setFont(naxa);
-    title->setMaximumHeight(50);
-    layout->addWidget(title, 0, Qt::AlignHCenter);
+    title->setMaximumHeight(64);
+
+    topBar->addWidget(backButton, 0, Qt::AlignLeft);
+    topBar->addSpacerItem(new QSpacerItem((title->width()/2), title->height(),QSizePolicy::Expanding));
+    topBar->addWidget(title, 0, Qt::AlignHCenter);
+    topBar->addSpacerItem(new QSpacerItem((title->width()/2), title->height(), QSizePolicy::Expanding));
+    topBar->setAlignment(layout, Qt::AlignTop);
+    layout->addLayout(topBar);
 
     userButtons = new QButtonGroup();
     connect(userButtons, SIGNAL(buttonClicked(int)), this, SLOT(openClickedUser(int)));
     for(int i=0; i < users.size(); i++){
         QPushButton *btn = new QPushButton(users.at(i)->username.toStdString().c_str());
-        btn->setMinimumHeight(50);
-        btn->setMaximumWidth(150);
+        btn->setMinimumSize(250,50);
+        btn->setMaximumSize(300,100);
+        btn->setStyleSheet("background-color: rgb(200,200,200);");
         userButtons->addButton(btn);
         userButtons->setId(btn,i);
-        layout->addWidget(btn);
+        layout->addWidget(btn, 0, Qt::AlignHCenter);
     }
 
-    QHBoxLayout* bottomLayout = new QHBoxLayout();
+
     QPushButton* newUserButton = new QPushButton("Create New User");
     connect(newUserButton, SIGNAL(clicked()), this, SLOT(newUserCallback()));
-    QPushButton* backButton = new QPushButton("Back");
-    connect(backButton, SIGNAL(clicked()), this, SLOT(goBackCallback()));
-    bottomLayout->addWidget(backButton, 0, Qt::AlignLeft);
-    bottomLayout->addWidget(newUserButton, 0, Qt::AlignHCenter);
-
-    layout->addLayout(bottomLayout);
+    newUserButton->setMinimumSize(250,50);
+    newUserButton->setMaximumSize(300,100);
+    layout->addWidget(newUserButton, 0, Qt::AlignHCenter);
 
     this->setLayout(layout);
 }
