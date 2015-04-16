@@ -74,6 +74,7 @@ void LogIn::initialSetup(){
         newLabel->setMaximumSize(500,500);
         newLabel->setMinimumSize(500,500);
         layout->addWidget(newLabel,0,0);
+        layout->setAlignment(newLabel, Qt::AlignHCenter);
     }
 
     QLabel *title_info = new QLabel("The most comprehensive flashcard app on the market. Two thumbs up!");
@@ -87,9 +88,19 @@ void LogIn::initialSetup(){
 
 
     layout->addWidget(title_info,1,0);
-    layout->addWidget(startButton,2,0);
+
+    QVBoxLayout *lay = new QVBoxLayout;
+    lay->addLayout(layout);
+
+    lay->addSpacing(20);
+    lay->addWidget(startButton,2,0);
+    lay->setAlignment(startButton, Qt::AlignHCenter);
+    lay->addSpacing(40);
+    startButton->setMinimumHeight(40);
+    startButton->setMinimumWidth(175);
+
     //layout->addWidget(cr,3,0);
-    setLayout(layout);
+    setLayout(lay);
 
     connect(startButton, SIGNAL(clicked()), this, SLOT(nextPage()));
     //connect(cr, SIGNAL(clicked()),this,SLOT(createNewUserCallback()));
