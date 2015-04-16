@@ -25,13 +25,25 @@ NewUser::NewUser(QStackedWidget* pages_in, LogIn* parent_in, UserSelect* select_
     username->setMaximumHeight(40);
     username->setFont(naxa2);
     QLabel *select = new QLabel(tr("Select a Save Directory:"));
+
+    QHBoxLayout *direct_lay = new QHBoxLayout();
+    direct = new QLabel();
+    direct->setFont(naxa2);
+
     select->setFont(naxa2);
-    QPushButton *submitButton = new QPushButton("Browse");
-    submitButton->setFont(naxa2);
+    QPushButton *browseButton = new QPushButton("Browse");
+    browseButton->setFont(naxa2);
     QPushButton *cancelButton = new QPushButton("Cancel");
+    QPushButton *submitButton = new QPushButton("Create User");
+    connect(browseButton, SIGNAL(clicked()), this, SLOT(browse()));
     connect(submitButton,SIGNAL(clicked()),this,SLOT(submit()));
     connect(cancelButton,SIGNAL(clicked()),this,SLOT(cancel()));
-    form->addRow(select, submitButton);
+
+    direct_lay->addWidget(browseButton);
+    direct_lay->addWidget(direct);
+    browseButton->setMaximumWidth(150);
+    form->addRow(select, direct_lay);
+    form->addRow(submitButton);
 
     submitButton->setFont(naxa2);
     cancelButton->setFont(naxa2);
@@ -51,7 +63,7 @@ NewUser::~NewUser()
 
 }
 
-void NewUser::submit()
+void NewUser::browse()
 {
     if(anyEmpty())
     {
@@ -66,8 +78,13 @@ void NewUser::submit()
         }
     }
 
-    QString pathName = QFileDialog::getExistingDirectory(this,tr("Select a Save Directory"), QDir::homePath());
+    pathName = QFileDialog::getExistingDirectory(this,tr("Select a Save Directory"), QDir::homePath());
 //    QDir dir(pathName);
+    direct->setText(pathName);
+
+}
+
+void NewUser::submit(){
     User* newUser = new User(validName(),
                              pathName
                              );
