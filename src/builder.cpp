@@ -99,7 +99,7 @@ void builder::done_slot(){
 
     while (card_list->count() > 0){
     builderItem* item = dynamic_cast <builderItem*> (card_list->takeItem(0));
-    Flashcard* card = new Flashcard(item->ftext(), item->btext(), 0);
+    Flashcard* card = new Flashcard(item->ftext(), item->btext(), 1);
     _cards.push(card);
     }
 

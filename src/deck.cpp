@@ -76,10 +76,10 @@ int Deck::getDeckScore()
 void Deck::shuffle()
 {
     Flashcard* curCard = getTop();
-    if(cards.size()>4){
+    if(cards.size()>5){
         cards.erase(cards.begin());
-        int i = 3;
-        while(cards[i]->getScore() < curCard->getScore() && i<cards.size()-1) i++;
+        int i = 4;
+        while(i<cards.size()-1 && cards[i]->getScore() < curCard->getScore()) i++;
         cards.insert(cards.begin()+i,curCard);
     }
     else{
