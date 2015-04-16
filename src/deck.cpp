@@ -190,13 +190,13 @@ void Deck::makeSaveText()
     }
     saveText += '\n';
 
-    for(int i = 0; i < num_cards; ++i)
+    for(int i = 0; i < cards.size(); ++i)
     {
         saveText += cards[i]->fstr;
         saveText += char(30);
         saveText += cards[i]->bstr;
         saveText += char(30);
-        saveText += cards[i]->cardScore;
+        saveText += QString::number(cards[i]->getScore());
         saveText += '\n';
     }
 
