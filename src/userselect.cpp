@@ -35,19 +35,25 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
     topBar->addWidget(title, 0, Qt::AlignHCenter);
     topBar->addSpacerItem(new QSpacerItem((title->width()/2), title->height(), QSizePolicy::Expanding));
     topBar->setAlignment(layout, Qt::AlignTop);
-    layout->addLayout(topBar);
+    //layout->addLayout(topBar);
 
-    QSplitter *splitter = new QSplitter();
-    QFrame *rightWidget = new QFrame();
-    rightWidget->setLayout(layout);
-    rightWidget->setStyleSheet("QFrame { background-color: rgb(191, 197, 255); }");
+    QWidget *userList = new QWidget();
+    userList->setLayout(layout);
+
     QScrollArea *scrollArea = new QScrollArea();
-    scrollArea->setWidgetResizable(1);
-    scrollArea->setWidget(rightWidget);
-    splitter->addWidget(scrollArea);
-    QGridLayout *lay = new QGridLayout();
-    lay->addWidget(splitter);
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setWidget(userList);
+
+
+    QVBoxLayout *lay = new QVBoxLayout();
+    lay->addSpacing(10);
+    lay->addLayout(topBar);
+    lay->addSpacing(40);
+    lay->addWidget(scrollArea);
+
     this->setLayout(lay);
+    this->setStyleSheet("QFrame { background-color: rgb(191, 197, 255); }");
+    scrollArea->setStyleSheet("background-color:rgb(191,197,255);");
 
 
     userButtons = new QButtonGroup();
@@ -69,6 +75,7 @@ UserSelect::UserSelect(QStackedWidget *pages_in, std::vector<User*> users_in, Lo
     newUserButton->setMinimumSize(250,75);
     newUserButton->setMaximumSize(300,100);
     newUserButton->setFont(naxa3);
+    newUserButton->setStyleSheet("background-color: rgb(240,240,200);");
     layout->addWidget(newUserButton, 0, Qt::AlignHCenter);
 }
 
