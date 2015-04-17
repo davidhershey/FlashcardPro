@@ -13,7 +13,6 @@ StatsView::StatsView(Deck *_deck, QStackedWidget* pages_in,QWidget *parent)
     title->setAlignment(Qt::AlignCenter);
     vbox->addWidget(title);
 
-
 //    QLabel *scoreLabel = new QLabel;
 //    scoreLabel->setText("Deck Score: " + QString::number(deck->getDeckScore()));
 //    scoreLabel->setAlignment(Qt::AlignCenter);

@@ -49,6 +49,7 @@ Tutorial::Tutorial()
     mainLayout->addWidget(tutPages);
     mainLayout->addLayout(layout);
     setLayout(mainLayout);
+    this->resize(500,500);
 
 }
 

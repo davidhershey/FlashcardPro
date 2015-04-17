@@ -24,10 +24,13 @@ public:
     bool passwordMismatch();
     QString validName();
     void showError(QString text);
+    QString pathName;
+    QTextEdit* direct;
 
 public slots:
     void submit();
     void cancel();
+    void browse();
 };
 
 #endif // NEWUSER

@@ -11,9 +11,11 @@ DecksView::DecksView(QStackedWidget* pages_in, User *_user)
     QHBoxLayout* topBar = new QHBoxLayout();
 
 
-    QFont naxa;
+    QFont naxa, naxa2;
     QFontDatabase db;
     naxa = db.font("Nexa Light","Normal",64);
+    naxa2 = db.font("Nexa Light", "Normal", 18);
+
     QLabel* title = new QLabel("Your Decks");
     title->setFont(naxa);
     title->setAlignment(Qt::AlignHCenter);
@@ -21,8 +23,9 @@ DecksView::DecksView(QStackedWidget* pages_in, User *_user)
     title->setMinimumHeight(120);
 
     backButton = new QPushButton("Back");
+    backButton->setFont(naxa2);
     backButton->setMinimumSize(100, 30);
-    backButton->setMaximumSize(200, 30);
+    //backButton->setMaximumSize(200, 30);
     connect(backButton, SIGNAL(clicked()), this, SLOT(goBack()));
 
     topBar->addWidget(backButton, 0, Qt::AlignLeft);
@@ -66,7 +69,7 @@ void DecksView::getUserDecks()
         QFile myFile(fileName);
         myFile.open(QIODevice::ReadOnly);
         int fileHandle = myFile.handle();
-        qDebug() << fileName;
+        //qDebug() << fileName;
         FILE* fh = fdopen(fileHandle, "rb");
         Deck* insDeck = new Deck(fh,user);
         addNewDeckLabel(insDeck);

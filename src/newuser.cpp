@@ -7,7 +7,7 @@ NewUser::NewUser(QStackedWidget* pages_in, LogIn* parent_in, UserSelect* select_
     pages = pages_in;
     parent = parent_in;
     select = select_parent;
-    qDebug() << "making new user ";
+    //qDebug() << "making new user ";
     QLabel* title = new QLabel("Create New User");
     QFont naxa;
     QFontDatabase db;
@@ -25,23 +25,43 @@ NewUser::NewUser(QStackedWidget* pages_in, LogIn* parent_in, UserSelect* select_
     username->setMaximumHeight(40);
     username->setFont(naxa2);
     QLabel *select = new QLabel(tr("Select a Save Directory:"));
+
+    QHBoxLayout *direct_lay = new QHBoxLayout();
+    direct = new QTextEdit();
+    direct->setReadOnly(true);
+    direct->setMaximumHeight(40);
+    direct->setFont(naxa2);
+
     select->setFont(naxa2);
-    QPushButton *submitButton = new QPushButton("Browse");
-    submitButton->setFont(naxa2);
+    QPushButton *browseButton = new QPushButton("Browse");
+    browseButton->setFont(naxa2);
     QPushButton *cancelButton = new QPushButton("Cancel");
+    QPushButton *submitButton = new QPushButton("Create User");
+    connect(browseButton, SIGNAL(clicked()), this, SLOT(browse()));
     connect(submitButton,SIGNAL(clicked()),this,SLOT(submit()));
     connect(cancelButton,SIGNAL(clicked()),this,SLOT(cancel()));
-    form->addRow(select, submitButton);
+
+    direct_lay->addWidget(browseButton);
+
+    direct_lay->addWidget(direct);
+
+    browseButton->setMaximumWidth(150);
+    form->addRow(select, direct_lay);
+    //form->addRow(submitButton);
 
     submitButton->setFont(naxa2);
+    submitButton->setMinimumWidth(150);
+    cancelButton->setMinimumWidth(150);
     cancelButton->setFont(naxa2);
 
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(title, 0, Qt::AlignHCenter);
     layout->addSpacerItem(new QSpacerItem(this->width(), this->height()/4));
     layout->addLayout(form);
-    layout->addSpacerItem(new QSpacerItem(this->width(), this->height()/4));
+    layout->addSpacerItem(new QSpacerItem(this->width(), this->height()/8));
+    layout->addWidget(submitButton, 0, Qt::AlignHCenter);
     layout->addWidget(cancelButton, 0, Qt::AlignHCenter);
+    layout->addSpacerItem(new QSpacerItem(this->width(), this->height()/8));
 
 
     this->setLayout(layout);
@@ -51,14 +71,8 @@ NewUser::~NewUser()
 
 }
 
-void NewUser::submit()
+void NewUser::browse()
 {
-    if(anyEmpty())
-    {
-        showError("Please fill in all fields.");
-        return;
-    }
-
     for(int i=0; i < parent->curUsers.size(); i++){
         if(parent->curUsers.at(i)->username == validName()){
             showError("Please choose a unique name");
@@ -66,9 +80,19 @@ void NewUser::submit()
         }
     }
 
-    QString pathName = QFileDialog::getExistingDirectory(this,tr("Select a Save Directory"), QDir::homePath());
+    pathName = QFileDialog::getExistingDirectory(this,tr("Select a Save Directory"), QDir::homePath());
 //    QDir dir(pathName);
-    if(pathName == "") return;
+    direct->setText(pathName);
+
+}
+
+void NewUser::submit(){
+    if(anyEmpty())
+    {
+        showError("Please fill in all fields.");
+        return;
+    }
+
     User* newUser = new User(validName(),
                              pathName
                              );
