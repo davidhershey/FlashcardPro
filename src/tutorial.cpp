@@ -100,7 +100,21 @@ QFrame* Tutorial::createUserTutPage()
     layout->addWidget(line3, 0, Qt::AlignHCenter);
     layout->addWidget(line4, 0, Qt::AlignHCenter);
     layout->addWidget(line5, 0, Qt::AlignHCenter);
-    frame->setLayout(layout);
+
+
+    QSplitter *splitter = new QSplitter();
+    QFrame *rightWidget = new QFrame();
+    rightWidget->setLayout(layout);
+    rightWidget->setStyleSheet("QFrame { background-color: rgb(191, 197, 255); }");
+    QScrollArea *scrollArea = new QScrollArea();
+    scrollArea->setWidgetResizable(1);
+    scrollArea->setWidget(rightWidget);
+    splitter->addWidget(scrollArea);
+    QGridLayout *lay = new QGridLayout();
+    lay->addWidget(splitter);
+    frame->setLayout(lay);
+
+    //frame->setLayout(layout);
     return frame;
 }
 
@@ -136,7 +150,23 @@ QFrame* Tutorial::createDecksViewTutPage()
     layout->addWidget(line3, 0, Qt::AlignHCenter);
     layout->addWidget(line4, 0, Qt::AlignHCenter);
     layout->addWidget(line5, 0, Qt::AlignHCenter);
-    frame->setLayout(layout);
+
+
+
+
+    QSplitter *splitter = new QSplitter();
+    QFrame *rightWidget = new QFrame();
+    rightWidget->setLayout(layout);
+    rightWidget->setStyleSheet("QFrame { background-color: rgb(191, 197, 255); }");
+    QScrollArea *scrollArea = new QScrollArea();
+    scrollArea->setWidgetResizable(1);
+    scrollArea->setWidget(rightWidget);
+    splitter->addWidget(scrollArea);
+    QGridLayout *lay = new QGridLayout();
+    lay->addWidget(splitter);
+    frame->setLayout(lay);
+
+    //frame->setLayout(layout);
     return frame;
 }
 
@@ -162,7 +192,21 @@ QFrame* Tutorial::createDeckMenuTutPage()
     layout->addWidget(line1,0, Qt::AlignHCenter);
     layout->addWidget(line2,0, Qt::AlignHCenter);
     layout->addWidget(mocMenu,0, Qt::AlignHCenter);
-    frame->setLayout(layout);
+
+
+    QSplitter *splitter = new QSplitter();
+    QFrame *rightWidget = new QFrame();
+    rightWidget->setLayout(layout);
+    rightWidget->setStyleSheet("QFrame { background-color: rgb(191, 197, 255); }");
+    QScrollArea *scrollArea = new QScrollArea();
+    scrollArea->setWidgetResizable(1);
+    scrollArea->setWidget(rightWidget);
+    splitter->addWidget(scrollArea);
+    QGridLayout *lay = new QGridLayout();
+    lay->addWidget(splitter);
+    frame->setLayout(lay);
+
+    //frame->setLayout(layout);
     return frame;
 }
 
@@ -187,7 +231,21 @@ QFrame* Tutorial::createStudyAreaTutPage()
     layout->addWidget(line1,0, Qt::AlignHCenter);
     layout->addWidget(line2,0, Qt::AlignHCenter);
     layout->addWidget(mocStudyArea,0, Qt::AlignHCenter);
-    frame->setLayout(layout);
+
+
+    QSplitter *splitter = new QSplitter();
+    QFrame *rightWidget = new QFrame();
+    rightWidget->setLayout(layout);
+    rightWidget->setStyleSheet("QFrame { background-color: rgb(191, 197, 255); }");
+    QScrollArea *scrollArea = new QScrollArea();
+    scrollArea->setWidgetResizable(1);
+    scrollArea->setWidget(rightWidget);
+    splitter->addWidget(scrollArea);
+    QGridLayout *lay = new QGridLayout();
+    lay->addWidget(splitter);
+    frame->setLayout(lay);
+
+    //frame->setLayout(layout);
     return frame;
 }
 
@@ -210,6 +268,19 @@ QFrame* Tutorial::createDonePage()
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(line1,0, Qt::AlignHCenter);
     layout->addWidget(line2,0, Qt::AlignHCenter);
-    frame->setLayout(layout);
+
+    QSplitter *splitter = new QSplitter();
+    QFrame *rightWidget = new QFrame();
+    rightWidget->setLayout(layout);
+    rightWidget->setStyleSheet("QFrame { background-color: rgb(191, 197, 255); }");
+    QScrollArea *scrollArea = new QScrollArea();
+    scrollArea->setWidgetResizable(1);
+    scrollArea->setWidget(rightWidget);
+    splitter->addWidget(scrollArea);
+    QGridLayout *lay = new QGridLayout();
+    lay->addWidget(splitter);
+    frame->setLayout(lay);
+
+    //frame->setLayout(layout);
     return frame;
 }
