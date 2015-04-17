@@ -45,6 +45,12 @@ StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, DeckMenu* parent_in)
     grid->addWidget(wrong,2,0,1,1,Qt::AlignRight);
     connect(wrong,SIGNAL(clicked()),this,SLOT(incorrect()));
 
+    QFont smallfont;
+    QFontDatabase db;
+
+    smallfont = db.font("Nexa Light", "Normal", 18);
+    back->setFont(smallfont);
+
     scores->setText("Card Score: " + QString::number(curCard->getScore()));
     grid->addWidget(scores,2,1,1,1,Qt::AlignCenter);
 
