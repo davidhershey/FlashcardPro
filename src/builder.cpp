@@ -45,7 +45,7 @@ builder::~builder()
 
 void builder::submit_card(){
     if ((front_text->toPlainText()).trimmed().isEmpty() | (back_text->toPlainText()).trimmed().isEmpty()){
-        QMessageBox::warning(this, "Incomplete Card", "Incomplete Card. Please filling in card before adding/updating.");
+        QMessageBox::warning(this, "Incomplete Card", "Incomplete Card. Please fill in card before adding/updating.");
     }
     else {
         bool free = true;
@@ -185,11 +185,12 @@ void builder::setup(){
     cardlay->addWidget(card_list);
     cardlay->addWidget(remove);
 
-    layout2->addLayout(cardlay);
+
 
     QVBoxLayout *layout3 = new QVBoxLayout();
     layout2->addLayout(layout3);
 
+    layout2->addLayout(cardlay);
     QLabel* header1 = new QLabel(tr("Front text"));
     QLabel* header2 = new QLabel(tr("Back text"));
     front_text = new QTextEdit();
