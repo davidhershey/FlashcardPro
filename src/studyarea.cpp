@@ -29,8 +29,8 @@ StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, DeckMenu* parent_in)
     right->setIcon(ic);
     QSize iconSize(65, 65);
     right->setIconSize(iconSize);
-    right->setShortcut(QKeySequence(Qt::Key_Left));
-    grid->addWidget(right,2,0,1,1,Qt::AlignLeft);
+    right->setShortcut(QKeySequence(Qt::Key_Right));
+    grid->addWidget(right,2,2,1,1,Qt::AlignLeft);
     connect(right,SIGNAL(clicked()),this,SLOT(correct()));
 
     QPushButton *wrong = new QPushButton;
@@ -41,8 +41,8 @@ StudyArea::StudyArea(Deck *_deck, QStackedWidget* pages_in, DeckMenu* parent_in)
     QIcon ic2(pm2);
     wrong->setIcon(ic2);
     wrong->setIconSize(iconSize);
-    wrong->setShortcut(QKeySequence(Qt::Key_Right));
-    grid->addWidget(wrong,2,2,1,1,Qt::AlignRight);
+    wrong->setShortcut(QKeySequence(Qt::Key_Left));
+    grid->addWidget(wrong,2,0,1,1,Qt::AlignRight);
     connect(wrong,SIGNAL(clicked()),this,SLOT(incorrect()));
 
     scores->setText("Card Score: " + QString::number(curCard->getScore()));

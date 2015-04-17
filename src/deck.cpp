@@ -29,6 +29,7 @@ Deck::Deck(FILE* deck_file, User *_user)
         parseCard(&line);
         line = instream.readLine();
     }
+    autoSave();
 
 }
 

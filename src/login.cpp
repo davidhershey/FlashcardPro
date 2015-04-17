@@ -83,6 +83,7 @@ void LogIn::initialSetup(){
     QFontDatabase db;
     naxa = db.font("Nexa Light","Normal",18);
     title_info->setFont(naxa);
+    title_info->setAlignment(Qt::AlignHCenter);
 
     QPushButton* startButton = new QPushButton("Start");
     QFont naxa2= db.font("Nexa Light", "Normal", 18);

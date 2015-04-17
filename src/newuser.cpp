@@ -68,6 +68,7 @@ void NewUser::submit()
 
     QString pathName = QFileDialog::getExistingDirectory(this,tr("Select a Save Directory"), QDir::homePath());
 //    QDir dir(pathName);
+    if(pathName == "") return;
     User* newUser = new User(validName(),
                              pathName
                              );

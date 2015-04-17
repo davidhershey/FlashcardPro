@@ -79,7 +79,7 @@ void DecksView::loadDeck()
     if(user == NULL) return;
     QString fileName =QFileDialog::getOpenFileName(this, tr("Pick a Deck"),
                                                    "*",
-                                                   tr("Text File (*.txt)"));
+                                                   tr("Deck File (*.dek)"));
 
     if (fileName.isEmpty() || fileName.isNull())
       return;
