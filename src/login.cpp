@@ -20,6 +20,7 @@ LogIn::LogIn(QStackedWidget* pages_in)
     layout = new QGridLayout();
     QDir directory;
     fileLoc = directory.currentPath();
+    curUsers = new vector<User*>;
     readCurrentUsers();
     initialSetup();
 }
@@ -32,7 +33,7 @@ LogIn::LogIn(QStackedWidget* pages_in)
 void LogIn::nextPage()
 {
     //qDebug() << "at next page";
-    if(curUsers.empty()){
+    if(curUsers->empty()){
         int index = pages->addWidget(new NewUser(pages, this));
         pages->setCurrentIndex(index);
         return;
@@ -146,14 +147,14 @@ void LogIn::readCurrentUsers(){
             return;
         }
         //qDebug() << "added user " << list[0];
-        curUsers.push_back(new User(list[0], list[1]));
+        curUsers->push_back(new User(list[0], list[1]));
     }
 }
 
 
 void LogIn::addNewUser(User* user)
 {
-    curUsers.push_back(user);
+    curUsers->push_back(user);
 
     //write to login_names.txt
     user->writeUserInfo(fileLoc + "/users.txt");

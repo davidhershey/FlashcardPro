@@ -36,7 +36,8 @@ SOURCES +=     src/main.cpp \
     src/newuser.cpp \
     src/user.cpp \
     src/userselect.cpp \
-    src/tutorial.cpp
+    src/tutorial.cpp \
+    src/deletebutton.cpp
 
 HEADERS  +=   include/mainwindow.h \
     include/flashcard.h \
@@ -58,7 +59,8 @@ HEADERS  +=   include/mainwindow.h \
     include/newuser.h \
     include/user.h \
     include/userselect.h \
-    include/tutorial.h
+    include/tutorial.h \
+    include/deletebutton.h
 
 DISTFILES += \
     info.txt \

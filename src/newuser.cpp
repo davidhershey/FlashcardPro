@@ -73,8 +73,8 @@ NewUser::~NewUser()
 
 void NewUser::browse()
 {
-    for(int i=0; i < parent->curUsers.size(); i++){
-        if(parent->curUsers.at(i)->username == validName()){
+    for(int i=0; i < parent->curUsers->size(); i++){
+        if(parent->curUsers->at(i)->username == validName()){
             showError("Please choose a unique name");
             return;
         }
@@ -117,9 +117,9 @@ bool NewUser::anyEmpty()
 
 bool NewUser::invalidUsername()
 {
-    for(int i=0; i < parent->curUsers.size(); ++i)
+    for(int i=0; i < parent->curUsers->size(); ++i)
     {
-        if(parent->curUsers[i]->sameName(username->toPlainText()))
+        if(parent->curUsers->at(i)->sameName(username->toPlainText()))
             return true;
     }
     return false;

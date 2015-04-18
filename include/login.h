@@ -20,7 +20,7 @@ public:
     QTextEdit* edit3;
     QString fileLoc;
     vector<QString> currentUsers;
-    vector<User*> curUsers;
+    vector<User*> *curUsers;
 
 private:
     QStackedWidget* pages;
