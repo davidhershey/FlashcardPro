@@ -37,6 +37,7 @@ private:
     QLabel* titleplate;
     void setup();
     User* user;
+
 public slots:
     void submit_card();
     void delete_card();

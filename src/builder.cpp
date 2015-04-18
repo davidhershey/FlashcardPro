@@ -8,6 +8,7 @@ builder::builder(QStackedWidget* pages_in, DecksView* decksview_in, User* _user)
         decksview = decksview_in;
         user = _user;
         pages = pages_in;
+        done = new QPushButton(tr("Add Deck"));
 
         setup();
         connect(done, SIGNAL(pressed()), this, SLOT(done_slot()));
@@ -17,10 +18,11 @@ builder::builder(QStackedWidget* pages_in, Deck* deck)
 {
     pages = pages_in;
     decksave = deck;
+    done = new QPushButton(tr("Save Deck Changes"));
 
     setup();
 
-    done->setText("Save Changes");
+
     titleplate->setText("Deck Editor");
 
     connect(done, SIGNAL(pressed()), this, SLOT(done_edit_slot()));
@@ -73,12 +75,14 @@ void builder::submit_card(){
             update->setCardInfo(front_text->toPlainText(), back_text->toPlainText());
         }
     }
+
 }
 
 void builder::delete_card(){
     card_list->takeItem(card_list->currentRow());
     front_text->clear();
     back_text->clear();
+
 }
 
 void builder::cancel_slot(){
@@ -159,7 +163,6 @@ void builder::setup(){
     submit = new QPushButton(tr("Add/Update Card"));
     remove = new QPushButton(tr("Delete Card"));
     cancel = new QPushButton(tr("Cancel"));
-    done = new QPushButton(tr("Add Deck"));
 
     titleplate = new QLabel(tr("Deck Builder"));
     deck_title = new QTextEdit();
